@@ -3,4 +3,12 @@
 
 > 선형회귀 기법에 대한 학습과 신경망 네트워크를 구현하기위한 머신 러닝 방법론 학습
 
-> mask r-cnn https://github.com/matterport/Mask_RCNN
+
+
+## 아이디어 목록
+> 아이디어, 혹은 관련 데이터 링크 추가 바람
+
+ - 마스크 착용한 얼굴 구분
+    > mask r-cnn https://github.com/matterport/Mask_RCNN
+
+ - 협업툴 사이트 + 그림인식 (순위 ↓)
