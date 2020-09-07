@@ -1,0 +1,7 @@
+{
+  "caption_file_path": "datasets\\captions.csv",
+  "train_file_path": "datasets\\train_list.csv",
+  "test_file_path": "datasets\\test_list.csv",
+  "image_file_path": "datasets\\image",
+  "do_sampling": 1
+}

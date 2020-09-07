@@ -1,0 +1,5 @@
+2020-09-02 15:51:40,783 Namespace(caption_file_path='.\\datasets\\captions.csv', do_sampling=1, image_file_path='.\\datasets\\images', test_file_path='.\\datasets\\test_list.csv', train_file_path='.\\datasets\\train_list.csv')
+2020-09-02 15:53:13,626 Namespace(caption_file_path='.\\datasets\\captions.csv', do_sampling=1, image_file_path='.\\datasets\\images', test_file_path='.\\datasets\\test_list.csv', train_file_path='.\\datasets\\train_list.csv')
+2020-09-02 15:56:19,930 Namespace(caption_file_path='.\\datasets\\captions.csv', do_sampling=1, image_file_path='.\\datasets\\images', test_file_path='.\\datasets\\test_list.csv', train_file_path='.\\datasets\\train_list.csv')
+2020-09-02 16:01:02,073 Namespace(caption_file_path='.\\datasets\\captions.csv', do_sampling=1, image_file_path='.\\datasets\\images', test_file_path='.\\datasets\\test_list.csv', train_file_path='.\\datasets\\train_list.csv')
+2020-09-02 16:01:49,822 Namespace(caption_file_path='.\\datasets\\captions.csv', do_sampling=1, image_file_path='.\\datasets\\images', test_file_path='.\\datasets\\test_list.csv', train_file_path='.\\datasets\\train_list.csv')
