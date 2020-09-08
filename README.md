@@ -12,3 +12,8 @@
     > mask r-cnn https://github.com/matterport/Mask_RCNN
 
  - 협업툴 사이트 + 그림인식 (순위 ↓)
+ 
+ - 화상회의 회의록 자동 작성
+   - 얼굴 & 목소리 매핑하여 회의 모든 내용 작성
+   - 텍스트 summerization을 통한 회의 내용 정리
+   - 데이터 시각화 / 워드 클라우드. 일정 별 정리 등
