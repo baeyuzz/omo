@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import tensorflow as tf
 from tqdm.notebook import tqdm
 from PIL import Image, ImageOps
 
@@ -101,3 +102,20 @@ def normalize_image(image: np.array ,mean,stddev) :
 
 #R,G,B 평균
 print(calc_color_mean("r"),calc_color_mean("g"),calc_color_mean("b"))
+
+
+
+# Req 3-1
+
+#이미지 Array를 Dataset으로 변환
+data = tf.data.Dataset.from_tensor_slices(get_image('datasets/images/8237901726.jpg'))
+
+#텍스트 string을 Dataset으로 변환
+#RNN쪽에서 Tokenize 해줘야 함
+
+def create_dataset(path) :
+    image = tf.data.Dataset.from_tensor_slices(get_image(path))
+    
+    return image
+
+data = create_dataset(x_train)
