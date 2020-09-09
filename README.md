@@ -10,6 +10,8 @@
 
  - 마스크 착용한 얼굴 구분
     > mask r-cnn https://github.com/matterport/Mask_RCNN
+    
+ - 마스크 착용한 사람 얼굴 추정해서 합성
 
  - 협업툴 사이트 + 그림인식 (순위 ↓)
  
