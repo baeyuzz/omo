@@ -1,0 +1,100 @@
+<template>
+  <div id="signIn">
+    <input type="text" placeholder="기관명" v-model="name" />
+    <br />
+    <input type="text" placeholder="email" v-model="email" />
+    <br />
+    <input type="password" placeholder="password" v-model="password" />
+    <br />
+    <input type="password" placeholder="passwordConfirm" v-model="passwordConfirm" />
+    <br />
+
+    <h5>Sign on here!</h5>
+    <button class="loginBtn" @click="signOn">SignOn</button>
+  </div>
+</template>
+
+<script>
+// import constants from "@/lib/constants.js";
+import http from "@/http-common.js";
+export default {
+  methods: {
+    signOn() {
+      if (this.password != this.passwordConfirm) {
+        alert("패스워드가 다릅니다.");
+        return;
+      }
+
+      // let data = {
+      //   name: this.name,
+      //   email: this.email,
+      //   password: this.password,
+      // };
+
+      // this.$store.dispatch(constants.METHODS.CREATE_USER, data);
+      // this.$emit("reTurn");
+      let url = "";
+      http
+        .post(url, {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+        })
+        .then(() => {
+          console.log("Success");
+          this.$emit("reTurn", "aasdf");
+        })
+        .catch((err) => {
+          console.log(err);
+
+          this.$emit("reTurn");
+        });
+    },
+  },
+  data: () => {
+    return {
+      name: "",
+      email: "",
+      password: "",
+      passwordConfirm: "",
+    };
+  },
+};
+</script>
+
+<style>
+#signIn {
+  position: relative;
+  margin: auto;
+  width: 40vw;
+  height: 40vh;
+  /* border: solid red 1px; */
+}
+
+input {
+  background-color: #ffffffd8;
+  font-size: 15px;
+  padding: 15px 20px 15px 20px;
+  margin: 5px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  box-shadow: 1.5px 2px #292929;
+  width: 200px;
+}
+
+.loginBtn {
+  padding: 5px 15px 5px 15px;
+  margin: 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #128db37e;
+  color: white;
+  box-shadow: 0.5px 1px #292929;
+}
+
+.loginBtn:hover {
+  color: #ffffffbb;
+}
+</style>
