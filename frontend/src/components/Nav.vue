@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-        <h1 class="logo" @click="goHome()">
+        <h1 class="logo" @click="goMain()">
             ㅇㅁㅇ
         </h1>
         <div class="menu">
