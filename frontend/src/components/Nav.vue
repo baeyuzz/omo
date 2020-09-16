@@ -1,8 +1,10 @@
 <template>
   <div class="nav">
-        <h1 class="logo" @click="goMain()">
+        <!-- <h1 class="logo" @click="goMain()">
             ㅇㅁㅇ
-        </h1>
+        </h1> -->
+        <img class="logo" @click="goMain()" src="@/assets/icon.png" width="100px"/>
+
         <div class="menu">
             <button>서비스 소개 </button>
             <button> 공지사항</button>
@@ -30,9 +32,16 @@ export default {
     justify-items: center;
 }
 
-.logo {
-}
-.logo:hover, button:hover {
+img {
+    padding-top: 25px;
+    transform: scale(1);
+    -webkit-transform:scale(1);
+  }
+  img:hover {
+    transform: scale(1.1);
+    -webkit-transform:scale(1.1);
+  }
+button:hover {
     color: #ffffffbb;
 }
 .menu {
@@ -45,6 +54,7 @@ button {
     outline: none;
     border: none;
     color : white;
+    font-size: 15px;;
 }
 
 </style>
