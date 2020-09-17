@@ -1,32 +1,32 @@
 <template>
     <div>
         <Nav/>
-        <div class="regForm" style="margin-top : 5%;">
-            <h1>
-            음성등록
-            </h1>
-        </div>
-        <div style="text-align : center; color : black" class="regForm" >
+        
+        <div style="text-align : center; color : black; margin-top : 4%" class="regForm" >
             <div style="margin-top : 2%; background-color : white; width : 480px; border-radius : 15px">
-
+            <div class="regForm" style="padding-top : 4%;">
+                <h1>
+                    음성등록
+                </h1>
+            </div>
                 <div class="regForm">
                     <table>
                         <tbody>
                             <tr>
                                 <td><label>모임 코드</label></td>
-                                <td> <input class="regInput"  placeholder="ex) A123"/></td>
+                                <td> <input class="regInput"  placeholder="ex. A123"/></td>
                             </tr>
                             <tr>
                                 <td><label>이름</label></td>
-                                <td> <input class="regInput"  placeholder="ex) 홍길동"/></td>
+                                <td> <input class="regInput"  placeholder="ex. 홍길동"/></td>
                             </tr>
                             <tr>
                                 <td><label>휴대 전화</label></td>
-                                <td><input class="regInput" type="tel" placeholder="ex) 010-1234-1234"/></td>
+                                <td><input class="regInput" type="tel" placeholder="ex. 010-1234-1234"/></td>
                             </tr>
                             <tr>
                                 <td><label>주소</label></td>
-                                <td><input class="regInput" placeholder="ex) 경기 안양"/></td>
+                                <td><input class="regInput" placeholder="ex. 경기 안양"/></td>
                             </tr>
                         </tbody>
                     </table>
@@ -35,7 +35,7 @@
                     다음 버튼을 누르시면 음성 인식을 위한 녹음이 시작됩니다
                 </div>
                 <div class="regForm">
-                    <button class="regBtn cancel">취소</button>
+                    <router-link to="/main" class="regBtn">취소</router-link>
                     <button class="regBtn">다음</button>
                 </div>
             </div>
@@ -63,7 +63,7 @@ export default {
 .regInput {
     background-color: #ffffff00;
     font-size : 15px;
-    padding : 15px 20px 15px 20px;
+    padding : 15px 20px 15px 8px;
     margin: 5px;
     /* border-radius: 10px; */
     border : none;
@@ -78,6 +78,7 @@ export default {
   font-weight: bold;
 }
 .regBtn {
+    text-decoration: none;
     padding : 5px 15px 5px 15px;
     margin: 30px 5px 8% 5px;
     border-radius: 5px;

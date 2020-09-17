@@ -22,12 +22,14 @@
       </div>
 
       <div>
+        <router-link to="/voiceReg" style="text-decoration:none">
         <div class="icons">
           <img src="@/assets/mic.png" width="90px" height="120px;"/>
         </div>
-        <p>
-        음성 등록
+        <p style="color : white">
+          음성 등록
         </p>
+        </router-link>
       </div>
 
       <div>
