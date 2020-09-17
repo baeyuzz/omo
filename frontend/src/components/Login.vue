@@ -35,7 +35,7 @@ export default {
         email: this.email,
         password: this.password,
       };
-
+      alert("현재 준비중입니다.");
       this.$store.dispatch(constants.METHODS.LOGIN_USER, data);
     },
   },
