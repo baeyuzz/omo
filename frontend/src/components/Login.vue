@@ -1,40 +1,111 @@
 <template>
   <div class="login">
-    <input class="loginInput" placeholder="email"/>
-    <br>
-    <input class="loginInput" type="password" placeholder="password"/>
-    <br>
-    <button class="loginBtn">Login</button>
+    <transition name="slide-fade" mode="out-in">
+      <div id="loginForm" v-if="!isShow">
+        <input class="loginInput" placeholder="email" v-model="email" />
+        <br />
+        <input class="loginInput" type="password" placeholder="password" v-model="password" />
+        <br />
+        <button class="loginBtn" @click="signIn">Login</button>
+
+        <h5>아직 회원이 아니세요?</h5>
+        <button @click="openSignOn">회원가입</button>
+      </div>
+
+      <SignIn v-else v-on:reTurn="openSignOn" />
+    </transition>
   </div>
 </template>
 
 <script>
+import SignIn from "@/components/SignIn.vue";
+import constants from "@/lib/constants.js";
+
+export default {
+  name: "Login.vue",
+  components: {
+    SignIn,
+  },
+  methods: {
+    openSignOn() {
+      this.isShow = !this.isShow;
+    },
+    signIn() {
+      let data = {
+        email: this.email,
+        password: this.password,
+      };
+
+      this.$store.dispatch(constants.METHODS.LOGIN_USER, data);
+    },
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+      isShow: false,
+    };
+  },
+};
 </script>
 
-
 <style scoped>
-.login{
+.login {
   text-align: center;
+  height: 40vh;
 }
 .loginInput {
-    background-color: #ffffffd8;
-    font-size : 15px;
-    padding : 15px 20px 15px 20px;
-    margin: 5px;
-    border-radius: 25px;
-    border : none;
-    outline: none;
-    box-shadow: 1.5px 2px #292929;
-    width: 200px;
+  background-color: #ffffffd8;
+  font-size: 15px;
+  padding: 15px 20px 15px 20px;
+  margin: 5px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  box-shadow: 1.5px 2px #292929;
+  width: 200px;
 }
 .loginBtn {
-    padding : 5px 15px 5px 15px;
-    margin: 15px;
-    border-radius: 25px;
-    border : none;
-    outline: none;
-    background-color: #128db37e;
-    color : white;
-    box-shadow: 0.5px 1px #292929;
+  padding: 5px 15px 5px 15px;
+  margin: 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #128db37e;
+  color: white;
+  box-shadow: 0.5px 1px #292929;
+}
+
+#loginForm {
+  position: relative;
+  width: 40vw;
+  /* height: 40vh; */
+  margin: auto;
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+  color: white;
+}
+button:hover {
+  color: #ffffffbb;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.5s;
+}
+.slide-fade-leave-active {
+  transition: all 0.3s;
+}
+.slide-fade-enter
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.slide-fade-leave-to {
+  transform: translateX(-10px);
+  opacity: 0;
 }
 </style>
