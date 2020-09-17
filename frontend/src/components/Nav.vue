@@ -34,6 +34,15 @@ export default {
 a:link { color: white; text-decoration: none;}
 a:visited { color: white; text-decoration: none;}
 a:hover { color: #ffffffbb; text-decoration: none;}
+img {
+    padding-top: 25px;
+    transform: scale(1);
+    -webkit-transform:scale(1);
+  }
+  img:hover {
+    transform: scale(1.1);
+    -webkit-transform:scale(1.1);
+  }
 .logo {
 }
 .logo:hover, button:hover {

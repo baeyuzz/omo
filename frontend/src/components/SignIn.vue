@@ -62,7 +62,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #signIn {
   position: relative;
   margin: auto;
