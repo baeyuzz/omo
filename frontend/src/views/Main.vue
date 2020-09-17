@@ -5,7 +5,7 @@
     <div class="menu">
       <div>
         <div class="icons">
-        <img src="@/assets/frame.png" width="110px" height="110px;"/>
+        <img src="@/assets/frame.png" width="120px" height="120px;"/>
         </div>
         <p>
         명부 작성
@@ -14,7 +14,7 @@
 
       <div>
         <div class="icons">
-          <img src="@/assets/paper.png" width="100px" height="110px;"/>
+          <img src="@/assets/paper.png" width="110px" height="120px;"/>
         </div>
         <p>
         명부 관리
@@ -23,7 +23,7 @@
 
       <div>
         <div class="icons">
-          <img src="@/assets/mic.png" width="90px" height="110px;"/>
+          <img src="@/assets/mic.png" width="90px" height="120px;"/>
         </div>
         <p>
         음성 등록
@@ -32,7 +32,7 @@
 
       <div>
         <div class="icons">
-          <img src="@/assets/key.png" width="110px" height="110px;"/>
+          <img src="@/assets/key.png" width="110px" height="120px;"/>
         </div>
         <p>
         계정 설정

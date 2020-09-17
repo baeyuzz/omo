@@ -1,8 +1,10 @@
 <template>
   <div class="nav">
-        <h1 class="logo" @click="goMain()">
+        <!-- <h1 class="logo" @click="goMain()">
             ㅇㅁㅇ
-        </h1>
+        </h1> -->
+        <img class="logo" @click="goMain()" src="@/assets/icon.png" width="100px"/>
+
         <div class="menu">
             <button>서비스 소개 </button>
             <button><router-link to="/notice">공지사항</router-link></button>
@@ -47,6 +49,7 @@ button {
     outline: none;
     border: none;
     color : white;
+    font-size: 15px;;
 }
 
 </style>
