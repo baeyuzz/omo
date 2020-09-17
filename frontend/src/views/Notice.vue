@@ -38,11 +38,8 @@
 					</div>
 			</div>
 		</div>
-  
   </div>
 
-     
-  
 </template>
 
 <script>
@@ -85,7 +82,6 @@ a:visited { color: #666666; text-decoration: none;}
 a:hover { color: black; text-decoration: underline;}
 
 /* [ Table ]*/
-
 .limiter {
   width: 100%;
   margin: 0 auto;
@@ -119,12 +115,6 @@ a:hover { color: black; text-decoration: underline;}
   margin: 0;
 }
 
-@media screen and (max-width: 768px) {
-  .table {
-    display: block;
-  }
-}
-
 .row {
   display: table-row;
   background: #fff;
@@ -135,45 +125,9 @@ a:hover { color: black; text-decoration: underline;}
   background: #6c7ae0;
 }
 
-@media screen and (max-width: 768px) {
-  .row {
-    display: block;
-  }
-
-  .row.header {
-    padding: 0;
-    height: 0px;
-  }
-
-  .row.header .cell {
-    display: none;
-    align-content: center;
-  }
-
-  .row .cell:before {
-    font-family: Poppins-Bold;
-    font-size: 12px;
-    color: #808080;
-    line-height: 1.2;
-    text-transform: uppercase;
-    font-weight: unset !important;
-
-    margin-bottom: 13px;
-    content: attr(data-title);
-    min-width: 98px;
-    display: block;
-  }
-}
-
 .cell {
   display: table-cell;
   text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .cell {
-    display: block;
-  }
 }
 
 .row .cell {
@@ -221,46 +175,4 @@ a:hover { color: black; text-decoration: underline;}
   width: 100% !important;
 }
 
-/* .row:hover {
-  background-color: #ececff;
-  background-color: rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-.row.header :hover {
-  background-color: #ececff;
-  background-color: rgba(0, 0, 0, 0.1);
-  background-color: #6c7ae0;
-  cursor: default;
-} */
-@media (max-width: 768px) {
-  .row {
-    border-bottom: 1px solid #f2f2f2;
-    padding-bottom: 18px;
-    padding-top: 30px;
-    padding-right: 15px;
-    margin: 0;
-  }
-  
-  .row .cell {
-    border: none;
-    padding-left: 30px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-  .row .cell:nth-child(1) {
-    padding-left: 30px;
-  }
-  
-  .row .cell {
-    font-family: Poppins-Regular;
-    font-size: 18px;
-    color: #555555;
-    line-height: 1.2;
-    font-weight: unset !important;
-  }
-
-  .table, .row, .cell {
-    width: 100% !important;
-  }
-}
 </style>

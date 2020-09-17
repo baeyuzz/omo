@@ -5,7 +5,7 @@
         </h1>
         <div class="menu">
             <button>서비스 소개 </button>
-            <button> 공지사항</button>
+            <button><router-link to="/notice">공지사항</router-link></button>
         </div>
   </div>
 </template>
@@ -29,7 +29,9 @@ export default {
     justify-content: space-between;
     justify-items: center;
 }
-
+a:link { color: white; text-decoration: none;}
+a:visited { color: white; text-decoration: none;}
+a:hover { color: #ffffffbb; text-decoration: none;}
 .logo {
 }
 .logo:hover, button:hover {
