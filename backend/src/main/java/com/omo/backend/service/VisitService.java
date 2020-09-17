@@ -7,15 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class VisitService {
 
     @Autowired
     private VisitorRepository visitorRepository;
 
-    public Visitor writeGuestBook(String name) {
+    public Optional<Visitor> writeGuestBook(String name) {
         Visitor visitor = visitorRepository.save(new Visitor(name));
-        return visitor;
+        return Optional.of(visitor);
     }
 
 }

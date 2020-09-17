@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/api")
 public class VisitController {
@@ -20,8 +22,8 @@ public class VisitController {
 
     @PostMapping("/visitation")
     public ResponseEntity visit(@RequestBody VisitorRequest request) {
-        Visitor visitor = visitService.writeGuestBook(request.getName());
-        if(visitor == null)
+        Optional<Visitor> visitor = visitService.writeGuestBook(request.getName());
+        if(visitor.isPresent())
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         else
             return new ResponseEntity<>(visitor, HttpStatus.OK);
