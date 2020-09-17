@@ -14,19 +14,19 @@
                         <tbody>
                             <tr>
                                 <td><label>모임 코드</label></td>
-                                <td> <input class="regInput"  placeholder="ex. A123"/></td>
+                                <td> <input class="regInput" placeholder="ex. A123" v-model="code"/></td>
                             </tr>
                             <tr>
                                 <td><label>이름</label></td>
-                                <td> <input class="regInput"  placeholder="ex. 홍길동"/></td>
+                                <td> <input class="regInput" placeholder="ex. 홍길동" v-model="name"/></td>
                             </tr>
                             <tr>
                                 <td><label>휴대 전화</label></td>
-                                <td><input class="regInput" type="tel" placeholder="ex. 010-1234-1234"/></td>
+                                <td><input class="regInput" type="tel" placeholder="ex. 010-1234-1234" v-model="phone"/></td>
                             </tr>
                             <tr>
                                 <td><label>주소</label></td>
-                                <td><input class="regInput" placeholder="ex. 경기 안양"/></td>
+                                <td><input class="regInput" placeholder="ex. 경기 안양" v-model="addr"/></td>
                             </tr>
                         </tbody>
                     </table>
@@ -36,21 +36,72 @@
                 </div>
                 <div class="regForm">
                     <router-link to="/main" class="regBtn">취소</router-link>
-                    <button class="regBtn">다음</button>
+                    <button class="regBtn" @click=submitForm()>다음</button>
                 </div>
             </div>
         </div>
   </div>
 </template>
 
-<script>
-import Nav from '@/components/Nav.vue'
 
+<script>
+
+import Nav from '@/components/Nav.vue'
+import http from '@/http-common.js'
 export default {
   name: 'VoiceRegForm',
   components: {
     Nav
-  }
+  },
+  data() {
+    return {
+      name: '',
+      phone: '',
+      addr: '',
+      code: '',
+    };
+  },
+  methods: {
+    async submitForm() {
+        if(this.code.length == 0) {
+            alert('모임 코드를 입력하세요');
+            this.$refs.code.focus();
+            return;
+        }
+        if(this.name.length == 0) {
+                alert('이름을 입력하세요');
+                this.$refs.name.focus();
+                return;
+        }
+        if(this.phone.length == 0) {
+            alert('휴대 전화를 입력하세요');
+            this.$refs.phone.focus();
+            return;
+        }
+        if(this.addr.length == 0) {
+            alert('주소를 입력하세요');
+            this.$refs.addr.focus();
+            return;
+        }
+        const params = {
+            phone: this.phone,
+            name: this.name,
+            code: this.code,
+            addr: this.addr,
+        };
+        http.post('/아직안정해짐',params)
+            .then((res) => {
+                    if(res.data.state){ // 등록이 되면
+                        console.log('success')
+                    } else {
+                        console.log('fail')
+                    }
+                } 
+            )
+            .catch((err) => alert('Error ', err));
+    },
+  },
+
 }
 </script>
 <style scoped>
