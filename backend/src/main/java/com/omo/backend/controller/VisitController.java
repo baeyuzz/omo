@@ -1,9 +1,7 @@
 package com.omo.backend.controller;
 
 import com.omo.backend.model.Visitor;
-import com.omo.backend.payload.ApiResponse;
 import com.omo.backend.payload.VisitorRequest;
-import com.omo.backend.service.MemberService;
 import com.omo.backend.service.VisitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +17,6 @@ public class VisitController {
 
     @Autowired
     VisitService visitService;
-    @Autowired
-    MemberService memberService;
 
     @PostMapping("/visitation")
     public ResponseEntity visit(@RequestBody VisitorRequest request) {
