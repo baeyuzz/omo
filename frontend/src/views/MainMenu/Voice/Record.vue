@@ -45,7 +45,6 @@ export default {
         audio.append('audio', data.blob, `record.mp3`)
 
         console.log(audio.getAll('audio'))
-        console.debug(audio)
         
         const headers = Object.assign({})
         headers['Content-Type'] = `multipart/form-data`
