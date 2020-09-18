@@ -53,7 +53,7 @@ export default {
   position: absolute;
   width: 90%;
   margin: 0% 5%;
-  bottom: 10%;
+  bottom: 5%;
   text-align: center;
 }
 .loginInput {
