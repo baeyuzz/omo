@@ -8,6 +8,7 @@
                 <h1>
                     음성등록
                 </h1>
+                
             </div>
                 <div class="regForm">
                     <table>

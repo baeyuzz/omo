@@ -1,15 +1,12 @@
 <template>
   <div class="record">
-    <Nav/>
-    <div style="text-align : center">
-      <h1>음성등록</h1>
-    </div>
+
     <div class="recorder">
       <audio-recorder
-          :attempts="1"
-          :time="1.5"
-          :after-recording="upload"
-          :show-upload-button='false'
+          :attempts=attempts
+          :time=time
+          :after-recording='upload'
+          :show-upload-button=uploadBtn
           :show-download-button='false'
           />
     </div>
@@ -19,19 +16,32 @@
 <script>
 import Vue from 'vue'
 import VueAudioRecorder from 'vue-audio-recorder'
-import Nav from '@/components/Nav.vue'
+
 import http from '@/http-common.js'
 
 Vue.use(VueAudioRecorder)
 
 export default {
     name: 'Record',
-    components: {
-        Nav
+    props: {
+      time :{
+        type: Number,
+        required: true,
+      },
+      attempts :{
+        type: Number,
+        required: true,
+      },
+      uploadBtn :{
+        type: Boolean,
+        required: true,
+      },
+     
     },
-    
+
     methods: {
       callback (data) {
+        console.log('callback')
         console.debug(data)
       },
       callbackUploading (data) {
@@ -39,6 +49,8 @@ export default {
         console.debug(data)
       },
       upload(data){
+        if(!this.uploadBtn){ // false면 자동 업로드
+
         console.log(data.blob)
 
         const audio = new FormData()
@@ -52,12 +64,14 @@ export default {
         console.log(headers)
 
         http.post("/uploadAudio", audio, { headers: headers }).then(resp => {
-            console.log(data)
+          console.log(data)
             console.log(resp)
           })
             .catch(error => {
-            console.log(error)
+              console.log(error)
           })
+        }
+        else this.callback();
       },
       download (data) {
         const type = data.blob.type.split('/')[1]
@@ -72,7 +86,6 @@ export default {
 </script>
 <style scoped>
 .recorder {
-  margin-top : 5%;
   display: flex;
   justify-content: center;
   text-align: center;

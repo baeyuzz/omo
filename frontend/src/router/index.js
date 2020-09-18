@@ -56,12 +56,14 @@ const routes = [{
     path: '/userSetting',
     name: 'UserSettingForm',
     component: () => import('../views/developing.vue'),
-  },{
+  },
+  {
     path: '/voiceReg/record',
     name: 'RegRecord',
-    component: () => import('../views/MainMenu/Voice/Record.vue'),
+    component: () => import('../views/MainMenu/Voice/RegRecord.vue'),
   },
-
+  
+  
 ]
 
 const router = new VueRouter({
