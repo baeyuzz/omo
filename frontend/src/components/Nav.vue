@@ -3,7 +3,9 @@
     <!-- <h1 class="logo" @click="goMain()">
             ㅇㅁㅇ
     </h1>-->
-    <img class="logo" @click="goMain()" src="@/assets/icon.png" width="100px" />
+    <router-link to="/main">
+      <img class="logo" @click="goMain()" src="@/assets/icon.png" width="100px" />
+    </router-link>
 
     <div class="menu">
       <button>서비스 소개</button>

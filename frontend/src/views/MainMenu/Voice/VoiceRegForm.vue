@@ -13,7 +13,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td><label>모임 코드</label></td>
+                                <td><label>기관 코드</label></td>
                                 <td> <input class="regInput" placeholder="ex. A123" v-model="code"/></td>
                             </tr>
                             <tr>
@@ -64,7 +64,7 @@ export default {
   methods: {
     async submitForm() {
         if(this.code.length == 0) {
-            alert('모임 코드를 입력하세요');
+            alert('기관 코드를 입력하세요');
             this.$refs.code.focus();
             return;
         }
@@ -92,13 +92,21 @@ export default {
         http.post('/아직안정해짐',params)
             .then((res) => {
                     if(res.data.state){ // 등록이 되면
+                        this.$router.push({
+                            name: "RegRecord",
+                        });
                         console.log('success')
                     } else {
                         console.log('fail')
                     }
                 } 
             )
-            .catch((err) => alert('Error ', err));
+            .catch((err) => {
+                this.$router.push({
+                    name: "RegRecord",
+                    });
+                alert('Error ', err)
+                });
     },
   },
 
