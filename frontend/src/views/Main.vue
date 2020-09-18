@@ -1,34 +1,32 @@
 <template>
   <div class="main">
-    <Nav/>
+    <Nav />
 
     <div class="menu">
       <div>
-        <div class="icons">
-        <img src="@/assets/frame.png" width="120px" height="120px;"/>
-        </div>
-        <p>
-        명부 작성
-        </p>
+        <router-link to="/createList" style="text-decoration:none">
+          <div class="icons">
+            <img src="@/assets/frame.png" width="120px" height="120px;" />
+          </div>
+          <p>명부 작성</p>
+        </router-link>
       </div>
 
       <div>
-        <div class="icons">
-          <img src="@/assets/paper.png" width="110px" height="120px;"/>
-        </div>
-        <p>
-        명부 관리
-        </p>
+        <router-link to="/manageList" style="text-decoration:none">
+          <div class="icons">
+            <img src="@/assets/paper.png" width="110px" height="120px;" />
+          </div>
+          <p>명부 관리</p>
+        </router-link>
       </div>
 
       <div>
         <router-link to="/voiceReg" style="text-decoration:none">
-        <div class="icons">
-          <img src="@/assets/mic.png" width="90px" height="120px;"/>
-        </div>
-        <p style="color : white">
-          음성 등록
-        </p>
+          <div class="icons">
+            <img src="@/assets/mic.png" width="90px" height="120px;" />
+          </div>
+          <p>음성 등록</p>
         </router-link>
       </div>
 
@@ -47,14 +45,14 @@
 </template>
 
 <script>
-  import Nav from '@/components/Nav.vue'
+import Nav from "@/components/Nav.vue";
 
-  export default {
-    name: 'Main',
-    components: {
-      Nav,
-    }
-  }
+export default {
+  name: "Main",
+  components: {
+    Nav,
+  },
+};
 </script>
 
 <style scoped>

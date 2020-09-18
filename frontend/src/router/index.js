@@ -4,8 +4,7 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'Home',
     component: Home
@@ -16,7 +15,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Main.vue')
+    component: () => import( /* webpackChunkName: "about" */ '../views/Main.vue')
   },
 
   {
@@ -25,7 +24,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Notice.vue')
+    component: () => import( /* webpackChunkName: "about" */ '../views/Notice.vue')
   },
 
   {
@@ -43,8 +42,21 @@ const routes = [
     name: 'ChangePwd',
     component: () => import('../views/ChangePwd.vue'),
   },
+  {
+    path: '/createList',
+    name: 'CreateListForm',
+    component: () => import('../views/developing.vue'),
+  },
+  {
+    path: '/manageList',
+    name: 'ManageListForm',
+    component: () => import('../views/developing.vue'),
+  }, {
+    path: '/userSetting',
+    name: 'UserSettingForm',
+    component: () => import('../views/developing.vue'),
+  },
 
-  
 ]
 
 const router = new VueRouter({
