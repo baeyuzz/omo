@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -9,11 +9,20 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color:white;
+  color: white;
 }
 
 html {
-  height : 100%;
-  background-image: linear-gradient(-225deg, #473B7Bdd 0%, #3584A7dd 51%, #30D2BEdd 100%);
+  height: 100%;
+  background-image: linear-gradient(
+    -225deg,
+    #473b7bdd 0%,
+    #3584a7dd 51%,
+    #30d2bedd 100%
+  );
+}
+
+body {
+  margin: 0;
 }
 </style>

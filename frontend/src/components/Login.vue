@@ -50,6 +50,10 @@ export default {
 
 <style scoped>
 .login {
+  position: absolute;
+  width: 90%;
+  margin: 0% 5%;
+  bottom: 10%;
   text-align: center;
 }
 .loginInput {
@@ -92,7 +96,7 @@ button:hover {
 }
 
 .slide-fade-enter-active {
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 .slide-fade-leave-active {
   transition: all 0.3s;

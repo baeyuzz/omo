@@ -17,7 +17,7 @@
 
     <div class="menu">
       <div>
-        <div class="icons">
+        <div class="icons" onclick="alert(`준비중입니다.`)">
           <img src="@/assets/paper.png" style="width : 160px; height : 170px;" />
         </div>
         <p>등록 회원 관리</p>
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div>
-        <div class="icons">
+        <div class="icons" @click="logout">
           <img src="@/assets/unlock.png" style="width : 160px; height : 160px;" />
         </div>
         <p>로그아웃</p>
@@ -75,6 +75,11 @@ export default {
           changPwdModal.style.display = "none";
         }
       };
+    },
+    logout() {
+      this.$router.push({
+        name: "Home",
+      });
     },
   },
   mounted() {
