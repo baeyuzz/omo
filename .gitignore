@@ -1,9 +1,8 @@
-# Initially taken from Github's Python gitignore file
-
-# Image Files
-images/
-
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/s03p22a509.iml
+.idea/vcs.xml
+.idea/workspace.xml
+AI/Voice/_config.yml
+frontend/package-lock.json
