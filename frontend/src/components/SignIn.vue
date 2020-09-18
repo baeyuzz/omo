@@ -16,7 +16,7 @@
 
 <script>
 // import constants from "@/lib/constants.js";
-import http from "@/http-common.js";
+// import http from "@/http-common.js";
 export default {
   methods: {
     signOn() {
@@ -24,31 +24,24 @@ export default {
         alert("패스워드가 다릅니다.");
         return;
       }
+      alert("현재 준비중입니다.");
+      this.$emit("reTurn");
+      // let url = "";
+      // http
+      //   .post(url, {
+      //     name: this.name,
+      //     email: this.email,
+      //     password: this.password,
+      //   })
+      //   .then(() => {
+      //     console.log("Success");
+      //     this.$emit("reTurn", "aasdf");
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
 
-      // let data = {
-      //   name: this.name,
-      //   email: this.email,
-      //   password: this.password,
-      // };
-
-      // this.$store.dispatch(constants.METHODS.CREATE_USER, data);
-      // this.$emit("reTurn");
-      let url = "";
-      http
-        .post(url, {
-          name: this.name,
-          email: this.email,
-          password: this.password,
-        })
-        .then(() => {
-          console.log("Success");
-          this.$emit("reTurn", "aasdf");
-        })
-        .catch((err) => {
-          console.log(err);
-
-          this.$emit("reTurn");
-        });
+      //     this.$emit("reTurn");
+      //   });
     },
   },
   data: () => {
