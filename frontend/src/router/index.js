@@ -30,7 +30,7 @@ const routes = [{
   {
     path: '/voiceReg',
     name: 'VoiceRegForm',
-    component: () => import('../views/MainMenu/VoiceRegForm.vue'),
+    component: () => import('../views/MainMenu/Voice/VoiceRegForm.vue'),
   },
   {
     path: '/account',
@@ -51,10 +51,15 @@ const routes = [{
     path: '/manageList',
     name: 'ManageListForm',
     component: () => import('../views/developing.vue'),
-  }, {
+  },
+  {
     path: '/userSetting',
     name: 'UserSettingForm',
     component: () => import('../views/developing.vue'),
+  },{
+    path: '/voiceReg/record',
+    name: 'RegRecord',
+    component: () => import('../views/MainMenu/Voice/Record.vue'),
   },
 
 ]
