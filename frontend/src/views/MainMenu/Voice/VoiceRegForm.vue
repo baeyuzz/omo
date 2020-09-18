@@ -35,7 +35,7 @@
                     다음 버튼을 누르시면 음성 인식을 위한 녹음이 시작됩니다
                 </div>
                 <div class="regForm">
-                    <router-link to="/main" class="regBtn">취소</router-link>
+                    <router-link to="/account" class="regBtn">취소</router-link>
                     <button class="regBtn" @click=submitForm()>다음</button>
                 </div>
             </div>
