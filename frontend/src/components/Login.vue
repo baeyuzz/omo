@@ -29,7 +29,7 @@ export default {
     openSignUp() {
       this.isShow = !this.isShow;
     },
-    signUp() {
+    signIn() {
       let data = {
         email: this.email,
         password: this.password,

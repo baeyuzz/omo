@@ -11,7 +11,7 @@
 import Nav from "@/components/Nav.vue";
 
 export default {
-  name: "VoiceRegForm",
+  name: "notYet",
   components: {
     Nav,
   },
