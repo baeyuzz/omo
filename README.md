@@ -16,6 +16,8 @@
 
 8.배포주소 : [http://j3a509.p.ssafy.io/](http://j3a509.p.ssafy.io/)
 
+![image](https://user-images.githubusercontent.com/23401317/93544693-a9110980-f999-11ea-9fe2-64d0122e70a3.png)
+
 # 서비스 구체화 회의
 
 주제 : 방문자 명단 자동 작성을 위한 서비스
