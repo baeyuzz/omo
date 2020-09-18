@@ -1,16 +1,15 @@
 <template>
-  <div id="signIn">
+  <div id="signUp">
     <input type="text" placeholder="기관명" v-model="name" />
     <br />
-    <input type="text" placeholder="email" v-model="email" />
+    <input type="text" placeholder="Email" v-model="email" />
     <br />
-    <input type="password" placeholder="password" v-model="password" />
+    <input type="password" placeholder="Password" v-model="password" />
     <br />
-    <input type="password" placeholder="passwordConfirm" v-model="passwordConfirm" />
+    <input type="password" placeholder="Password Confirm" v-model="passwordConfirm" />
     <br />
-
-    <h5>Sign on here!</h5>
-    <button class="loginBtn" @click="signOn">SignOn</button>
+    <!-- <h5>Sign Up here!</h5> -->
+    <button class="loginBtn" @click="signUp">SignUp</button>
   </div>
 </template>
 
@@ -19,7 +18,7 @@
 import http from "@/http-common.js";
 export default {
   methods: {
-    signOn() {
+    signUp() {
       if (this.password != this.passwordConfirm) {
         alert("패스워드가 다릅니다.");
         return;
@@ -63,11 +62,11 @@ export default {
 </script>
 
 <style scoped>
-#signIn {
-  position: relative;
-  margin: auto;
-  width: 40vw;
-  height: 40vh;
+#signUp {
+  /* position: relative; */
+  margin: 0;
+  /* width: 40vw; */
+  /* height: 40vh; */
   /* border: solid red 1px; */
 }
 

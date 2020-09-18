@@ -33,14 +33,15 @@
       </div>
 
       <div>
-        <div class="icons">
-          <img src="@/assets/key.png" width="110px" height="120px;"/>
-        </div>
-        <p>
-        계정 설정
-        </p>
+        <router-link to="/account" style="text-decoration:none">
+          <div class="icons">
+            <img src="@/assets/key.png" width="110px" height="120px;"/>
+          </div>
+          <p>
+          계정 설정
+          </p>
+        </router-link>
       </div>
-      
     </div>
   </div>
 </template>
@@ -78,5 +79,8 @@
   img:hover {
     transform: scale(1.2);
     -webkit-transform:scale(1.2);
+  }
+  p {
+    color : white;
   }
 </style>

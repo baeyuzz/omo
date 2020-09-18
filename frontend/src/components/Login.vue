@@ -9,28 +9,27 @@
         <button class="loginBtn" @click="signIn">Login</button>
 
         <h5>아직 회원이 아니세요?</h5>
-        <button @click="openSignOn">회원가입</button>
+        <button @click="openSignUp">회원가입</button>
       </div>
-
-      <SignIn v-else v-on:reTurn="openSignOn" />
+      <SignUp v-else v-on:reTurn="openSignUp" />
     </transition>
   </div>
 </template>
 
 <script>
-import SignIn from "@/components/SignIn.vue";
+import SignUp from "@/components/SignUp.vue";
 import constants from "@/lib/constants.js";
 
 export default {
   name: "Login.vue",
   components: {
-    SignIn,
+    SignUp,
   },
   methods: {
-    openSignOn() {
+    openSignUp() {
       this.isShow = !this.isShow;
     },
-    signIn() {
+    signUp() {
       let data = {
         email: this.email,
         password: this.password,
@@ -52,7 +51,6 @@ export default {
 <style scoped>
 .login {
   text-align: center;
-  height: 40vh;
 }
 .loginInput {
   background-color: #ffffffd8;

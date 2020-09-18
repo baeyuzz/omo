@@ -31,7 +31,17 @@ const routes = [
   {
     path: '/voiceReg',
     name: 'VoiceRegForm',
-    component: () => import('../views/VoiceRegister/VoiceRegForm.vue'),
+    component: () => import('../views/MainMenu/VoiceRegForm.vue'),
+  },
+  {
+    path: '/account',
+    name: 'Account',
+    component: () => import('../views/MainMenu/Account.vue'),
+  },
+  {
+    path: '/account/changePwd',
+    name: 'ChangePwd',
+    component: () => import('../views/ChangePwd.vue'),
   },
 
   
