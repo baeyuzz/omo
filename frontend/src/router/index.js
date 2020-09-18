@@ -40,7 +40,7 @@ const routes = [{
   {
     path: '/account/changePwd',
     name: 'ChangePwd',
-    component: () => import('../views/ChangePwd.vue'),
+    component: () => import('../views/MainMenu/Account/ChangePwd.vue'),
   },
   {
     path: '/createList',
