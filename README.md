@@ -38,9 +38,8 @@
 
 # 서비스 설계
 
-## 와이어프레임
-
-[https://www.figma.com/file/Ke6MIc0wdEYPm34qRRzKtI/특화-프로젝트-5반-9조-와이어프레임?node-id=0%3A1](https://www.figma.com/file/Ke6MIc0wdEYPm34qRRzKtI/%ED%8A%B9%ED%99%94-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-5%EB%B0%98-9%EC%A1%B0-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84?node-id=0%3A1)
+## 와이어프레임 
+[구경하러가기](https://www.figma.com/file/Ke6MIc0wdEYPm34qRRzKtI/%ED%8A%B9%ED%99%94-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-5%EB%B0%98-9%EC%A1%B0-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84?node-id=0%3A1)
 
 ## 메인동작방식 (3가지 경우의 수)
 
