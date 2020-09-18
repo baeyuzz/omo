@@ -1,0 +1,14 @@
+conda create -n pjt python=3.7.9
+
+conda activate pjt
+
+conda install git matplotlib librosa scikit-learn tqdm scipy numpy  keras pandas tensorflow-gpu==2.3.0
+// 등등 더 설치할 거 있으면 해야함
+
+pip install ipykernel
+
+python -m ipykernel install --user --name pjt --display-name pjt
+
+jupyter notebook
+
+kernel python3 -> pjt 로 변경하고 실행
