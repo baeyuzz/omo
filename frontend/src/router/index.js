@@ -45,7 +45,7 @@ const routes = [{
   {
     path: '/createList',
     name: 'CreateListForm',
-    component: () => import('../views/developing.vue'),
+    component: () => import('../views/CreateList/WebCam.vue'),
   },
   {
     path: '/manageList',
