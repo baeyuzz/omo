@@ -18,19 +18,36 @@
     <div class="menu">
       <div>
         <div class="icons" onclick="alert(`준비중입니다.`)">
-          <img src="@/assets/paper.png" style="width : 160px; height : 170px;" />
+          <img src="@/assets/frame.png" style="width : 120px; height : 120px;" />
         </div>
         <p>등록 회원 관리</p>
       </div>
+      <div>
+        <router-link to="/voiceReg" style="text-decoration:none">
+          <div class="icons">
+            <img src="@/assets/mic.png" width="90px" height="120px;" />
+          </div>
+          <p>음성 등록</p>
+        </router-link>
+      </div>
+      <div>
+        <router-link to="/manageList" style="text-decoration:none">
+          <div class="icons">
+            <img src="@/assets/paper.png" width="110px" height="120px;" />
+          </div>
+          <p>명부 관리</p>
+        </router-link>
+      </div>
+
       <div class="pwd-modal" data-toggle="modal">
         <div class="icons">
-          <img src="@/assets/pwd.png" style="width : 180px; height : 160px;" />
-          <p>비밀번호 변경</p>
+          <img src="@/assets/pwd.png" style="width : 130px; height : 120px;" />
         </div>
+          <p>비밀번호 변경</p>
       </div>
       <div>
         <div class="icons" @click="logout">
-          <img src="@/assets/unlock.png" style="width : 160px; height : 160px;" />
+          <img src="@/assets/unlock.png" style="width : 120px; height : 120px;" />
         </div>
         <p>로그아웃</p>
       </div>
@@ -95,9 +112,9 @@ export default {
 .menu {
   margin-top: 8%;
   text-align: center;
-  padding: 0 25% 0 25%;
+  padding: 0 15% 0 15%;
   display: flex;
-  z-index: 3;
+  z-index: 5;
   justify-items: center;
   justify-content: space-between;
 }
@@ -111,7 +128,7 @@ export default {
   justify-content: space-between;
 }
 .icons {
-  height: 180px;
+  height: 150px;
 }
 img {
   transform: scale(1);

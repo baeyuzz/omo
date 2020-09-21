@@ -6,34 +6,17 @@
       <div>
         <router-link to="/createList" style="text-decoration:none">
           <div class="icons">
-            <img src="@/assets/frame.png" width="120px" height="120px;" />
+            <img src="@/assets/frame.png" width="170px" height="170px;" />
           </div>
           <p>명부 작성</p>
         </router-link>
       </div>
 
-      <div>
-        <router-link to="/manageList" style="text-decoration:none">
-          <div class="icons">
-            <img src="@/assets/paper.png" width="110px" height="120px;" />
-          </div>
-          <p>명부 관리</p>
-        </router-link>
-      </div>
-
-      <div>
-        <router-link to="/voiceReg" style="text-decoration:none">
-          <div class="icons">
-            <img src="@/assets/mic.png" width="90px" height="120px;" />
-          </div>
-          <p>음성 등록</p>
-        </router-link>
-      </div>
-
+      
       <div>
         <router-link to="/account" style="text-decoration:none">
           <div class="icons">
-            <img src="@/assets/key.png" width="110px" height="120px;"/>
+            <img src="@/assets/key.png" width="170px" height="170px;"/>
           </div>
           <p>
           계정 설정
@@ -59,16 +42,16 @@ export default {
   .menu {
     position : fixed;
     top : 42%;
-    width: 60%;
+    width: 30%;
     text-align: center;
-    padding: 0 20% 0 20%;
+    padding: 0 35% 0 35%;
     display: flex;
-    z-index: 4;
+    z-index: 2;
     justify-items: center;
     justify-content: space-between;
   }
   .icons {
-    height : 130px;
+    height : 180px;
   }
   img {
     transform: scale(1);
