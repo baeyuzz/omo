@@ -55,9 +55,7 @@ export default {
         console.debug(data)
       },
       upload(data){
-        if(!this.uploadBtn){ // 업로드 버튼이 false면 자동 업로드
-
-          console.log(data.blob)
+         console.log(data.blob)
 
           const audio = new FormData()
           audio.append('audio', data.blob, `record.mp3`)
@@ -69,7 +67,10 @@ export default {
           
           console.log(headers)
 
-          http.post("/uploadAudio", audio, { headers: headers }).then(resp => {
+        if(!this.uploadBtn){ // 업로드 버튼이 false면 자동 업로드 -> 명부 작성 시 사용
+
+         
+          http.post("/uploadAudio4list", audio, { headers: headers }).then(resp => {
             // 백으로 mp3파일 보내줌,, wav로 보내고 싶은데 ㅠ
             console.log(data)
              console.log(resp)
@@ -78,7 +79,18 @@ export default {
                 console.log(error)
             })
         }
-        else this.callback(); // upload 버튼이 true면 그거 눌러서 업로드하면 됨
+        else {
+           
+          http.post("/uploadAudio4member", audio, { headers: headers }).then(resp => {
+            // 백으로 mp3파일 보내줌,, wav로 보내고 싶은데 ㅠ
+            console.log(data)
+             console.log(resp)
+            })
+              .catch(error => {
+                console.log(error)
+            })
+            // upload 버튼이 true면 그거 눌러서 업로드하면 됨 -> 음성 등록 시 사용
+        }
       },
       download (data) { // download는 사실 쓸 일 없을 듯?
         const type = data.blob.type.split('/')[1]
@@ -97,4 +109,5 @@ export default {
   justify-content: center;
   text-align: center;
 }
+
 </style>
