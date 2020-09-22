@@ -4,6 +4,9 @@ import router from './router'
 import {
   store
 } from './store'
+import * as cv from 'opencv.js'
+
+Vue.prototype.$cv = cv
 
 Vue.config.productionTip = false
 

@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
+from django.core.files.base import ContentFile
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from django.http import JsonResponse
@@ -12,35 +13,39 @@ import imutils
 import time
 import cv2
 import os
+import base64
+from io import BytesIO
+from PIL import Image 
+from .models import Capture
 #-*- coding:utf-8 -*-
 
+@api_view(['POST'])
 def detect_image(request):
-  # USAGE
-  # python detect_mask_image.py --image examples/example_01.png
-
-  # # construct the argument parser and parse the arguments
-  # ap = argparse.ArgumentParser()
-  # # ap.add_argument("-i", "--image", required=True,
-  # #   help="path to input image")
-  # ap.add_argument("-f", "--face", type=str,
-  #   default="face_detector",
-  #   help="path to face detector model directory")
-  # ap.add_argument("-m", "--model", type=str,
-  #   default="mask_detector_all.model",
-  #   help="path to trained face mask detector model")
-  # ap.add_argument("-c", "--confidence", type=float, default=0.5,
-  #   help="minimum probability to filter weak detections")
-  # print(ap.print_help)
-  # print('@@@@@@@@@@@')
-  # print(ap.print_help)
-  # args = vars(ap.parse_args())
+  capture64 = request.POST['capture']
+  format, imgstr = capture64.split(';base64,') 
+  ext = format.split('/')[-1] 
+  file2 = ContentFile(base64.b64decode(imgstr), name='temp.' + ext)
+  Capture.objects.create(image=file2)
+  # capture = Image.open(file2)
+  # capture.save(file2, format='png')
+  # print(capture)
+  # capture.save(fp=capture, format='png') 
+  # image = Image.objects.create(capture, name="hello")
+  # # Decoding base64 string to bytes object
+  # offset = capture64.index(',')s+1
+  # img_bytes = base64.b64decode(capture64[offset:])
+  # img = Image.open(BytesIO(img_bytes))
+  # img  = np.array(img)
+  # cv2.imshow("img", img)
+  # # cv2.waitKey(0)
+  # # cv2.destroyAllWindows()
+  # # print(capture)
+  
 
   # load our serialized face detector model from disk
   print("[INFO] loading face detector model...")
   prototxtPath = os.path.sep.join(["face_detector", "deploy.prototxt"])
   weightsPath = os.path.sep.join(["face_detector", "res10_300x300_ssd_iter_140000.caffemodel"])
-  print(prototxtPath)
-  print('PROTOT TPATH : : ::: :')
   net = cv2.dnn.readNet(prototxtPath, weightsPath)
 
   # load the face mask detector model from disk
@@ -49,7 +54,7 @@ def detect_image(request):
 
   # load the input image from disk, clone it, and grab the image spatial
   # dimensions
-  image = cv2.imread("image1,284.jpg")
+  image = cv2.imread(os.path.sep.join(["uploads", "temp.png"]))
   orig = image.copy()
   (h, w) = image.shape[:2]
 
@@ -108,12 +113,10 @@ def detect_image(request):
         cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
       cv2.rectangle(image, (startX, startY), (endX, endY), color, 2)
 
-  # show the output image
-  cv2.imshow("Output", image)
-  cv2.waitKey(0)
-  print(image)
 
-  return JsonResponse({"image": "test"})
+  cv2.imwrite('uploads/detect_image.png', image)
+  Capture.objects.all().delete()
+  return JsonResponse({"start": (startX, startY), "end": (endX, endY)})
 
 
 def detect_video(request):
@@ -207,6 +210,8 @@ def detect_video(request):
   vs = VideoStream(src=0).start()
   time.sleep(2.0)
   # loop over the frames from the video stream
+  capture = cv2.imread(os.path.sep.join(["uploads", "temp.png"]))
+  cv2.imshow("capture", capture)
   while True:
     # grab the frame from the threaded video stream and resize it
     # to have a maximum width of 400 pixels
@@ -227,7 +232,11 @@ def detect_video(request):
       # determine the class label and color we'll use to draw
       # the bounding box and text
       label = "Mask" if mask > withoutMask else "No Mask"
-      color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
+      if label == "Mask" :
+        color = (0, 255, 0)
+
+      else:
+        color = (0, 0, 255)
 
       # include the probability in the label
       label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
@@ -237,15 +246,18 @@ def detect_video(request):
       cv2.putText(frame, label, (startX, startY - 10),
         cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
       cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
-
+    
     # show the output frame
     cv2.imshow("Frame", frame)
     key = cv2.waitKey(1) & 0xFF
 
     # if the `q` key was pressed, break from the loop
     if key == ord("q"):
+      capture = frame
       break
 
   # do a bit of cleanup
   cv2.destroyAllWindows()
   vs.stop()
+  cv2.imshow("Capture", capture)
+  

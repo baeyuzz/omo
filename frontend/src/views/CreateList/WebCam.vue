@@ -8,9 +8,11 @@
                 <img v-bind:src="c" height="50" />
             </li>
         </ul>
+        <div><button id="submit" v-on:click="captureSubmit()">사진 전송</button></div>
     </div>
 </template>
 <script>
+    import axios from 'axios'
     export default {
         name: 'WebCam',
         data() {
@@ -38,7 +40,21 @@
 
                 console.log(context);
                 console.log(this.captures);
-            }
+            },
+            captureSubmit() {
+              var capture = this.captures[(this.captures.length-1)]
+              console.log("전송@@") 
+              var data = new FormData()
+              data.append('capture', capture)
+              axios.post('http://127.0.0.1:8000/cam/video/', data)
+              .then((res) => {
+                console.log("전송...?")
+                this.result = res.data;
+              })
+              .catch((err) => {
+                console.log('사진 업로드 실패', err)
+              })
+            },
         }
     }
 </script>

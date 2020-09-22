@@ -62,7 +62,11 @@ const routes = [{
     name: 'RegRecord',
     component: () => import('../views/MainMenu/Voice/RegRecord.vue'),
   },
-  
+  {
+    path: '/test',
+    name: 'Test',
+    component: () => import('../views/CreateList/test.vue'),
+  },
   
 ]
 
