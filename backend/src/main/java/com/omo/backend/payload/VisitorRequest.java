@@ -12,5 +12,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VisitorRequest implements Serializable {
+    private String groupCode;
     private String name;
 }
