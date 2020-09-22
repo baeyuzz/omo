@@ -1,4 +1,4 @@
-package com.omo.backend.payload;
+package com.omo.backend.visitor;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,5 +12,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VisitorRequest implements Serializable {
+    private String groupCode;
     private String name;
 }

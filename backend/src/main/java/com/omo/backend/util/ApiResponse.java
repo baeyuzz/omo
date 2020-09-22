@@ -1,4 +1,4 @@
-package com.omo.backend.payload;
+package com.omo.backend.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
