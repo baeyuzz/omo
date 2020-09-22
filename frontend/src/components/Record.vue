@@ -7,7 +7,7 @@
           :time=time
           :after-recording='upload'
           :show-upload-button=uploadBtn
-          :show-download-button='false'
+          :show-download-button='true'
           />
           <!--
             attempts - 몇번 녹음 가능한지
@@ -21,11 +21,11 @@
 
 <script>
 import Vue from 'vue'
-import VueAudioRecorder from 'vue-audio-recorder'
+import AudioRecorder from '@/index.js'
 
 import http from '@/http-common.js'
 
-Vue.use(VueAudioRecorder)
+Vue.use(AudioRecorder)
 
 export default {
     name: 'Record',
