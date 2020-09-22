@@ -1,10 +1,8 @@
-package com.omo.backend.controller;
+package com.omo.backend.visitor;
 
-import com.omo.backend.model.VisitLog;
-import com.omo.backend.payload.VisitorRequest;
-import com.omo.backend.service.VisitService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,12 +13,14 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 @AllArgsConstructor
+@Api(description = "방문자 명부 관리 API")
 public class VisitController {
 
     private VisitService visitService;
 
     @PostMapping("/visitor")
     @ResponseBody
+    @ApiOperation(value = "방문자 명부 작성")
     public ResponseEntity<VisitLog> visit(@RequestBody VisitorRequest request) {
         Optional<VisitLog> visitLog = visitService.writeGuestBook(request);
         if(!visitLog.isPresent())
@@ -31,6 +31,7 @@ public class VisitController {
 
     @GetMapping("/visitors/{groupCode}")
     @ResponseBody
+    @ApiOperation(value = "방문자 명부 조회")
     public ResponseEntity getVisitorList(@PathVariable String groupCode) {
         Optional<List<VisitLog>> visitLogs = visitService.getVisitorList(groupCode);
         if(!visitLogs.isPresent())

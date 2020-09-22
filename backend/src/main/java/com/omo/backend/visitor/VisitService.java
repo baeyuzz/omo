@@ -1,10 +1,9 @@
-package com.omo.backend.service;
+package com.omo.backend.visitor;
 
-import com.omo.backend.model.VisitLog;
-import com.omo.backend.payload.VisitorRequest;
-import com.omo.backend.repository.VisitorRepository;
+import com.omo.backend.visitor.VisitLog;
+import com.omo.backend.visitor.VisitorRequest;
+import com.omo.backend.visitor.VisitorRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

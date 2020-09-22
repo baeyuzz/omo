@@ -1,14 +1,11 @@
-package com.omo.backend.model;
+package com.omo.backend.visitor;
 
-import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 //@Document(collation = "visitor")
 @Entity

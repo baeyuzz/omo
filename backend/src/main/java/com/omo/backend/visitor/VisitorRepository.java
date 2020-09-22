@@ -1,6 +1,6 @@
-package com.omo.backend.repository;
+package com.omo.backend.visitor;
 
-import com.omo.backend.model.VisitLog;
+import com.omo.backend.visitor.VisitLog;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
