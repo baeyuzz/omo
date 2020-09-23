@@ -81,7 +81,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     #webcam {
         text-align: center;
         color: #2c3e50;
