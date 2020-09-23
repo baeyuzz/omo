@@ -7,6 +7,10 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
+    name : '',
+    code : '',
+    addr : '',
+    phone : '',
 
   },
   actions: {
@@ -30,6 +34,26 @@ export const store = new Vuex.Store({
 
 
   },
-  mutations: {},
+  mutations: {
+    setName(state, name) {
+      state.name = name;
+    },
+    setAddr(state, addr) {
+      state.addr = addr;
+    },
+    setPhone(state, phone) {
+      state.phone = phone;
+    },
+    setCode(state, code) {
+      state.code = code;
+    },
+    clearMember(state) {
+      state.phone = '';
+      state.code = '';
+      state.addr = '';
+      state.name = '';
+    }
+
+  },
   getters: {},
 });

@@ -84,18 +84,16 @@ export default {
             this.$refs.addr.focus();
             return;
         }
-        const params = {
-            phone: this.phone,
-            name: this.name,
-            code: this.code,
-            addr: this.addr,
-        };
-        http.post('/아직안정해짐',params)
+
+        this.$store.commit("setPhone", this.phone);
+        this.$store.commit("setName", this.name);
+        this.$store.commit("setAddr", this.addr);
+        this.$store.commit("setCode", this.code);
+
+        http.post('/아직안정해짐')
             .then((res) => {
                     if(res.data.state){ // 등록이 되면
-                        this.$router.push({
-                            name: "RegRecord",
-                        });
+                        this.$router.push({name: 'RegRecord',});
                         console.log('success')
                     } else {
                         console.log('fail')
@@ -103,9 +101,7 @@ export default {
                 } 
             )
             .catch((err) => {
-                this.$router.push({
-                    name: "RegRecord",
-                    });
+                this.$router.push({name: 'RegRecord',});
                 alert('Error ', err)
                 });
     },

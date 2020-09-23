@@ -257,6 +257,8 @@
   export default {
     mixins: [UploaderPropsMixin],
     props: {
+      filename : {type : String},
+      format : {type : String},
       attempts : { type: Number },
       time     : { type: Number },
 

@@ -47,10 +47,10 @@ import Record from '@/components/Record.vue'
 
 export default {
   name: 'RegRecord',
-    components: {
-      Nav,
-        Record,
-    },
+  components: {
+    Nav,
+    Record,
+  },
 }
 </script>
 <style scoped>
