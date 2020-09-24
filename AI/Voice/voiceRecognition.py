@@ -25,9 +25,12 @@ def load_wave_generator(path):
         files = os.listdir(path + "/" + folder)
 
         for f in files:
-            if f.endswith('.wav'):
-                y, sr = librosa.load(path + "/" + folder + "/" + f)
-                mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13, hop_length=int(sr * 0.01), n_fft=int(sr * 0.02)).T
+            if f.endswith('.npy'):
+                # y, sr = librosa.load(path + "/" + folder + "/" + f)
+                # mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13, hop_length=int(sr * 0.01), n_fft=int(sr * 0.02)).T
+
+
+                mfcc = np.load(os.path.join(os.path.join('C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\data', str(total_class)), 'data.npy'))
 
                 X_data.extend(mfcc)
 
@@ -100,7 +103,7 @@ model.save("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice\model0915.h5")
 
 res = model.evaluate(X_test, Y_test)
 
-y, sr = librosa.load(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice\\test유진test.wav"))
+y, sr = librosa.load(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice\\test\\유진test.wav"))
 
 X_test = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13, hop_length=int(sr * 0.01), n_fft=int(sr * 0.02)).T
 
