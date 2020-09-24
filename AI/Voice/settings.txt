@@ -1,9 +1,12 @@
-conda create -n pjt python=3.7.9
+ï»¿conda create -n pjt python=3.7.9
 
 conda activate pjt
 
 conda install git matplotlib librosa scikit-learn tqdm scipy numpy  keras pandas tensorflow-gpu==2.3.0
-// µîµî ´õ ¼³Ä¡ÇÒ °Å ÀÖÀ¸¸é ÇØ¾ßÇÔ
+
+pip install h5py
+
+// ë“±ë“± ë” ì„¤ì¹˜í•  ê±° ìžˆìœ¼ë©´ í•´ì•¼í•¨
 
 pip install ipykernel
 
@@ -11,4 +14,4 @@ python -m ipykernel install --user --name pjt --display-name pjt
 
 jupyter notebook
 
-kernel python3 -> pjt ·Î º¯°æÇÏ°í ½ÇÇà
+kernel python3 -> pjt ë¡œ ë³€ê²½í•˜ê³  ì‹¤í–‰

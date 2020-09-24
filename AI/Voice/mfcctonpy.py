@@ -2,6 +2,9 @@ import numpy as np
 import os
 import librosa
 
+
+# wav -> mfcc, mfcc -> .npy 로 변환해서 저장함
+
 DATA_PATH = ('C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\data')
 
 i = 0

@@ -29,7 +29,8 @@ def load_wave_generator(path):
                 # y, sr = librosa.load(path + "/" + folder + "/" + f)
                 # mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13, hop_length=int(sr * 0.01), n_fft=int(sr * 0.02)).T
 
-
+                # wav 대신 npy 불러와서 훈련시킴
+               
                 mfcc = np.load(os.path.join(os.path.join('C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\data', str(total_class)), 'data.npy'))
 
                 X_data.extend(mfcc)
