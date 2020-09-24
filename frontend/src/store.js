@@ -49,7 +49,6 @@ export const store = new Vuex.Store({
     },
     clearMember(state) {
       state.phone = '';
-      state.code = '';
       state.addr = '';
       state.name = '';
     }

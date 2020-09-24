@@ -6,7 +6,7 @@
 
     </head>
     <Nav/>
-    <div style="text-align : center;   padding-top : 4%;">
+    <div style="text-align : center;">
       <h1>음성등록</h1>
       <p>
         녹음 버튼을 누르고 아래의 내용을 읽어주세요
