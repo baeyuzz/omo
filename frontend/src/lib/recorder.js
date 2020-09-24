@@ -1,4 +1,4 @@
-import Mp3Encoder from './mp3-encoder'
+// import Mp3Encoder from './mp3-encoder'
 import WavEncoder from './wav-encoder'
 import { convertTimeMMSS } from './utils'
 
@@ -48,9 +48,9 @@ export default class {
     this.isPause     = false
     this.isRecording = true
 
-    if (this._isMp3() && !this.lameEncoder) {
-      this.lameEncoder = new Mp3Encoder(this.encoderOptions)
-    }
+    // if (this._isMp3() && !this.lameEncoder) {
+    //   this.lameEncoder = new Mp3Encoder(this.encoderOptions)
+    // }
   }
 
   stop () {
@@ -61,9 +61,9 @@ export default class {
 
     let record = null
 
-    if (this._isMp3()) {
-      record = this.lameEncoder.finish()
-    } else {
+    // if (this._isMp3()) {
+    //   record = this.lameEncoder.finish()
+    // } else {
       let wavEncoder = new WavEncoder({
         bufferSize : this.bufferSize,
         sampleRate : this.encoderOptions.sampleRate,
@@ -71,7 +71,7 @@ export default class {
       })
       record = wavEncoder.finish()
       this.wavSamples = []
-    }
+    // }
 
     record.duration = convertTimeMMSS(this.duration)
     this.records.push(record)
@@ -115,11 +115,11 @@ export default class {
       const sample = ev.inputBuffer.getChannelData(0)
       let sum = 0.0
 
-      if (this._isMp3()) {
-        this.lameEncoder.encode(sample)
-      } else {
+      // if (this._isMp3()) {
+      //   this.lameEncoder.encode(sample)
+      // } else {
         this.wavSamples.push(new Float32Array(sample))
-      }
+      // }
 
       for (let i = 0; i < sample.length; ++i) {
         sum += sample[i] * sample[i]
@@ -137,7 +137,7 @@ export default class {
     this.micFailed && this.micFailed(error)
   }
 
-  _isMp3 () {
-    return this.format.toLowerCase() === 'mp3'
-  }
+  // _isMp3 () {
+  //   return this.format.toLowerCase() === 'mp3'
+  // }
 }

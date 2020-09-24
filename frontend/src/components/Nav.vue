@@ -1,8 +1,8 @@
 <template>
   <div class="nav">
-    <!-- <h1 class="logo" @click="goMain()">
-            ㅇㅁㅇ
-    </h1>-->
+    <head>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    </head>
     <router-link to="/main">
       <img class="logo" @click="goMain()" src="@/assets/icon.png" width="100px" />
     </router-link>
@@ -35,6 +35,7 @@ export default {
   display: flex;
   justify-content: space-between;
   justify-items: center;
+  margin-bottom : 4%;
 }
 a:link {
   color: white;
@@ -74,5 +75,9 @@ button {
   border: none;
   color: white;
   font-size: 15px;
+}
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+
 }
 </style>

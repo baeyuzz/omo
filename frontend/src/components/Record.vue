@@ -29,6 +29,10 @@ Vue.use(AudioRecorder)
 
 export default {
     name: 'Record',
+        data() {
+            return {
+            }
+        },
     props: {
       time :{
         type: Number,
@@ -42,7 +46,6 @@ export default {
         type: Boolean,
         required: true,
       },
-     
     },
 
     methods: {
@@ -55,41 +58,47 @@ export default {
         console.debug(data)
       },
       upload(data){
-         console.log(data.blob)
+        console.log(data.blob)
 
-          const audio = new FormData()
-          audio.append('audio', data.blob, `record.mp3`)
+        const audio = new FormData()
+        audio.append('audio', data.blob, `record.wav`)
 
-          console.log(audio.getAll('audio'))
+        console.log(audio.getAll('audio'))
           
-          const headers = Object.assign({})
-          headers['Content-Type'] = `multipart/form-data`
-          
-          console.log(headers)
+        const headers = {}
+        headers['Content-Type'] = `multipart/form-data; boundary=${audio._boundary}`
+
+        console.log(headers)
+        console.log(audio)
 
         if(!this.uploadBtn){ // 업로드 버튼이 false면 자동 업로드 -> 명부 작성 시 사용
-
-         
-          http.post("/uploadAudio4list", audio, { headers: headers }).then(resp => {
-            // 백으로 mp3파일 보내줌,, wav로 보내고 싶은데 ㅠ
+          
+          http.post("/uploadAudio4list", audio, { headers: headers })
+          .then(resp => {
             console.log(data)
-             console.log(resp)
-            })
-              .catch(error => {
-                console.log(error)
-            })
+            console.log(resp)
+          })
+          .catch(error => {
+            console.log(error)
+          })
         }
         else {
-           
-          http.post("/uploadAudio4member", audio, { headers: headers }).then(resp => {
-            // 백으로 mp3파일 보내줌,, wav로 보내고 싶은데 ㅠ
+          const info = {
+            name : this.$store.state.name,
+            addr : this.$store.state.addr,
+            phone : this.$store.state.phone,
+            code : this.$store.state.code,
+          }
+          console.log(info)
+          http.post("/uploadAudio4member", audio, {headers : info})
+          .then(resp => {
             console.log(data)
-             console.log(resp)
-            })
-              .catch(error => {
-                console.log(error)
-            })
-            // upload 버튼이 true면 그거 눌러서 업로드하면 됨 -> 음성 등록 시 사용
+            console.log(resp)
+          })
+          .catch(error => {
+            console.log(audio)
+            console.log(error)
+          })
         }
       },
       download (data) { // download는 사실 쓸 일 없을 듯?

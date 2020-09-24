@@ -5,7 +5,7 @@ import os
 from keras.models import Sequential, load_model, save_model
 from keras.layers import Dense, Dropout
 
-DATA_PATH = ('C:\\ssafy\\project2\\pjt2\\s03p22a509\\AI\\Voice\\data')
+DATA_PATH = ('C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\data')
 X_train = []
 X_test = []
 Y_train = []
@@ -88,19 +88,19 @@ model.compile(loss='binary_crossentropy', optimizer='Adam', metrics=['accuracy']
 model.summary()
 trained_model = model.fit(X_train, Y_train,
                           batch_size=32,
-                          epochs=50,
+                          epochs=40,
                           validation_data=(X_val, Y_val),
                           shuffle=True)
 
 # 모델 저장하기 - pip install h5py 해야함
-model.save("C:\ssafy\project2\pjt2\s03p22a509\AI\Voice\model0915.h5")
+model.save("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice\model0915.h5")
 
 # 모델 불러오기
 # model = load_model("C:\ssafy\project2\pjt2\s03p22a509\AI\Voice\model0915.h5")
 
 res = model.evaluate(X_test, Y_test)
 
-y, sr = librosa.load(os.path.join("C:\ssafy\project2\pjt2\s03p22a509\AI\Voice\\test\박보영test.wav"))
+y, sr = librosa.load(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice\\test유진test.wav"))
 
 X_test = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13, hop_length=int(sr * 0.01), n_fft=int(sr * 0.02)).T
 
@@ -118,9 +118,10 @@ res = np.sum(output, axis=0) / np.sum(output) * 100
 6 민니
 7 류진
 8 소미
+9 유진
 '''
 
-print(0, '박보영 /', 1, '유인나 /', 2, '청하 /', 3, '정국 /', 4, '우영 /', 5, '찬희 /', 6, '민니 /', 7, '류진 /', 8, '소미')
+print(0, '박보영 /', 1, '승철 /', 2, '청하 /', 3, '정국 /', 4, '우영 /', 5, '찬희 /', 6, '민니 /', 7, '류진 /', 8, '소미',9 , '유진')
 
 if np.max(res) > 50:
     print("result : ", np.argmax(res))

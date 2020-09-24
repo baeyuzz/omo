@@ -67,6 +67,11 @@ const routes = [{
     name: 'VoiceRecognition',
     component: () => import('../views/CreateList/VoiceRecognition.vue'),
   },
+  {
+    path: '/visitor',
+    name: 'VisitorList',
+    component: () => import('../views/MainMenu/Account/Visitor.vue'),
+  },
   
   
 ]

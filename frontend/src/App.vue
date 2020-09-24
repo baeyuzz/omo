@@ -1,12 +1,20 @@
 <template>
   <div id="app">
+    <head>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    </head>
     <router-view />
   </div>
 </template>
 
 <style>
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+
+    font-family: 'Noto Sans KR', sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
