@@ -5,8 +5,9 @@ import constants from './lib/constants.js'
 
 Vue.use(Vuex);
 
-export const store = new Vuex.Store({
+export default new Vuex.Store({
   state: {
+    id : '',
     name : '',
     code : '',
     addr : '',
@@ -54,5 +55,5 @@ export const store = new Vuex.Store({
     }
 
   },
-  getters: {},
+ 
 });
