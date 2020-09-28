@@ -46,10 +46,17 @@
               console.log("전송@@") 
               var data = new FormData()
               data.append('capture', capture)
-              axios.post('http://127.0.0.1:8000/cam/video/', data)
+              const config = {
+                headers: {
+                  Authorization: `Token ${this.$cookies.get('auth-token')}`
+                }
+              }
+              axios.post('http://127.0.0.1:8000/cam/image/', data, config)
               .then((res) => {
-                console.log("전송...?")
+                console.log("전송성공")
                 this.result = res.data;
+                console.log(this.result)
+                alert('응답왔어용')
               })
               .catch((err) => {
                 console.log('사진 업로드 실패', err)

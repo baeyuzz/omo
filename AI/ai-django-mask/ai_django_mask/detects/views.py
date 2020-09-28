@@ -16,12 +16,19 @@ import os
 import base64
 from io import BytesIO
 from PIL import Image 
+import magic
 from .models import Capture
+from django.views.decorators.csrf import csrf_exempt
 #-*- coding:utf-8 -*-
+
 
 @api_view(['POST'])
 def detect_image(request):
+  print('[INFO] detect_image Initiated!!')
+  result = {"face_detected": False, "mask_detected": False}
+
   capture64 = request.POST['capture']
+  print(type(capture64))
   format, imgstr = capture64.split(';base64,') 
   ext = format.split('/')[-1] 
   file2 = ContentFile(base64.b64decode(imgstr), name='temp.' + ext)
@@ -66,7 +73,8 @@ def detect_image(request):
   print("[INFO] computing face detections...")
   net.setInput(blob)
   detections = net.forward()
-
+  print('detected: ',len(detections))
+  if len(detections): result["face_detected"]=True
   # loop over the detections
   for i in range(0, detections.shape[2]):
     # extract the confidence (i.e., probability) associated with
@@ -102,6 +110,7 @@ def detect_image(request):
       # determine the class label and color we'll use to draw
       # the bounding box and text
       label = "Mask" if mask > withoutMask else "No Mask"
+      if mask > withoutMask: result['mask_detected'] = True
       color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
 
       # include the probability in the label
@@ -116,7 +125,7 @@ def detect_image(request):
 
   cv2.imwrite('uploads/detect_image.png', image)
   Capture.objects.all().delete()
-  return JsonResponse({"start": (startX, startY), "end": (endX, endY)})
+  return JsonResponse(result)
 
 
 def detect_video(request):
@@ -208,11 +217,23 @@ def detect_video(request):
   # initialize the video stream and allow the camera sensor to warm up
   print("[INFO] starting video stream...")
   vs = VideoStream(src=0).start()
-  time.sleep(2.0)
+  time.sleep(0.5)
   # loop over the frames from the video stream
-  capture = cv2.imread(os.path.sep.join(["uploads", "temp.png"]))
-  cv2.imshow("capture", capture)
+  # capture = cv2.imread(os.path.sep.join(["uploads", "temp.png"]))
+  # cv2.imshow("capture", capture)
+  value = [False] * 20
+  i = 0
+  frame = None
+  result = {'result': 'a'}
   while True:
+    if value.count(True) == 20:
+      capture = frame
+      print('Success')
+      cv2.imwrite('uploads/capture.png', capture)
+      break
+    i += 1
+    if i >= 20:
+      i = 0
     # grab the frame from the threaded video stream and resize it
     # to have a maximum width of 400 pixels
     frame = vs.read()
@@ -234,9 +255,10 @@ def detect_video(request):
       label = "Mask" if mask > withoutMask else "No Mask"
       if label == "Mask" :
         color = (0, 255, 0)
-
+        value[i] = True
       else:
         color = (0, 0, 255)
+        value[i] = False
 
       # include the probability in the label
       label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
@@ -253,11 +275,17 @@ def detect_video(request):
 
     # if the `q` key was pressed, break from the loop
     if key == ord("q"):
-      capture = frame
       break
 
   # do a bit of cleanup
   cv2.destroyAllWindows()
   vs.stop()
-  cv2.imshow("Capture", capture)
-  
+  filename = 'uploads/capture.png'
+  with open(filename, "rb") as capture:
+    encoded_string = str(base64.b64encode(capture.read()))
+  # mime = magic.Magic(mime=True)
+  # mime_type = mime.from_file(filename)
+  # file_string = 'data:%s;base64,%s' % (mime_type.decode(), encoded_string.decode())
+  print(type(encoded_string))
+  result['capture'] = encoded_string[2:]
+  return JsonResponse(result)
