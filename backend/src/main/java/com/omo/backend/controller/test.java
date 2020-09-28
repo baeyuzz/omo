@@ -38,7 +38,7 @@ public class test {
         String code = (String) info.get("code");
 
         String fileName= file.getOriginalFilename();
-        File f= new File("C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\9조\\" + fileName); // 나중엔 9조 대신 code 넣어야함
+        File f= new File("C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\ssafy\\" + fileName); // 나중엔 9조 대신 code 넣어야함
         file.transferTo(f);
         
 
@@ -48,9 +48,10 @@ public class test {
         command[1] = "C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\test.py";
         command[2] = "ssafy"; // 여기도 9조 대신 code(기관명) 넣어야함
         try {
-            execPython(command);
+            execPython(command,0);
         } catch (Exception e) {
             e.printStackTrace();
+            execPython(command,1);
         }
 
 
@@ -95,9 +96,10 @@ public class test {
         command[3] = nplusp;
 
         try {
-            execPython(command);
+            execPython(command,0);
         } catch (Exception e) {
             e.printStackTrace();
+            execPython(command,1);
         } // mfcc를 .npy 로 저장
 
 
@@ -113,13 +115,13 @@ public class test {
         //     execPython(command);
         // } catch (Exception e) {
         //     e.printStackTrace();
-        // } // mfcc를 .npy 로 저장
-
+        // } 
+        
         return new ResponseEntity<>(true, HttpStatus.OK);
 
     }
 
-    public static void execPython(String[] command) throws IOException, InterruptedException { // python 실행 함수
+    public static void execPython(String[] command, int idx) throws IOException, InterruptedException { // python 실행 함수
         CommandLine commandLine = CommandLine.parse(command[0]);
         for (int i = 1, n = command.length; i < n; i++) {
             commandLine.addArgument(command[i]);
@@ -128,11 +130,14 @@ public class test {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PumpStreamHandler pumpStreamHandler = new PumpStreamHandler(outputStream);
         DefaultExecutor executor = new DefaultExecutor();
+ 
+        executor.setExitValue(idx);
+        
         executor.setStreamHandler(pumpStreamHandler);
         int result = executor.execute(commandLine);
         System.out.println("result: " + result);
         System.out.println("output: " + outputStream.toString());
-
+      
     }    
 }
 
