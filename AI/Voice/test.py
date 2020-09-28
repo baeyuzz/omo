@@ -10,6 +10,7 @@ def main(argv) :
     default_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code))
     model_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code), 'model.h5')
     wav_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code), 'record.wav')
+    wav_path = os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice\ssafy\data\유진",'record.wav')
 
     model = load_model(model_path)
     y, sr = librosa.load(wav_path)
