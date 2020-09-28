@@ -41,7 +41,7 @@ export default {
 <style scoped>
   .menu {
     position : fixed;
-    top : 42%;
+    top : 40%;
     width: 30%;
     text-align: center;
     padding: 0 35% 0 35%;

@@ -6,7 +6,7 @@
       <router-link to="/main" style="text-decoration:none; color : white;">
         <h1>◀</h1>
       </router-link>
-      <h2>계정 설정</h2>
+      <h1>계정 설정</h1>
       <h2 />
     </div>
     <!-- 
@@ -17,10 +17,12 @@
 
     <div class="menu">
       <div>
-        <div class="icons" onclick="alert(`준비중입니다.`)">
+        <router-link to="/account" style="text-decoration:none">
+        <div class="icons">
           <img src="@/assets/frame.png" style="width : 120px; height : 120px;" />
         </div>
         <p>등록 회원 관리</p>
+        </router-link>
       </div>
       <div>
         <router-link to="/voiceReg" style="text-decoration:none">
@@ -31,7 +33,7 @@
         </router-link>
       </div>
       <div>
-        <router-link to="/manageList" style="text-decoration:none">
+        <router-link to="/visitor" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/paper.png" width="110px" height="120px;" />
           </div>
@@ -119,7 +121,7 @@ export default {
   justify-content: space-between;
 }
 .intro {
-  padding-top: 3%;
+  /* padding-top: 3%; */
   margin-left: 7%;
   margin-right: 7%;
   display: flex;

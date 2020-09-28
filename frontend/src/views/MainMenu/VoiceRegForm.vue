@@ -4,7 +4,7 @@
         
         <div style="text-align : center; color : black; margin-top : 4%" class="regForm" >
             <div style="margin-top : 2%; background-color : white; width : 480px; border-radius : 15px">
-            <div class="regForm" style="padding-top : 4%;">
+            <div class="regForm">
                 <h1>
                     음성등록
                 </h1>

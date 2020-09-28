@@ -35,6 +35,7 @@ export default {
   display: flex;
   justify-content: space-between;
   justify-items: center;
+  margin-bottom : 4%;
 }
 a:link {
   color: white;
