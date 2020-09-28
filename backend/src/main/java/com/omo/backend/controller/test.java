@@ -38,22 +38,20 @@ public class test {
         String code = (String) info.get("code");
 
         String fileName= file.getOriginalFilename();
-        File f= new File("C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\ssafy\\" + fileName); // 나중엔 9조 대신 code 넣어야함
-        file.transferTo(f);
-        
+        File f= new File("C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\ssafy\\" + fileName); // 나중엔 ssafy 대신 code 넣어야함
+        file.transferTo(f);    
 
         System.out.println("Python Call");
         String[] command = new String[3];
         command[0] = "python";
         command[1] = "C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\test.py";
-        command[2] = "ssafy"; // 여기도 9조 대신 code(기관명) 넣어야함
+        command[2] = "ssafy"; // 여기도 ssafy 대신 code(기관명) 넣어야함
         try {
             execPython(command,0);
         } catch (Exception e) {
             e.printStackTrace();
             execPython(command,1);
         }
-
 
         return new ResponseEntity<>(true, HttpStatus.OK);
 
@@ -70,8 +68,8 @@ public class test {
 
         String nplusp = name + phone;
 
-        nplusp = "유진2";
-        code = "ssafy";
+        nplusp = "유진2"; // 임의로 해놓은 거
+        code = "ssafy"; // 임의로 해놓은 거
 
         String path = "C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\" + code + "\\data\\" + nplusp;
 
@@ -84,9 +82,7 @@ public class test {
 
 
         File f= new File(path + "\\record.wav");
-        file.transferTo(f);
-        
-        
+        file.transferTo(f);   
 
         System.out.println("Python Call");
         String[] command = new String[4];
@@ -102,8 +98,7 @@ public class test {
             execPython(command,1);
         } // mfcc를 .npy 로 저장
 
-
-
+        
         // 여기는 training 하는 코드인데 굳이 java에서 안하고 python에서 하면 될 둣
         // System.out.println("Python Call 2");
         // String[] command = new String[4];
