@@ -87,7 +87,7 @@ const router = new VueRouter({
 })
 
 function requireLogin(to, from, next) {
-  store.state.id != '' ?next() : next('/'); // 지금은 임시로 == 해놓음 ~
+  store.state.id == '' ?next() : next('/'); // 지금은 임시로 == 해놓음 ~
 }
 
 export default router
