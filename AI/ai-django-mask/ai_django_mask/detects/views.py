@@ -282,10 +282,10 @@ def detect_video(request):
   vs.stop()
   filename = 'uploads/capture.png'
   with open(filename, "rb") as capture:
-    encoded_string = str(base64.b64encode(capture.read()))
+    encoded_string = base64.b64encode(capture.read()).decode('utf-8')
   # mime = magic.Magic(mime=True)
   # mime_type = mime.from_file(filename)
   # file_string = 'data:%s;base64,%s' % (mime_type.decode(), encoded_string.decode())
   print(type(encoded_string))
-  result['capture'] = encoded_string[2:]
+  result['capture'] = encoded_string
   return JsonResponse(result)
