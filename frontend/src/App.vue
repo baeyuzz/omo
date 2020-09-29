@@ -1,11 +1,25 @@
 <template>
   <div id="app">
-    <head>
+    <size-warning id="nope"/>
+    <div id="yep">
+      <head>
       <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
-    </head>
+      </head>
     <router-view />
+    </div>
+    
   </div>
 </template>
+
+<script>
+import sizeWarning from '@/components/size-warning.vue';
+
+export default {
+  components: {
+    "size-warning" : sizeWarning
+  },
+}
+</script>
 
 <style>
 * {
@@ -33,4 +47,22 @@ html {
 body {
   margin: 0;
 }
+
+
+@media screen and (min-width: 800px) { 
+  #nope { display:none } 
+  #yep {display: inherit;}
+}
+
+@media screen and (max-width: 800px) { 
+  #nope { display:inherit } 
+  #app { 
+    height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    }
+  #yep {display: none;}
+}
+
 </style>

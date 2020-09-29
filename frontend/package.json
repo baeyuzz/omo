@@ -10,6 +10,10 @@
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "node-sass": "^4.14.1",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
     "vue": "^2.6.11",
     "vue-google-oauth2": "^1.5.5",
     "vue-router": "^3.2.0",

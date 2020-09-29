@@ -11,7 +11,7 @@ module.exports = (env, args) => {
         {
           test: /\.scss$/,
           use: [
-            'vue-style-loader',
+            'style-loader',
             'css-loader',
             'sass-loader'
           ],
