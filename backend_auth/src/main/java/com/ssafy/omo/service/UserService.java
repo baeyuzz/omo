@@ -1,11 +1,7 @@
 package com.ssafy.omo.service;
 
 import com.ssafy.omo.model.user.User;
-import com.ssafy.omo.payload.ApiResponse;
-import com.ssafy.omo.payload.InfoRequest;
-import com.ssafy.omo.payload.UserIdentityAvailability;
-import com.ssafy.omo.payload.UserProfile;
-import com.ssafy.omo.payload.UserSummary;
+import com.ssafy.omo.payload.*;
 import com.ssafy.omo.security.UserPrincipal;
 
 public interface UserService {
