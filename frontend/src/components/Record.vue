@@ -73,7 +73,11 @@ export default {
 
         if(!this.uploadBtn){ // 업로드 버튼이 false면 자동 업로드 -> 명부 작성 시 사용
           
-          http.post("/uploadAudio4list", audio, { headers: headers })
+          const info = {
+            code : this.$store.state.code,
+          }
+
+          http.post("/uploadAudio4list", audio, {headers : info})
           .then(resp => {
             console.log(data)
             console.log(resp)

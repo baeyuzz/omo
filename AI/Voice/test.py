@@ -2,39 +2,46 @@ import librosa
 import numpy as np
 import os
 from keras.models import load_model
+import sys
 
-model = load_model("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice\model0915.h5")
+def main(argv) :
+    code = argv[1]  # 기관명
 
-y, sr = librosa.load("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice\\test\소미test.wav")
+    default_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code))
+    model_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code), 'model.h5')
+    wav_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code), 'record.wav')
 
-X_test = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13, hop_length=int(sr * 0.01), n_fft=int(sr * 0.02)).T
+    model = load_model(model_path)
+    y, sr = librosa.load(wav_path)
 
-print(X_test)
+    X_test = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13, hop_length=int(sr * 0.01), n_fft=int(sr * 0.02)).T
 
-output = model.predict(X_test, steps=1)
+    # predict
+    output = model.predict(X_test, steps=1)
+    res = np.sum(output, axis=0) / np.sum(output) * 100
 
-res = np.sum(output, axis=0) / np.sum(output) * 100
+    print(res)
 
-'''
-0 박보영
-1 승철
-2 청하
-3 정국
-4 우영
-5 찬희
-6 민니
-7 류진
-8 소미
-9 유진
-'''
+    # 결과 출력
+    DATA_PATH = os.path.join(default_path,'data')
+    folders = os.listdir(DATA_PATH)
+    order = 0
+    for folder in folders:
+        if not os.path.isdir(DATA_PATH):
+            continue
+        elif np.argmax(res) == order:
+            result = folder
+            break;
+        else:
+            order += 1
 
-print(0, '박보영 /', 1, '승철 /', 2, '청하 /', 3, '정국 /', 4, '우영 /', 5, '찬희 /', 6, '민니 /', 7, '류진 /', 8, '소미 /',9,'유진')
+    if np.max(res) > 50:
+        print("result : ", result)
+    else:
+        print("uncertain result :", result)
 
 
-if np.max(res) > 50:
-    print("result : ", np.argmax(res))
-else:
-    print("uncertain result :", np.argmax(res))
-print(res)
 
+if __name__ == "__main__":
+    main(sys.argv)
 
