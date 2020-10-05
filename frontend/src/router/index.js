@@ -45,11 +45,6 @@ const routes = [{
     component: () => import('../views/CreateList/WebCam.vue'),
   },
   {
-    path: '/createList2',
-    name: 'CreateListForm2',
-    component: () => import('../views/CreateList/DjangoCam.vue'),
-  },
-  {
     path: '/chat',
     name: 'Chat',
     component: () => import('../views/CreateList/chat.vue'),

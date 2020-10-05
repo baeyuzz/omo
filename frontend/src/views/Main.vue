@@ -13,7 +13,7 @@
       </div>
 
       <div>
-        <router-link to="/createList2" style="text-decoration:none">
+        <router-link to="/chat/123" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/frame.png" width="170px" height="170px;" />
           </div>

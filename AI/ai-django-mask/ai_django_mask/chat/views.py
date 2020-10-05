@@ -158,18 +158,24 @@ def room(request, room_name):
     # show the output frame 
     if i % 2 == 1:
       print(value.count(True))
+      ins = Chat()
       capture = frame
       cv2.imwrite('uploads/capture.png', capture)
-      ins = Chat()
       filename = 'uploads/capture.png'
       with open(filename, "rb") as capture:
         encoded_string = base64.b64encode(capture.read()).decode('utf-8')
+      capture.close()
       if value.count(True) == LENGTH - ALLOW: 
         ins.check = True 
         print('CHECKED@@@@@@@@@@@@@@@@@2')
         value = [False] * LENGTH
       else: ins.check = False
-      
+      # capture = np.fromstring(frame.getvalue(), dtype='uint8')
+      # encoded_string = cv2.imdecode(capture, cv2.IMREAD_COLOR)
+      # encoded_string = cv2.imdecode(np.fromstring(base64.b64decode(capture.split(',')[1]), np.uint8), cv2.IMREAD_COLOR)
+      # print('ENCODED?  :' ,encoded_string[:30])
+      # encoded_string2 = base64.b64encode(frame).decode('utf-8')
+      # print('ENCODED?  :' ,encoded_string2[:30])
       ins.room = mark_safe(json.dumps(room_name))
       ins.message = encoded_string
       ins.save()
