@@ -1,8 +1,5 @@
 package com.omo.backend.visitor;
 
-import com.omo.backend.visitor.VisitLog;
-import com.omo.backend.visitor.VisitorRequest;
-import com.omo.backend.visitor.VisitorRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -18,7 +18,7 @@ public class VisitController {
 
     private VisitService visitService;
 
-    @PostMapping("/visitor")
+    @PostMapping("/visitors")
     @ResponseBody
     @ApiOperation(value = "방문자 명부 작성")
     public ResponseEntity<VisitLog> visit(@RequestBody VisitorRequest request) {
