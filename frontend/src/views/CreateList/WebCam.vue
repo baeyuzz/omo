@@ -78,7 +78,7 @@
                     this.$router.push({name: "Main"});
                 });
 
-                console.log(context);
+                // console.log(context);
                 console.log(this.captures);
             },
             captureSubmit() {
