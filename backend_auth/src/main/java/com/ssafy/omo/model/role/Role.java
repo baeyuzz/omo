@@ -6,6 +6,8 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 
+import static com.ssafy.omo.model.role.RoleName.ROLE_ADMIN;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -18,7 +20,7 @@ public class Role {
 	@Enumerated(EnumType.STRING)
 	@NaturalId
 	@Column(name = "name")
-	private RoleName name;
+	private RoleName name = ROLE_ADMIN;
 
 	public Role(RoleName name) {
 		this.name = name;
