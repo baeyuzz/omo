@@ -1,4 +1,4 @@
-package com.omo.backend.config;
+package com.omo.aibackend.config;
 
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
