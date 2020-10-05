@@ -48,6 +48,11 @@ const routes = [{
     beforeEnter: requireLogin,
   },
   {
+    path: '/createList2',
+    name: 'CreateListForm',
+    component: () => import('../views/CreateList/DjangoCam.vue'),
+  },
+  {
     path: '/manageList',
     name: 'ManageListForm',
     component: () => import('../views/developing.vue'),
