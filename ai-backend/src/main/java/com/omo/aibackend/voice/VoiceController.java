@@ -33,15 +33,20 @@ public class VoiceController {
         command[1] = "C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\test.py";
         command[2] = code;
 
+        String res;
         // python code 실행하는 부분
         try {
-            execPython(command,0);
+            res = execPython(command,0);
         } catch (Exception e) {
             e.printStackTrace();
-            execPython(command,1);
+            res = execPython(command,1);
         }
+        System.out.println("res : " + res);
 
-        return new ResponseEntity<>(true, HttpStatus.OK);
+        if(res != null)
+            return new ResponseEntity<>(res, HttpStatus.OK);
+        else 
+            return new ResponseEntity<>(false, HttpStatus.OK);
 
     }
 
@@ -76,11 +81,13 @@ public class VoiceController {
         command[2] = code;
         command[3] = nplusp;
 
+        String res ;
+
         try {
-            execPython(command,0);
+            res = execPython(command,0);
         } catch (Exception e) {
             e.printStackTrace();
-            execPython(command,1);
+            res = execPython(command,1);
         } // mfcc를 .npy 로 저장
 
 
@@ -96,12 +103,15 @@ public class VoiceController {
         // } catch (Exception e) {
         //     e.printStackTrace();
         // }
+        System.out.println("res : " + res);
 
-        return new ResponseEntity<>(true, HttpStatus.OK);
+        if(res.equals("success"))
+            return new ResponseEntity<>(true, HttpStatus.OK);
 
+        else return new ResponseEntity<>(false, HttpStatus.OK);
     }
 
-    public static void execPython(String[] command, int idx) throws IOException, InterruptedException { // python 실행 함수
+    public static String execPython(String[] command, int idx) throws IOException, InterruptedException { // python 실행 함수
         CommandLine commandLine = CommandLine.parse(command[0]);
         for (int i = 1, n = command.length; i < n; i++) {
             commandLine.addArgument(command[i]);
@@ -115,8 +125,50 @@ public class VoiceController {
 
         executor.setStreamHandler(pumpStreamHandler);
         int result = executor.execute(commandLine);
-        System.out.println("result: " + result);
+        // System.out.println("result: " + result);
         System.out.println("output: " + outputStream.toString());
+
+        String output = outputStream.toString();
+        int idx2 = output.lastIndexOf("result : ");
+
+        String res = output.substring(idx2+9, idx2+12);
+        
+        if(idx2 == -1)
+            return "success";
+
+        return res;
+
+    }
+
+    @PostMapping("/form") // 음성 인식 페이지
+    public ResponseEntity upload (@RequestHeader final Map<String, Object> info, @RequestParam (value = "audio") final MultipartFile file) throws Exception {
+
+        String code = (String) info.get("code");
+
+        String fileName= file.getOriginalFilename();
+        File f= new File("C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\" + code + "\\" + fileName);
+        file.transferTo(f);
+
+        System.out.println("Python Call");
+        String[] command = new String[3];
+        command[0] = "python";
+        command[1] = "C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\test.py";
+        command[2] = code;
+
+        String res;
+        // python code 실행하는 부분
+        try {
+            res = execPython(command,0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            res = execPython(command,1);
+        }
+        System.out.println("res : " + res);
+
+        if(res != null)
+            return new ResponseEntity<>(res, HttpStatus.OK);
+        else 
+            return new ResponseEntity<>(false, HttpStatus.OK);
 
     }
 
