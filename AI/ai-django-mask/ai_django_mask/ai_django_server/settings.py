@@ -41,9 +41,19 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'tensorflow',
+    'channels',
     #my apps
-    'detects'
+    'detects',
+    'chat',
 ]
+
+# Channels
+ASGI_APPLICATION = 'ai_django_server.routing.application'
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+   }
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -73,6 +83,11 @@ TEMPLATES = [
         },
     },
 ]
+
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+TEMPLATE_DIRS = (
+    os.path.join(SETTINGS_PATH, 'templates'),
+)
 
 WSGI_APPLICATION = 'ai_django_server.wsgi.application'
 

@@ -19,6 +19,7 @@ from PIL import Image
 import magic
 from .models import Capture
 from django.views.decorators.csrf import csrf_exempt
+
 #-*- coding:utf-8 -*-
 
 
@@ -129,6 +130,8 @@ def detect_image(request):
 
 
 def detect_video(request):
+  cv2.destroyAllWindows()
+  vs.stop()
   def detect_and_predict_mask(frame, faceNet, maskNet):
     # grab the dimensions of the frame and then construct a blob
     # from it
@@ -190,18 +193,6 @@ def detect_video(request):
     # locations
     return (locs, preds)
 
-  # # construct the argument parser and parse the arguments
-  # ap = argparse.ArgumentParser()
-  # ap.add_argument("-f", "--face", type=str,
-  #   default="face_detector",
-  #   help="path to face detector model directory")
-  # ap.add_argument("-m", "--model", type=str,
-  #   default="mask_detector_all.model",
-  #   help="path to trained face mask detector model")
-  # ap.add_argument("-c", "--confidence", type=float, default=0.5,
-  #   help="minimum probability to filter weak detections")
-  # args = vars(ap.parse_args())
-
   # load our serialized face detector model from disk
   print("[INFO] loading face detector model...")
   prototxtPath = os.path.sep.join(["face_detector", "deploy.prototxt"])
@@ -217,10 +208,8 @@ def detect_video(request):
   # initialize the video stream and allow the camera sensor to warm up
   print("[INFO] starting video stream...")
   vs = VideoStream(src=0).start()
-  time.sleep(0.5)
+  time.sleep(1.0)
   # loop over the frames from the video stream
-  # capture = cv2.imread(os.path.sep.join(["uploads", "temp.png"]))
-  # cv2.imshow("capture", capture)
   value = [False] * 20
   i = 0
   frame = None

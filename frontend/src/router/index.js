@@ -21,10 +21,7 @@ const routes = [{
   {
     path: '/notice',
     name: 'Notice',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "about" */ '../views/Notice.vue')
+    component: () => import('../views/Notice.vue')
   },
 
   {
@@ -49,8 +46,19 @@ const routes = [{
   },
   {
     path: '/createList2',
-    name: 'CreateListForm',
+    name: 'CreateListForm2',
     component: () => import('../views/CreateList/DjangoCam.vue'),
+  },
+  {
+    path: '/chat',
+    name: 'Chat',
+    component: () => import('../views/CreateList/chat.vue'),
+  },
+  {
+    path: '/chat/:roomName',
+    name: 'Room',
+    component: () => import('../views/CreateList/room.vue'),
+    props: route => ({roomName: String(route.params.roomName)})
   },
   {
     path: '/manageList',
