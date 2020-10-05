@@ -7,9 +7,9 @@ import sys
 def main(argv) :
     code = argv[1]  # 기관명
 
-    default_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code))
-    model_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code), 'model.h5')
-    wav_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code), 'record.wav')
+    default_path = os.path.join(os.path.join(os.path.abspath(__file__)), code))
+    model_path = os.path.join(os.path.join(os.path.abspath(__file__)), code), 'model.h5')
+    wav_path = os.path.join(os.path.join(os.path.abspath(__file__)), code), 'record.wav')
 
     model = load_model(model_path)
     y, sr = librosa.load(wav_path)
