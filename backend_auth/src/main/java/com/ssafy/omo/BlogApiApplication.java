@@ -1,7 +1,6 @@
 package com.ssafy.omo;
 
 import com.ssafy.omo.security.JwtAuthenticationFilter;
-import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -25,14 +24,14 @@ public class BlogApiApplication {
 		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
 	}
 
-	@Bean
-	public JwtAuthenticationFilter jwtAuthenticationFilter() {
-		return new JwtAuthenticationFilter();
-	}
+//	@Bean
+//	public JwtAuthenticationFilter jwtAuthenticationFilter() {
+//		return new JwtAuthenticationFilter();
+//	}
 
-	@Bean
-	public ModelMapper modelMapper() {
-		return new ModelMapper();
-	}
+//	@Bean
+//	public ModelMapper modelMapper() {
+//		return new ModelMapper();
+//	}
 
 }

@@ -1,23 +1,9 @@
 spring:
-  datasource:
-    url: jdbc:mysql://blogapi-db:3306/blogapi?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: root
-    password: root
-  jpa:
-    hibernate:
-      ddl-auto: none
-    show-sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: earlyBird10Team@gmail.com
+    password: earlybird5959!
     properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-  jackson:
-    serialization:
-      WRITE_DATES_AS_TIMESTAMPS: false
-    time-zone: UTC
-
-app:
-  jwtSecret: secret
-  jwtExpirationInMs: 3600000
-
-cors:
-  allowedOrings: '*'
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
