@@ -15,7 +15,7 @@ import java.util.Map;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 public class VoiceController {
 
     @PostMapping("/uploadAudio4list") // 음성 인식 페이지
