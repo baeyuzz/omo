@@ -1,4 +1,4 @@
-package com.omo.aibackend.voice;
+package com.omo.aibackend.controller;
 
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
