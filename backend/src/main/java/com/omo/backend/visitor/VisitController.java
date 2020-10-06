@@ -3,6 +3,7 @@ package com.omo.backend.visitor;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +13,11 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Api(description = "방문자 명부 관리 API")
 public class VisitController {
 
-    private VisitService visitService;
+    private final VisitService visitService;
 
     @PostMapping("/visitors")
     @ResponseBody

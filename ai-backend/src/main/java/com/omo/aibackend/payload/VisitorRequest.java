@@ -1,4 +1,4 @@
-package com.omo.backend.visitor;
+package com.omo.aibackend.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

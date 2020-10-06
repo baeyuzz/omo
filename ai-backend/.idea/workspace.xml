@@ -5,14 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a0d4a7-55ca-47e2-aeef-f89666d514b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/SignUpRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/SignUpResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/ApiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/UserClientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/VisitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/config/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberSignUpRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberSignUpResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/VisitorRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/VisitorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/voice/VoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/SignUpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/UserClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitorRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitorRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,14 +57,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/omo/aibackend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.omo.aibackend.config" />
+      <recent name="com.omo.aibackend.payload" />
       <recent name="com.omo.aibackend.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -63,17 +78,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AiBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ai-backend.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.omo.aibackend.AiBackendApplication" />
@@ -91,6 +95,11 @@
       <option name="presentableId" value="Default" />
       <updated>1601877323981</updated>
       <workItem from="1601877326314" duration="2089000" />
+      <workItem from="1601956100899" duration="1507000" />
+      <workItem from="1601957786422" duration="2049000" />
+      <workItem from="1601965710058" duration="605000" />
+      <workItem from="1601966334607" duration="2804000" />
+      <workItem from="1601969171156" duration="853000" />
     </task>
     <servers />
   </component>
@@ -98,9 +107,66 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1638" height="194" key="GridCell.Tab.0.bottom" timestamp="1601969156173">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="194" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156173" />
+    <state width="1638" height="194" key="GridCell.Tab.0.center" timestamp="1601969156172">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="194" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156172" />
+    <state width="1638" height="194" key="GridCell.Tab.0.left" timestamp="1601969156171">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="194" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156171" />
+    <state width="1638" height="194" key="GridCell.Tab.0.right" timestamp="1601969156172">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="194" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156172" />
+    <state width="1638" height="194" key="GridCell.Tab.1.bottom" timestamp="1601969156176">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="194" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156176" />
+    <state width="1638" height="194" key="GridCell.Tab.1.center" timestamp="1601969156175">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="194" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156175" />
+    <state width="1638" height="194" key="GridCell.Tab.1.left" timestamp="1601969156174">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="194" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156174" />
+    <state width="1638" height="194" key="GridCell.Tab.1.right" timestamp="1601969156175">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="194" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156175" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1601967145124">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1601967145124" />
     <state x="208" y="188" key="new project wizard" timestamp="1601883429038">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="208" y="188" key="new project wizard/0.0.1680.1050@0.0.1680.1050" timestamp="1601883429038" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java</url>
+          <line>205</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java</url>
+          <line>214</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java</url>
+          <line>217</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
