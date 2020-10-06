@@ -1,7 +1,6 @@
 package com.ssafy.omo.service;
 
 import com.ssafy.omo.model.Employee;
-import com.ssafy.omo.model.user.User;
 import com.ssafy.omo.payload.ApiResponse;
 import com.ssafy.omo.payload.EmployeeRequest;
 import com.ssafy.omo.payload.EmployeeResponse;
@@ -15,11 +14,11 @@ public interface EmployeeService {
 
 	List<Employee> getEmployeesByCreatedBy(String username);
 
-	Employee updateEmployee(String phone, EmployeeRequest newEmployeeRequest);
+	Employee updateEmployee(Long id, EmployeeRequest newEmployeeRequest, UserPrincipal currentUser);
 
-	ApiResponse deleteEmployee(String name, String phone);
+	ApiResponse deleteEmployee(Long id, UserPrincipal currentUser);
 
-	EmployeeResponse addEmployee(EmployeeRequest employeeRequest);
+	EmployeeResponse addEmployee(EmployeeRequest employeeRequest, UserPrincipal currentUser);
 
 	Employee getEmployee(Long id);
 

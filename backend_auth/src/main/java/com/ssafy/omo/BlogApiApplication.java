@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.convert.Jsr310Converters;
-import springfox.documentation.swagger2.mappers.ModelMapper;
+import org.modelmapper.ModelMapper;
 
 import javax.annotation.PostConstruct;
 import java.util.TimeZone;
@@ -30,9 +30,9 @@ public class BlogApiApplication {
 		return new JwtAuthenticationFilter();
 	}
 
-//	@Bean
-//	public ModelMapper modelMapper() {
-//		return new ModelMapper();
-//	}
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
+	}
 
 }

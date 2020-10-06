@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 import static com.ssafy.omo.model.role.RoleName.ROLE_ADMIN;
 
@@ -19,8 +21,9 @@ public class Role {
 
 	@Enumerated(EnumType.STRING)
 	@NaturalId
+	@NotEmpty
 	@Column(name = "name")
-	private RoleName name = ROLE_ADMIN;
+	private RoleName name;
 
 	public Role(RoleName name) {
 		this.name = name;
