@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-//@Document(collation = "visitor")
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
@@ -19,21 +18,27 @@ public class VisitLog implements Serializable {
 
     private String groupCode;
     private String name;
+    private String address;
+    private String phone;
 
     @CreationTimestamp
     private LocalDateTime visitTime;
 
     @Builder
-    public VisitLog(String groupCode, String name) {
+    public VisitLog(String groupCode, String name, String phone, String address) {
         this.groupCode = groupCode;
         this.name = name;
+        this.phone = phone;
+        this.address = address;
     }
 
     @Override
     public String toString() {
-        return "Visitor{" +
+        return "VisitLog{" +
                 "groupCode='" + groupCode + '\'' +
                 ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
                 ", visitTime=" + visitTime +
                 '}';
     }
