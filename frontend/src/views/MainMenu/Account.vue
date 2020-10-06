@@ -16,7 +16,7 @@
     -->
 
     <div class="menu">
-      <div>
+      <div style="padding-right : 2%;">
         <router-link to="/members" style="text-decoration:none">
         <div class="icons">
           <img src="@/assets/frame.png" style="width : 120px; height : 120px;" />
@@ -24,7 +24,7 @@
         <p>등록 회원 관리</p>
         </router-link>
       </div>
-      <div>
+      <div style="padding-right : 2%;">
         <router-link to="/voiceReg" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/mic.png" width="130px" height="130px;" />
@@ -32,7 +32,7 @@
           <p>음성 등록</p>
         </router-link>
       </div>
-      <div>
+      <div style="padding-right : 2%;">
         <router-link to="/visitor" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/paper.png" width="110px" height="120px;" />
@@ -41,14 +41,14 @@
         </router-link>
       </div>
 
-      <div class="pwd-modal" data-toggle="modal">
+      <div class="pwd-modal" data-toggle="modal" style="padding-right : 2%;">
         <div class="icons">
           <img src="@/assets/pwd.png" style="width : 130px; height : 120px;" />
         </div>
           <p>비밀번호 변경</p>
       </div>
       <div>
-        <div class="icons" @click="logout">
+        <div class="icons" @click="logout" style="padding-right : 2%;">
           <img src="@/assets/unlock.png" style="width : 120px; height : 120px;" />
         </div>
         <p>로그아웃</p>
