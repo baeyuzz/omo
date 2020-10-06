@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-// import store from './store'
+import store from './store'
 import VueCookies from 'vue-cookies'
-import {
-  store
-} from './store'
+// import {
+//   store
+// } from './store'
 import * as cv from 'opencv.js'
 
 Vue.prototype.$cv = cv

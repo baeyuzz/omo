@@ -6,9 +6,6 @@
       <h2>OMO 서비스 공지사항 </h2>
     </div> 
 
-    <!-- <div class="content-box">
-      
-    </div> -->
   <div class="content-box">
 			<div class="wrap-table100">
 					<div class="table">
@@ -26,10 +23,14 @@
 
 						<div class="row"  v-for="(article, idx) in article_list" :key="idx" >
 							<div class="cell" data-title="Full Name">
-								{{ idx }}
+								{{ idx +1 }}
 							</div>
 							<div class="cell" data-title="Age">
-								<router-link to="/notice">{{ article }}</router-link>
+                <div class="collapsible">{{ article }}</div>
+                <div class="content">
+                  첫 공지사항 입니다
+                </div>
+
 							</div>
 							<div class="cell" data-title="Job Title">
 								2020-09-16
@@ -53,12 +54,34 @@ export default {
   data() {
     return {
       article_list: [
-        '개인정보 처리방침 개정안내',
-        'OMO 운영정책 변경 안내'
+        '공지사항',
       ]
     }
   },
    methods: {
+     attachCollapse(){
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+     }
+   },
+   mounted() {
+      try {
+        this.attachCollapse();
+      } catch (e) {
+        return;
+      }
    }
 }
 </script>
@@ -175,4 +198,25 @@ a:hover { color: black; text-decoration: underline;}
   width: 100% !important;
 }
 
+.collapsible {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  color: rgb(180, 180, 180);
+}
+
+.content {
+  text-align: left;
+  padding: 30px;
+  display: none;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
 </style>

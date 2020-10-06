@@ -15,7 +15,9 @@
 
 <script>
 // import constants from "@/lib/constants.js";
-// import http from "@/http-common.js";
+// import axios from "axios";
+import { createUser } from "@/lib/userApi.js";
+
 export default {
   methods: {
     signUp() {
@@ -23,24 +25,21 @@ export default {
         alert("패스워드가 다릅니다.");
         return;
       }
-      alert("현재 준비중입니다.");
-      this.$emit("reTurn");
-      // let url = "";
-      // http
-      //   .post(url, {
-      //     name: this.name,
-      //     email: this.email,
-      //     password: this.password,
-      //   })
-      //   .then(() => {
-      //     console.log("Success");
-      //     this.$emit("reTurn", "aasdf");
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-
-      //     this.$emit("reTurn");
-      //   });
+      const data = {
+        username: this.name,
+        email: this.email,
+        password: this.password,
+      }
+      createUser(data)
+        .then(() => {
+          console.log("Success");
+          this.$store.commit("setCode", this.name);
+          this.$router.push("Main");
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("회원가입 실패")
+        });
     },
   },
   data: () => {

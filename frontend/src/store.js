@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import http from "@/http-common.js";
 import constants from './lib/constants.js'
+import cookies from 'vue-cookies';
 
 Vue.use(Vuex);
 
@@ -12,7 +13,7 @@ export default new Vuex.Store({
     code : '',
     addr : '',
     phone : '',
-
+    token: cookies.get('token'),
   },
   actions: {
     [constants.METHODS.LOGIN_USER]: (_store, payload) => {
@@ -52,8 +53,14 @@ export default new Vuex.Store({
       state.phone = '';
       state.addr = '';
       state.name = '';
-    }
-
+    },
+    logout(state){
+      state.code = '';
+    },
+    setToken(state, token) {
+      state.id_token = token;
+      cookies.set('token', token);
+    },
   },
  
 });

@@ -75,7 +75,7 @@
                 )
                 .catch(err => {
                     alert('문제가 발생했습니다. 잠시후 다시 시도해주세요. ', err)
-                    this.$router.push({name: "Main"});
+                    this.$router.push({name: "VoiceRecognition"});
                 });
 
                 // console.log(context);
@@ -100,6 +100,7 @@
               })
               .catch((err) => {
                 console.log('사진 업로드 실패', err)
+                
               })
             },
         }

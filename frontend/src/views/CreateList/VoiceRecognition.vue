@@ -13,14 +13,16 @@
             녹음 버튼을 누른 후 6초 간
             <br>
             오늘 날짜와 이름을 말씀해주세요
-
+            <br>
     </div>
+    <br>
     <div id="recorder">
         <Record
         :attempts='3'
         :time='0.1'
         :uploadBtn='false'
         />
+    <br>
         <router-link to="/main" style="text-decoration:none; color : white;">취소 </router-link>
     </div>
   </div>
@@ -42,6 +44,9 @@ export default {
 #recorder {
     text-align: center;
     
+}
+.notice {
+    padding-bottom: 20px;
 }
 </style>
 
