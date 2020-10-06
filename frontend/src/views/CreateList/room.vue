@@ -16,7 +16,9 @@
         </div>
         
         <img id="stream" height="480" alt="stream" v-if="!isLoading"/>
-        <p v-if="!isLoading & !success" class="caution"><strong>마스크를 벗지말고</strong> 얼굴을 찍어주세요!</p>
+        <div>
+          <p v-if="!isLoading & !success" class="caution"><strong>마스크를 벗지말고</strong> 얼굴을 찍어주세요!</p>
+        </div>
         <div class="success" v-if="success">
           <p>3초 후에 화자 인식 페이지로 넘어갑니다!</p>
         </div>
