@@ -6,9 +6,6 @@
       <h2>OMO 서비스 공지사항 </h2>
     </div> 
 
-    <!-- <div class="content-box">
-      
-    </div> -->
   <div class="content-box">
 			<div class="wrap-table100">
 					<div class="table">
@@ -29,21 +26,15 @@
 								{{ idx +1 }}
 							</div>
 							<div class="cell" data-title="Age">
-								<router-link to="/notice">{{ article }}</router-link>
+                <div class="collapsible">{{ article }}</div>
+                <div class="content">
+                  첫 공지사항 입니다
+                </div>
+
 							</div>
 							<div class="cell" data-title="Job Title">
-								2020-10-06
+								2020-09-16
 							</div>
-						<!-- <div class="row"  v-for="(article, idx) in article_list" :key="idx" >
-							<div class="cell" data-title="Full Name">
-								{{ idx +1 }}
-							</div>
-							<div class="cell" data-title="Age">
-								<router-link to="/notice">{{ article.title }}</router-link>
-							</div>
-							<div class="cell" data-title="Job Title">
-								{{article.createdAt}}
-							</div> -->
 						</div>
 					</div>
 			</div>
@@ -54,8 +45,6 @@
 
 <script>
 import Nav from '@/components/Nav.vue'
-// import axios from "axios";
-
 
 export default {
   name: 'Notice',
@@ -64,22 +53,36 @@ export default {
   },
   data() {
     return {
-      article_list: []
+      article_list: [
+        '공지사항',
+      ]
     }
   },
    methods: {
+     attachCollapse(){
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+     }
    },
-   created () {
-     this.article_list.push('공지사항')
-
-    //  axios.get(`http://localhost:8080/api/notice`)
-    //   .then((res) => {
-    //       this.article_list = res.data;
-    //     }
-    //   )
-    //    .catch((err) => {console.log(err)});
-
-  }
+   mounted() {
+      try {
+        this.attachCollapse();
+      } catch (e) {
+        return;
+      }
+   }
 }
 </script>
 <style scoped>
@@ -195,4 +198,25 @@ a:hover { color: black; text-decoration: underline;}
   width: 100% !important;
 }
 
+.collapsible {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  color: rgb(180, 180, 180);
+}
+
+.content {
+  text-align: left;
+  padding: 30px;
+  display: none;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
 </style>
