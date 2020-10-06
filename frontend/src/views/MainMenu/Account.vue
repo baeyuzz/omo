@@ -99,6 +99,7 @@ export default {
       this.$store.commit("clearMember");
       this.$store.commit("logout");
       this.$cookies.remove("token")
+      this.$cookies.remove("code")
       this.$router.push('/')
     },
   },

@@ -47,6 +47,10 @@ export default new Vuex.Store({
       state.phone = phone;
     },
     setCode(state, code) {
+      if(state.toke!='')
+        cookies.set('code',code)
+      else
+        cookies.set('code','')
       state.code = code;
     },
     clearMember(state) {
@@ -58,9 +62,12 @@ export default new Vuex.Store({
       state.code = '';
     },
     setToken(state, token) {
-      state.id_token = token;
+      state.token = token;
       cookies.set('token', token);
     },
+    setEmail(state,id) {
+      state.id = id
+    }
   },
  
 });

@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import store from '@/store';
+// import store from '@/store';
+import cookies from 'vue-cookies';
 
 
 Vue.use(VueRouter)
@@ -109,7 +110,7 @@ const router = new VueRouter({
 })
 
 function requireLogin(to, from, next) {
-  store.state.id == '' ?next() : next('/'); // 지금은 임시로 == 해놓음 ~
+  cookies.get('token') != null ?next() : next('/'); // 지금은 임시로 == 해놓음 ~
 }
 
 export default router

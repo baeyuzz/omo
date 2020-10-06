@@ -57,16 +57,16 @@ export default {
     },
 
     methods: {
-      callback (data) {
-        console.log('callback')
-        console.debug(data)
+      callback () {
+        // console.log('callback')
+        // console.debug(data)
       },
-      callbackUploading (data) {
-        console.log('upload')
-        console.debug(data)
+      callbackUploading () {
+        // console.log('upload')
+        // console.debug(data)
       },
       upload(data){
-        console.log(this.$store.state.code)
+        // console.log(this.$store.state.code)
         this.isLoading = false;
         // console.log(data.blob)
 
@@ -115,7 +115,7 @@ export default {
 
         }
         else {
-          console.log(this.$store.state.code)
+          // console.log(this.$store.state.code)
           this.isLoading = false;
           const info = {
             name : this.$store.state.name,
@@ -123,10 +123,12 @@ export default {
             phone : this.$store.state.phone,
             code : this.$store.state.code,
           }
-          console.log(info)
+
           axios.post("http://localhost:8081/api/ai/uploadAudio4member", audio, {headers : info})
           .then(resp => {
-            console.log(resp.data)
+
+            // console.log(resp.data)
+            
             if(resp.data) {
               
               this.$store.commit("setPhone", '');

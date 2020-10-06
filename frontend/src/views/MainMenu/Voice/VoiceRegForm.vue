@@ -61,7 +61,7 @@ export default {
       name: '',
       phone: '',
       addr: '',
-      code: '',
+      code: this.$store.state.code,
     };
   },
   methods: {
@@ -88,7 +88,6 @@ export default {
         this.$store.commit("setAddr", this.addr);
         this.$store.commit("setCode", this.code);
         
-        console.log(this.$store.state.code)
 
         this.$router.push({name: 'RegRecord',});
 
@@ -114,7 +113,10 @@ export default {
         //         });
     },
   },
-
+  created () {
+      this.$store.state.code = this.$cookies.get("code")
+      this.code = this.$store.state.code
+  }
 }
 </script>
 <style scoped>
