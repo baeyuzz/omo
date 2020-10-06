@@ -50,9 +50,9 @@ public class User extends DateAudit {
 	@Email
 	private String email;
 
-//	@ManyToMany(fetch = FetchType.EAGER)
-//	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
-//	private List<Role> roles;
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+	private List<Role> roles;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -78,18 +78,18 @@ public class User extends DateAudit {
 		}
 	}
 
-//	public List<Role> getRoles() {
-//
-//		return roles == null ? null : new ArrayList<>(roles);
-//	}
-//
-//	public void setRoles(List<Role> roles) {
-//
-//		if (roles == null) {
-//			this.roles = null;
-//		} else {
-//			this.roles = Collections.unmodifiableList(roles);
-//		}
-//	}
+	public List<Role> getRoles() {
+
+		return roles == null ? null : new ArrayList<>(roles);
+	}
+
+	public void setRoles(List<Role> roles) {
+
+		if (roles == null) {
+			this.roles = null;
+		} else {
+			this.roles = Collections.unmodifiableList(roles);
+		}
+	}
 
 }

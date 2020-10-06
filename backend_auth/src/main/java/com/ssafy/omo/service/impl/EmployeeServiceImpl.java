@@ -48,31 +48,44 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
 	@Override
-	public Employee updateEmployee(String phone, EmployeeRequest newEmployeeRequest) {
-		Employee employee = employeeRepository.findByPhone(phone);
-
+	public Employee updateEmployee(Long id, EmployeeRequest newEmployeeRequest, UserPrincipal currentUser) {
+		Employee employee = employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(AppConstants.EMPLOYEE, AppConstants.ID, id));
+		if (employee.getUser().getId().equals(currentUser.getId())
+				|| currentUser.getAuthorities().contains(new SimpleGrantedAuthority(RoleName.ROLE_ADMIN.toString()))) {
 			employee.setName(newEmployeeRequest.getName());
 			employee.setPhone(newEmployeeRequest.getPhone());
 			employee.setAddress(newEmployeeRequest.getAddress());
 			return employeeRepository.save(employee);
+		}
+		ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "You don't have permission to edit this employee");
+
+		throw new UnauthorizedException(apiResponse);
 	}
 
 	@Override
-	public ApiResponse deleteEmployee(String name, String phone) {
-		Employee employee = employeeRepository.findByPhoneAndName(name,phone);
-			employeeRepository.deleteByPhone(phone);
-			return new ApiResponse(Boolean.TRUE, "You successfully deleted");
+	public ApiResponse deleteEmployee(Long id, UserPrincipal currentUser) {
+		Employee employee = employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(AppConstants.EMPLOYEE, AppConstants.ID, id));
+		if (employee.getUser().getId().equals(currentUser.getId())
+				|| currentUser.getAuthorities().contains(new SimpleGrantedAuthority(RoleName.ROLE_ADMIN.toString()))) {
+			employeeRepository.deleteById(id);
+			return new ApiResponse(Boolean.TRUE, "You successfully deleted post");
+		}
 
+		ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "You don't have permission to delete this post");
+
+		throw new UnauthorizedException(apiResponse);
 	}
 
 	@Override
-	public EmployeeResponse addEmployee(EmployeeRequest employeeRequest) {
+	public EmployeeResponse addEmployee(EmployeeRequest employeeRequest, UserPrincipal currentUser) {
+		User user = userRepository.findById(currentUser.getId())
+				.orElseThrow(() -> new ResourceNotFoundException(AppConstants.USER, AppConstants.ID, 1L));
 
 		Employee employee = new Employee();
 		employee.setAddress(employeeRequest.getAddress());
 		employee.setPhone(employeeRequest.getPhone());
 		employee.setName(employeeRequest.getName());
-		employee.setUser(userRepository.findByUsername(employeeRequest.getUserId()).orElseThrow(null));
+		employee.setUser(user);
 
 		Employee newEmployee = employeeRepository.save(employee);
 
