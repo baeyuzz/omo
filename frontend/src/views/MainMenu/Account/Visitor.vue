@@ -22,8 +22,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="log in visitorlogs" :key="log">
-                                <td>{{log.visitTime}}</td>
+                            <tr v-for="(log,index) in visitorlogs" :key="index">
+                                <td>{{log.visitTime.replace('T',' ')}}</td>
                                 <td>{{log.name}}</td>
                                 <td>{{log.phone}}</td>
                                 <td>{{log.address}}</td>
