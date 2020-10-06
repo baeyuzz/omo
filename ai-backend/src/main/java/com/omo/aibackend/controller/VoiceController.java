@@ -1,5 +1,8 @@
 package com.omo.aibackend.controller;
 
+import com.omo.aibackend.payload.*;
+import com.omo.aibackend.service.ClientService;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.PumpStreamHandler;
@@ -16,11 +19,13 @@ import java.util.Map;
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api/ai")
+@RequiredArgsConstructor
 public class VoiceController {
+
+    private final ClientService clientService;
 
     @PostMapping("/uploadAudio4list") // 음성 인식 페이지
     public ResponseEntity upload (@RequestHeader final Map<String, Object> info, @RequestParam (value = "audio") final MultipartFile file) throws Exception {
-
         String code = (String) info.get("code");
 
         String fileName= file.getOriginalFilename();
@@ -42,30 +47,75 @@ public class VoiceController {
             res = execPython(command,1);
         }
         System.out.println("res : " + res);
+        String name = res.split("_")[0];
+        String phone = res.split("_")[1];
 
-        if(res != null)
+        // 1. 방문자 인식이 되었다면
+        // 2. backend_auth 서버로 방문자 정보 요청
+        // 3. 방문자 관리 서버에 명부 작성 요청
+        if(res != null) {   // 1. 방문자 인식 성공
+
+            // 2. 인식한 방문자의 정보 요청
+            ResponseEntity memberResponse = clientService.callGetAuthExternalServer(
+                    new MemberRequest().builder()
+                            .name(name)
+                            .phone(phone)
+                            .build());
+
+            if(memberResponse.getStatusCode() != HttpStatus.OK) {
+
+            } else {
+
+            }
+
+            // 3. 받아온 정보로 방문자 관리 서버에 전송
+            ResponseEntity visitorResponse = clientService.callPostVisitorExternalServer(
+                    new VisitorRequest().builder()
+                            .groupCode(code)
+                            .name(name)
+                            .phone(phone)
+                            //.address(address)
+                            .build());
+
+            if(visitorResponse.getStatusCode() != HttpStatus.OK) {
+                System.out.println("방문자 서버 에러");
+                return new ResponseEntity<>(false, HttpStatus.OK);
+            } else {
+                System.out.println(visitorResponse.getBody());
+//                return new ResponseEntity(response.getBody(), HttpStatus.OK);
+            }
+
             return new ResponseEntity<>(res, HttpStatus.OK);
-        else 
+        } else
             return new ResponseEntity<>(false, HttpStatus.OK);
-
     }
 
     @PostMapping("/uploadAudio4member") // 음성 등록 페이지
     public ResponseEntity regMember (@RequestHeader final Map<String, Object> info, @RequestParam (value = "audio") final MultipartFile file) throws Exception {
 
-        String name = (String) info.get("name");
-        String addr = (String) info.get("addr");
-        String phone = (String) info.get("phone");
         String code = (String) info.get("code");
+        String name = (String) info.get("name");
+        String phone = (String) info.get("phone");
+        String address = (String) info.get("addr");
 
-        String nplusp = name + phone;
+        ResponseEntity response = clientService.callPostAuthExternalServer(
+                new MemberSignUpRequest().builder()
+                        .code(code)
+                        .name(name)
+                        .phone(phone)
+                        .address(address)
+                        .build()
+        );
+
+        if(response.getStatusCode() != HttpStatus.OK) return new ResponseEntity<>(false, HttpStatus.OK);
+
+        String nplusp = name + "_" + phone;
 
         String path = "C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\" + code + "\\data\\" + nplusp;
 
         File newfile = new File(path);
 
         if (!newfile.mkdirs()) {
-
             System.out.println("폴더 생성 실패");
         }
 
@@ -142,7 +192,7 @@ public class VoiceController {
         String output = outputStream.toString();
         int idx2 = output.lastIndexOf("result : ");
 
-        String res = output.substring(idx2+9, idx2+12);
+        String res = output.substring(idx2+9);
         
         if(idx2 == -1)
             return "success";
@@ -151,27 +201,23 @@ public class VoiceController {
 
     }
 
-    @PostMapping("/form")
-    public ResponseEntity form (@RequestBody final Map<String,Object> info) throws Exception {
+    @PostMapping("/test")
+    public ResponseEntity VisitLogExternalServerRequestTest() {
+        ResponseEntity response = clientService.callPostVisitorTestExternalServer(
+                new VisitorRequest().builder()
+                        .groupCode("ssafy")
+                        .name("최문경")
+                        .phone("010-8535-3684")
+                        .address("서울 송파구")
+                        .build());
 
-        String code = (String) info.get("code");
-        String name = (String) info.get("name");
-        String phone = (String) info.get("phone");
-        String addr = (String) info.get("addr");
-
-       
-        System.out.println(code);
-        System.out.println(name);
-        System.out.println(phone);
-        System.out.println(addr);
-
-         // db에 저장하는 코드.,!!
-
-
-       return new ResponseEntity<>(true, HttpStatus.OK);
-
+        if(response.getStatusCode() != HttpStatus.OK) {
+            System.out.println("방문자 서버 에러");
+            return new ResponseEntity<>(false, HttpStatus.OK);
+        } else {
+            System.out.println(response.getBody());
+            return new ResponseEntity<>(true, HttpStatus.OK);
+        }
     }
-
-    
 
 }
