@@ -62,9 +62,9 @@ export default {
       upload(data){
         // console.log(data.blob)
 
-        this.$store.state.code = "team9"
-        this.$store.state.name = "team9"
-        this.$store.state.phone = "team9"
+        // this.$store.state.code = "team9"
+        // this.$store.state.name = "team9"
+        // this.$store.state.phone = "team9"
 
         const audio = new FormData()
         audio.append('audio', data.blob, `record.wav`)
@@ -82,7 +82,7 @@ export default {
           const info = {
             code : this.$store.state.code,
           }
-          axios.post("http://localhost:8080/api/uploadAudio4list", audio, {headers : info})
+          axios.post("http://localhost:8081/api/uploadAudio4list", audio, {headers : info})
           .then(resp => {
             console.log(resp.data)
      
@@ -110,10 +110,15 @@ export default {
             code : this.$store.state.code,
           }
           console.log(info)
-          axios.post("http://localhost:8080/api/uploadAudio4member", audio, {headers : info})
+          axios.post("http://localhost:8081/api/uploadAudio4member", audio, {headers : info})
           .then(resp => {
             console.log(resp.data)
             if(resp.data) {
+              
+              this.$store.commit("setPhone", '');
+              this.$store.commit("setName", '');
+              this.$store.commit("setAddr", '');
+              
               alert ('등록 되었습니다')
               this.$router.push({
                 name: "Main",

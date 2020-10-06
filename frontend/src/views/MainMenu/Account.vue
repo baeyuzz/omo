@@ -17,7 +17,7 @@
 
     <div class="menu">
       <div>
-        <router-link to="/account" style="text-decoration:none">
+        <router-link to="/members" style="text-decoration:none">
         <div class="icons">
           <img src="@/assets/frame.png" style="width : 120px; height : 120px;" />
         </div>

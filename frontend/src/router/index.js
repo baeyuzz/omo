@@ -87,6 +87,12 @@ const routes = [{
     component: () => import('../views/MainMenu/Account/Visitor.vue'),
     beforeEnter: requireLogin,
   },
+  {
+    path: '/members',
+    name: 'Members',
+    component: () => import('../views/MainMenu/Account/Members.vue'),
+    beforeEnter: requireLogin,
+  },
   
   
 ]
