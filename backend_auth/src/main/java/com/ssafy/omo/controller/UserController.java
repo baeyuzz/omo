@@ -29,7 +29,6 @@ public class UserController {
 	@Autowired
 	private EmployeeService employeeService;
 
-
 	@GetMapping("/me")
 	@PreAuthorize("hasRole('USER')")
 	@ApiOperation(value = "현재 로그인한 유저")
@@ -70,18 +69,17 @@ public class UserController {
 		return new ResponseEntity<  >(response, HttpStatus.OK);
 	}
 
-	@ApiOperation(value = "그냥 디플트를 어드민으로 줍시다")
+	@ApiOperation(value = "유저 추가")
 	@PostMapping
-	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseEntity<User> addUser(@Valid @RequestBody User user) {
+	public ResponseEntity<User> registerUser(@Valid @RequestBody User user) {
+
 		User newUser = userService.addUser(user);
 
 		return new ResponseEntity< >(newUser, HttpStatus.CREATED);
 	}
 
-	@ApiOperation(value = "업데이트")
+	@ApiOperation(value = "유저 업데이트")
 	@PutMapping("/{username}")
-	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<User> updateUser(@Valid @RequestBody User newUser,
 			@PathVariable(value = "username") String username, @CurrentUser UserPrincipal currentUser) {
 		User updatedUSer = userService.updateUser(newUser, username, currentUser);
@@ -91,7 +89,6 @@ public class UserController {
 
 	@ApiOperation(value = "삭제")
 	@DeleteMapping("/{username}")
-	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable(value = "username") String username,
 			@CurrentUser UserPrincipal currentUser) {
 		ApiResponse apiResponse = userService.deleteUser(username, currentUser);
@@ -99,31 +96,38 @@ public class UserController {
 		return new ResponseEntity< >(apiResponse, HttpStatus.OK);
 	}
 
-	@ApiOperation(value = "어드민 주기 - 필요없음")
-	@PutMapping("/{username}/giveAdmin")
-	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseEntity<ApiResponse> giveAdmin(@PathVariable(name = "username") String username) {
-		ApiResponse apiResponse = userService.giveAdmin(username);
-
-		return new ResponseEntity< >(apiResponse, HttpStatus.OK);
-	}
-
-	@PutMapping("/{username}/takeAdmin")
-	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseEntity<ApiResponse> takeAdmin(@PathVariable(name = "username") String username) {
-		ApiResponse apiResponse = userService.removeAdmin(username);
-
-		return new ResponseEntity< >(apiResponse, HttpStatus.OK);
-	}
-
 	@ApiOperation(value = "정보수정")
 	@PutMapping("/setOrUpdateInfo")
-	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<UserProfile> setAddress(@CurrentUser UserPrincipal currentUser,
 			@Valid @RequestBody InfoRequest infoRequest) {
 		UserProfile userProfile = userService.setOrUpdateInfo(currentUser, infoRequest);
 
 		return new ResponseEntity< >(userProfile, HttpStatus.OK);
+	}
+
+	@ApiOperation(value = "멤버 추가")
+	@PostMapping("/emp")
+	public ResponseEntity<EmployeeResponse> registerEmp(@Valid @RequestBody EmployeeRequest employeeRequest) {
+
+		return new ResponseEntity< >(employeeService.addEmployee(employeeRequest), HttpStatus.CREATED);
+	}
+
+	@ApiOperation(value = "멤버 업데이트")
+	@PutMapping("/emp/{empname}")
+	public ResponseEntity<Employee> updateEmp(@Valid @RequestBody EmployeeRequest employeeRequest,
+										   @PathVariable(value = "empname") String phone) {
+		Employee employee = employeeService.updateEmployee(phone,employeeRequest);
+
+		return new ResponseEntity< >(employee, HttpStatus.CREATED);
+	}
+
+	@ApiOperation(value = "멤버 삭제")
+	@DeleteMapping("/emp/{empname}")
+	public ResponseEntity<ApiResponse> deleteEmp(@PathVariable(value = "username") String name,
+												 @PathVariable(value = "username") String phone) {
+		ApiResponse apiResponse = employeeService.deleteEmployee(name,phone);
+
+		return new ResponseEntity< >(apiResponse, HttpStatus.OK);
 	}
 
 }

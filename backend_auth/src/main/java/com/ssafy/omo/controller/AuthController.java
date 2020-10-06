@@ -9,7 +9,6 @@ import com.ssafy.omo.payload.ApiResponse;
 import com.ssafy.omo.payload.JwtAuthenticationResponse;
 import com.ssafy.omo.payload.LoginRequest;
 import com.ssafy.omo.payload.SignUpRequest;
-import com.ssafy.omo.repository.RoleRepository;
 import com.ssafy.omo.repository.UserRepository;
 import com.ssafy.omo.security.JwtTokenProvider;
 import io.swagger.annotations.Api;
@@ -42,8 +41,8 @@ public class AuthController {
 	@Autowired
 	private UserRepository userRepository;
 
-	@Autowired
-	private RoleRepository roleRepository;
+//	@Autowired
+//	private RoleRepository roleRepository;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -59,7 +58,7 @@ public class AuthController {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
 		String jwt = jwtTokenProvider.generateToken(authentication);
-		return ResponseEntity.ok(new JwtAuthenticationResponse(jwt));
+		return ResponseEntity.ok(new JwtAuthenticationResponse(jwt,loginRequest.getUsernameOrEmail()));
 	}
 
 	@PostMapping("/signup")
@@ -82,17 +81,17 @@ public class AuthController {
 
 		List<Role> roles = new ArrayList<>();
 
-		if (userRepository.count() == 0) {
-			roles.add(roleRepository.findByName(RoleName.ROLE_USER)
-					.orElseThrow(() -> new AppException(USER_ROLE_NOT_SET)));
-			roles.add(roleRepository.findByName(RoleName.ROLE_ADMIN)
-					.orElseThrow(() -> new AppException(USER_ROLE_NOT_SET)));
-		} else {
-			roles.add(roleRepository.findByName(RoleName.ROLE_USER)
-					.orElseThrow(() -> new AppException(USER_ROLE_NOT_SET)));
-		}
-
-		user.setRoles(roles);
+//		if (userRepository.count() == 0) {
+//			roles.add(roleRepository.findByName(RoleName.ROLE_USER)
+//					.orElseThrow(() -> new AppException(USER_ROLE_NOT_SET)));
+//			roles.add(roleRepository.findByName(RoleName.ROLE_ADMIN)
+//					.orElseThrow(() -> new AppException(USER_ROLE_NOT_SET)));
+//		} else {
+//			roles.add(roleRepository.findByName(RoleName.ROLE_USER)
+//					.orElseThrow(() -> new AppException(USER_ROLE_NOT_SET)));
+//		}
+//
+//		user.setRoles(roles);
 
 		User result = userRepository.save(user);
 
