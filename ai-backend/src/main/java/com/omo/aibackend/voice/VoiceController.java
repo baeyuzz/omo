@@ -15,7 +15,7 @@ import java.util.Map;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/ai")
 public class VoiceController {
 
     @PostMapping("/uploadAudio4list") // 음성 인식 페이지
@@ -136,7 +136,7 @@ public class VoiceController {
 
         executor.setStreamHandler(pumpStreamHandler);
         int result = executor.execute(commandLine);
-        // System.out.println("result: " + result);
+        // System.out.println("result: " + resudlt);
         System.out.println("output: " + outputStream.toString());
 
         String output = outputStream.toString();
@@ -167,7 +167,7 @@ public class VoiceController {
 
          // db에 저장하는 코드.,!!
 
-         
+
        return new ResponseEntity<>(true, HttpStatus.OK);
 
     }

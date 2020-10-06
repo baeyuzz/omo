@@ -95,7 +95,7 @@ export default {
             code : this.$store.state.code,
           }
 
-        axios.post("http://localhost:8081/api/form", info)
+        axios.post("http://localhost:8081/api/ai/form", info)
             .then((res) => {
                     if(res.data){ // 등록이 되면
                         this.$router.push({name: 'RegRecord',});

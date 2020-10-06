@@ -82,7 +82,7 @@ export default {
           const info = {
             code : this.$store.state.code,
           }
-          axios.post("http://localhost:8081/api/uploadAudio4list", audio, {headers : info})
+          axios.post("http://localhost:8081/api/ai/uploadAudio4list", audio, {headers : info})
           .then(resp => {
             console.log(resp.data)
      
@@ -110,7 +110,7 @@ export default {
             code : this.$store.state.code,
           }
           console.log(info)
-          axios.post("http://localhost:8081/api/uploadAudio4member", audio, {headers : info})
+          axios.post("http://localhost:8081/api/ai/uploadAudio4member", audio, {headers : info})
           .then(resp => {
             console.log(resp.data)
             if(resp.data) {

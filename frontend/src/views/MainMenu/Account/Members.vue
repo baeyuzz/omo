@@ -59,7 +59,7 @@ export default {
         //   let code = 'ssafy';
         let code = this.$store.state.code
 
-          axios.get(`http://localhost:8081/api/train?code=${code}`)
+          axios.get(`http://localhost:8081/api/ai/train?code=${code}`)
           alert("음성데이터를 훈련 시킵니다 ! ")
       },
       remove(name, phone){
