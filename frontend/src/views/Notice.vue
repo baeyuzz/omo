@@ -26,14 +26,24 @@
 
 						<div class="row"  v-for="(article, idx) in article_list" :key="idx" >
 							<div class="cell" data-title="Full Name">
-								{{ idx }}
+								{{ idx +1 }}
 							</div>
 							<div class="cell" data-title="Age">
 								<router-link to="/notice">{{ article }}</router-link>
 							</div>
 							<div class="cell" data-title="Job Title">
-								2020-09-16
+								2020-10-06
 							</div>
+						<!-- <div class="row"  v-for="(article, idx) in article_list" :key="idx" >
+							<div class="cell" data-title="Full Name">
+								{{ idx +1 }}
+							</div>
+							<div class="cell" data-title="Age">
+								<router-link to="/notice">{{ article.title }}</router-link>
+							</div>
+							<div class="cell" data-title="Job Title">
+								{{article.createdAt}}
+							</div> -->
 						</div>
 					</div>
 			</div>
@@ -44,6 +54,8 @@
 
 <script>
 import Nav from '@/components/Nav.vue'
+// import axios from "axios";
+
 
 export default {
   name: 'Notice',
@@ -52,14 +64,22 @@ export default {
   },
   data() {
     return {
-      article_list: [
-        '개인정보 처리방침 개정안내',
-        'OMO 운영정책 변경 안내'
-      ]
+      article_list: []
     }
   },
    methods: {
-   }
+   },
+   created () {
+     this.article_list.push('공지사항')
+
+    //  axios.get(`http://localhost:8080/api/notice`)
+    //   .then((res) => {
+    //       this.article_list = res.data;
+    //     }
+    //   )
+    //    .catch((err) => {console.log(err)});
+
+  }
 }
 </script>
 <style scoped>

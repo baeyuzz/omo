@@ -10,7 +10,8 @@
                 <h1>
                     등록 회원 관리
                 </h1>
-                <button @click="train"> 음성 훈련</button>
+                    <button class="train" @click="train"> 음성 훈련</button>
+                
                 <h2 />
             </div>
             <div class="list">
@@ -94,10 +95,11 @@ export default {
 </script>
 <style scoped>
 .intro {
+  margin: auto;
   margin-left: 7%;
   margin-right: 7%;
   display: flex;
-  z-index: 2;
+  z-index: 4;
   justify-items: center;
   justify-content: space-between;
 }
@@ -119,5 +121,19 @@ td {
 }
 .remove {
     cursor: pointer;
+}
+.train {
+    font-size: 15px;
+    outline: none;
+    border : none;
+    background-color: rgb(0, 161, 224);
+    color : white;
+    height : 40px;
+    margin: auto;
+    margin-left : 0;
+    margin-right : 0;
+    border-radius: 10px;
+    cursor: pointer;
+    padding : 5px 10px 5px 10px;
 }
 </style>
