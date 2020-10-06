@@ -8,7 +8,9 @@
     </router-link>
 
     <div class="menu">
-      <button>서비스 소개</button>
+      <button>
+        <router-link to="/service">서비스 소개</router-link>
+      </button>
       <button>
         <router-link to="/notice">공지사항</router-link>
       </button>
@@ -57,8 +59,6 @@ img {
 img:hover {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
-}
-.logo {
 }
 .logo:hover,
 button:hover {
