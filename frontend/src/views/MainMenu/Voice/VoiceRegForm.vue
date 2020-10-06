@@ -14,7 +14,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td><label>기관 코드</label></td>
+                                <td><label>기관명</label></td>
                                 <td> <input class="regInput" placeholder="ex. A123" v-model="code"/></td>
                             </tr>
                             <tr>
@@ -49,7 +49,7 @@
 
 import Nav from '@/components/Nav.vue'
 // import http from '@/http-common.js'
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   name: 'VoiceRegForm',
@@ -67,7 +67,7 @@ export default {
   methods: {
     async submitForm() {
         if(this.code.length == 0) {
-            alert('기관 코드를 입력하세요');
+            alert('기관명을 입력하세요');
             return;
         }
         if(this.name.length == 0) {
@@ -87,27 +87,31 @@ export default {
         this.$store.commit("setName", this.name);
         this.$store.commit("setAddr", this.addr);
         this.$store.commit("setCode", this.code);
+        
+        console.log(this.$store.state.code)
 
-        const info = {
-            name : this.$store.state.name,
-            addr : this.$store.state.addr,
-            phone : this.$store.state.phone,
-            code : this.$store.state.code,
-          }
+        this.$router.push({name: 'RegRecord',});
 
-        axios.post("http://localhost:8081/api/ai/form", info)
-            .then((res) => {
-                    if(res.data){ // 등록이 되면
-                        this.$router.push({name: 'RegRecord',});
-                        console.log('success')
-                    } else {
-                        console.log('fail')
-                    }
-                } 
-            )
-            .catch((err) => {
-                alert('Error ', err)
-                });
+        // const info = {
+        //     name : this.$store.state.name,
+        //     addr : this.$store.state.addr,
+        //     phone : this.$store.state.phone,
+        //     code : this.$store.state.code,
+        //   }
+
+        // axios.post("http://localhost:8081/api/ai/form", info)
+        //     .then((res) => {
+        //             if(res.data){ // 등록이 되면
+        //                 this.$router.push({name: 'RegRecord',});
+        //                 console.log('success')
+        //             } else {
+        //                 console.log('fail')
+        //             }
+        //         } 
+        //     )
+        //     .catch((err) => {
+        //         alert('Error ', err)
+        //         });
     },
   },
 

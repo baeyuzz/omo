@@ -16,20 +16,32 @@
             </div>
             <div class="list">
                     <table>
-                        <tbody>
+                        <thead>
                             <tr>
-                                <td>이름</td>
-                                <td>번호</td>
-                                <td>삭제</td>
+                                <th>이름</th>
+                                <th>번호</th>
+                                <th>삭제</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr v-for="member in memberList" :key="member">
                                 <td>member.name</td>
                                 <td>member.phone</td>
                                 <td class="remove" @click="remove(member.name, member.phone)"><i class="far fa-trash-alt"></i></td> 
                             </tr>
                             <tr>
-                                <td>asdf</td>
-                                <td>010</td>
+                                <td>김청하</td>
+                                <td>010-9875-7890</td>
+                                <td class="remove"><i class="far fa-trash-alt"></i></td> 
+                            </tr>
+                            <tr>
+                                <td>김민규</td>
+                                <td>010-6543-1534</td>
+                                <td class="remove"><i class="far fa-trash-alt"></i></td> 
+                            </tr>
+                            <tr>
+                                <td>유연석</td>
+                                <td>010-4565-1232</td>
                                 <td class="remove"><i class="far fa-trash-alt"></i></td> 
                             </tr>
                         </tbody>
@@ -60,8 +72,14 @@ export default {
         //   let code = 'ssafy';
         let code = this.$store.state.code
 
-          axios.get(`http://localhost:8081/api/ai/train?code=${code}`)
-          alert("음성데이터를 훈련 시킵니다 ! ")
+            alert("음성데이터를 훈련 시킵니다 !")
+            axios.get(`http://localhost:8081/api/ai/train?code=${code}`)
+            .then(()=>{
+                alert("음성데이터 훈련이 끝났습니다")
+            })
+            .cath((err)=>{
+                alert("음성데이터 훈련 실패 ", err)
+            })
       },
       remove(name, phone){
           const info = {
@@ -118,6 +136,12 @@ table {
 }
 td {
     width: 33%;
+}
+tbody td {
+    padding: 10px;
+}
+th {
+    padding-bottom : 20px;
 }
 .remove {
     cursor: pointer;

@@ -12,7 +12,7 @@
         </router-link>
       </div>
 
-      <div>
+      <!-- <div>
         <router-link to="/chat/123" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/frame.png" width="170px" height="170px;" />
@@ -20,7 +20,7 @@
           <p>명부 작성 -yw</p>
         </router-link>
       </div>
-      
+       -->
       <div>
         <router-link to="/account" style="text-decoration:none">
           <div class="icons">

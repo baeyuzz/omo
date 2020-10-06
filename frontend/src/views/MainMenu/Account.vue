@@ -27,7 +27,7 @@
       <div>
         <router-link to="/voiceReg" style="text-decoration:none">
           <div class="icons">
-            <img src="@/assets/mic.png" width="90px" height="120px;" />
+            <img src="@/assets/mic.png" width="130px" height="130px;" />
           </div>
           <p>음성 등록</p>
         </router-link>

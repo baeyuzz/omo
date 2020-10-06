@@ -13,18 +13,56 @@
             <div class="list">
                 <!-- <div v-if="visitorlogs != ''"> -->
                     <table>
-                        <tbody>
+                        <thead>
                             <tr>
-                                <td>날짜</td>
-                                <td>이름</td>
+                                <th>날짜</th>
+                                <th>이름</th>
+                                <th>번호</th>
+                                <th>주소</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr v-for="log in visitorlogs" :key="log">
                                 <td>log.visitTime</td>
                                 <td>log.name</td>
+                                <td>log.phone</td>
+                                <td>log.address</td>
+                            </tr>
+                            <tr>
+                                <td>2020/10/05 14:46:35</td>
+                                <td>배재원</td>
+                                <td>010-1234-5678</td>
+                                <td>경기 성남</td>
+                            </tr>
+                            <tr>
+                                <td>2020/09/25 20:35:13</td>
+                                <td>김강현</td>
+                                <td>010-6564-5678</td>
+                                <td>서울 관악</td>
+                            </tr>
+                            <tr>
+                                <td>2020/09/25 16:38:24</td>
+                                <td>김강현</td>
+                                <td>010-6564-5678</td>
+                                <td>서울 관악</td>
+                            </tr>
+                            <tr>
+                                <td>2020/09/25 15:10:51</td>
+                                <td>최문경</td>
+                                <td>010-6547-3215</td>
+                                <td>서울 송파</td>
                             </tr>
                             <tr>
                                 <td>2020/09/24 19:30:23</td>
-                                <td>유진,,</td>
+                                <td>배유진</td>
+                                <td>010-3030-4565</td>
+                                <td>경기 하남</td>
+                            </tr>
+                            <tr>
+                                <td>2020/09/24 11:43:20</td>
+                                <td>정용우</td>
+                                <td>010-6547-3214</td>
+                                <td>서울 관악</td>
                             </tr>
                         </tbody>
                     </table>
@@ -87,6 +125,10 @@ table {
     text-align: center;
 }
 td {
-    width: 50%;
+    width: 25%;
+    padding : 10px;
+}
+th {
+    padding-bottom: 20px;
 }
 </style>
