@@ -2,6 +2,7 @@ package com.ssafy.omo.controller;
 
 import com.ssafy.omo.exception.AppException;
 import com.ssafy.omo.exception.BlogapiException;
+import com.ssafy.omo.exception.ResourceNotFoundException;
 import com.ssafy.omo.model.role.Role;
 import com.ssafy.omo.model.role.RoleName;
 import com.ssafy.omo.model.user.User;
@@ -9,6 +10,7 @@ import com.ssafy.omo.payload.ApiResponse;
 import com.ssafy.omo.payload.JwtAuthenticationResponse;
 import com.ssafy.omo.payload.LoginRequest;
 import com.ssafy.omo.payload.SignUpRequest;
+import com.ssafy.omo.repository.RoleRepository;
 import com.ssafy.omo.repository.UserRepository;
 import com.ssafy.omo.security.JwtTokenProvider;
 import io.swagger.annotations.Api;
@@ -41,8 +43,8 @@ public class AuthController {
 	@Autowired
 	private UserRepository userRepository;
 
-//	@Autowired
-//	private RoleRepository roleRepository;
+	@Autowired
+	private RoleRepository roleRepository;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -58,7 +60,11 @@ public class AuthController {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
 		String jwt = jwtTokenProvider.generateToken(authentication);
-		return ResponseEntity.ok(new JwtAuthenticationResponse(jwt,loginRequest.getUsernameOrEmail()));
+		System.out.println(jwt);
+		User curUser = userRepository.findByEmail(loginRequest.getUsernameOrEmail()).orElseThrow(
+				() -> new ResourceNotFoundException("User", "id", loginRequest.getUsernameOrEmail()));
+		String userName = curUser.getUsername();
+		return ResponseEntity.ok(new JwtAuthenticationResponse(jwt,userName));
 	}
 
 	@PostMapping("/signup")
@@ -81,6 +87,11 @@ public class AuthController {
 
 		List<Role> roles = new ArrayList<>();
 
+		roles.add(roleRepository.findByName(RoleName.ROLE_USER)
+					.orElseThrow(() -> new AppException(USER_ROLE_NOT_SET)));
+		roles.add(roleRepository.findByName(RoleName.ROLE_ADMIN)
+					.orElseThrow(() -> new AppException(USER_ROLE_NOT_SET)));
+
 //		if (userRepository.count() == 0) {
 //			roles.add(roleRepository.findByName(RoleName.ROLE_USER)
 //					.orElseThrow(() -> new AppException(USER_ROLE_NOT_SET)));
@@ -90,8 +101,8 @@ public class AuthController {
 //			roles.add(roleRepository.findByName(RoleName.ROLE_USER)
 //					.orElseThrow(() -> new AppException(USER_ROLE_NOT_SET)));
 //		}
-//
-//		user.setRoles(roles);
+
+		user.setRoles(roles);
 
 		User result = userRepository.save(user);
 

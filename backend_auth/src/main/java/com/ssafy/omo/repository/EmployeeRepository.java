@@ -10,7 +10,4 @@ import java.util.List;
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 	List<Employee> findByCreatedBy(Long userId);
 	Long countByCreatedBy(Long userId);
-	Employee findByPhone(String phone);
-	Employee findByPhoneAndName(String name, String phone);
-	void deleteByPhone(String phone);
 }

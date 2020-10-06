@@ -20,8 +20,4 @@ public class EmployeeRequest {
 	@Size(min = 50)
 	private String address;
 
-	@NotBlank
-	@Size(min = 50)
-	private String userId;
-
 }

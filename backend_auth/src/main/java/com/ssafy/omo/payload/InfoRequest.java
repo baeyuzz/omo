@@ -3,26 +3,21 @@ package com.ssafy.omo.payload;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Data
 public class InfoRequest {
 
 	@NotBlank
-	private String street;
+	@Size(min = 10)
+	private String name;
 
 	@NotBlank
-	private String suite;
-
-	@NotBlank
-	private String city;
-
-	@NotBlank
-	private String zipcode;
-
-	private String bs;
-
-	private String website;
-
+	@Size(min = 50)
 	private String phone;
+
+	@NotBlank
+	@Size(min = 50)
+	private String address;
 
 }

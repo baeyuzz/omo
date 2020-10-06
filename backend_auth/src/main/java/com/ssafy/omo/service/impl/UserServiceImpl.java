@@ -6,6 +6,7 @@ import com.ssafy.omo.model.role.RoleName;
 import com.ssafy.omo.model.user.User;
 import com.ssafy.omo.payload.*;
 import com.ssafy.omo.repository.EmployeeRepository;
+import com.ssafy.omo.repository.RoleRepository;
 import com.ssafy.omo.repository.UserRepository;
 import com.ssafy.omo.security.UserPrincipal;
 import com.ssafy.omo.service.UserService;
@@ -26,8 +27,8 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 
-//	@Autowired
-//	private RoleRepository roleRepository;
+	@Autowired
+	private RoleRepository roleRepository;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -69,11 +70,11 @@ public class UserServiceImpl implements UserService {
 			ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "Email is already taken");
 			throw new BadRequestException(apiResponse);
 		}
-//
-//		List<Role> roles = new ArrayList<>();
-//		roles.add(
-//				roleRepository.findByName(RoleName.ROLE_USER).orElseThrow(() -> new AppException("User role not set")));
-//		user.setRoles(roles);
+
+		List<Role> roles = new ArrayList<>();
+		roles.add(
+				roleRepository.findByName(RoleName.ROLE_USER).orElseThrow(() -> new AppException("User role not set")));
+		user.setRoles(roles);
 
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return userRepository.save(user);
@@ -111,29 +112,29 @@ public class UserServiceImpl implements UserService {
 		return new ApiResponse(Boolean.TRUE, "You successfully deleted profile of: " + username);
 	}
 
-//	@Override
-//	public ApiResponse giveAdmin(String username) {
-//		User user = userRepository.getUserByName(username);
-//		List<Role> roles = new ArrayList<>();
-////		roles.add(roleRepository.findByName(RoleName.ROLE_ADMIN)
-////				.orElseThrow(() -> new AppException("User role not set")));
-////		roles.add(
-////				roleRepository.findByName(RoleName.ROLE_USER).orElseThrow(() -> new AppException("User role not set")));
-////		user.setRoles(roles);
-//		userRepository.save(user);
-//		return new ApiResponse(Boolean.TRUE, "You gave ADMIN role to user: " + username);
-//	}
-//
-//	@Override
-//	public ApiResponse removeAdmin(String username) {
-//		User user = userRepository.getUserByName(username);
-//		List<Role> roles = new ArrayList<>();
-//		roles.add(
-//				roleRepository.findByName(RoleName.ROLE_USER).orElseThrow(() -> new AppException("User role not set")));
-//		user.setRoles(roles);
-//		userRepository.save(user);
-//		return new ApiResponse(Boolean.TRUE, "You took ADMIN role from user: " + username);
-//	}
+	@Override
+	public ApiResponse giveAdmin(String username) {
+		User user = userRepository.getUserByName(username);
+		List<Role> roles = new ArrayList<>();
+		roles.add(roleRepository.findByName(RoleName.ROLE_ADMIN)
+				.orElseThrow(() -> new AppException("User role not set")));
+		roles.add(
+				roleRepository.findByName(RoleName.ROLE_USER).orElseThrow(() -> new AppException("User role not set")));
+		user.setRoles(roles);
+		userRepository.save(user);
+		return new ApiResponse(Boolean.TRUE, "You gave ADMIN role to user: " + username);
+	}
+
+	@Override
+	public ApiResponse removeAdmin(String username) {
+		User user = userRepository.getUserByName(username);
+		List<Role> roles = new ArrayList<>();
+		roles.add(
+				roleRepository.findByName(RoleName.ROLE_USER).orElseThrow(() -> new AppException("User role not set")));
+		user.setRoles(roles);
+		userRepository.save(user);
+		return new ApiResponse(Boolean.TRUE, "You took ADMIN role from user: " + username);
+	}
 
 	@Override
 	public UserProfile setOrUpdateInfo(UserPrincipal currentUser, InfoRequest infoRequest) {
