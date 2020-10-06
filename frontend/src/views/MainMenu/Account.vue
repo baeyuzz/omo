@@ -96,9 +96,10 @@ export default {
       };
     },
     logout() {
-      this.$router.push({
-        name: "Home",
-      });
+      this.$store.commit("clearMember");
+      this.$store.commit("logout");
+      this.$cookies.remove("token")
+      this.$router.push('/')
     },
   },
   mounted() {

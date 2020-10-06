@@ -18,7 +18,8 @@
 
 <script>
 import SignUp from "@/components/SignUp.vue";
-import constants from "@/lib/constants.js";
+// import constants from "@/lib/constants.js";
+import { loginUser } from "@/lib/userApi.js";
 
 export default {
   name: "Login.vue",
@@ -31,11 +32,19 @@ export default {
     },
     signIn() {
       let data = {
-        email: this.email,
+        usernameOrEmail: this.email,
         password: this.password,
       };
-      alert("현재 준비중입니다.");
-      this.$store.dispatch(constants.METHODS.LOGIN_USER, data);
+      loginUser(data)
+      .then((res)=>{
+        this.$store.commit('setToken', res.data.jwt);
+        this.$store.commit('setCode', res.data.code);
+      })
+      .catch((err)=>{
+        alert(err)
+      });
+      // alert("현재 준비중입니다.");
+      // this.$store.dispatch(constants.METHODS.LOGIN_USER, data);
     },
   },
   data() {
