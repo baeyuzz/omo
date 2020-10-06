@@ -18,8 +18,8 @@ def main(argv):
     # path 설정
     code = argv[1]  # 기관명
 
-    default_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code))
-    model_path = os.path.join(os.path.join("C:\ssafy\project2\pjt3\s03p23a509\AI\Voice", code), 'model.h5')
+    default_path = os.path.join(os.path.join(os.path.abspath(__file__)).replace('voiceRecognition.py',''), code)
+    model_path = os.path.join(default_path, 'model.h5')
     DATA_PATH = os.path.join(default_path, 'data')
 
     # load_wave_generator(DATA_PATH)
