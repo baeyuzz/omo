@@ -12,8 +12,8 @@ spring:
 
    datasource:
      driver-class-name: org.mariadb.jdbc.Driver
-    #  url: jdbc:mariadb://j3a509.p.ssafy.io:3306/visitor?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
-     url: jdbc:mariadb://localhost:3306/visitor?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+     url: jdbc:mariadb://j3a509.p.ssafy.io:3306/visitor?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    #  url: jdbc:mariadb://localhost:3306/visitor?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
      username: root
-     password: mariadb
+     password: dhahdhah1!
      initialization-mode: always
