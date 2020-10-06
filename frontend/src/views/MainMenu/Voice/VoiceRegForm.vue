@@ -48,7 +48,9 @@
 <script>
 
 import Nav from '@/components/Nav.vue'
-import http from '@/http-common.js'
+// import http from '@/http-common.js'
+import axios from "axios";
+
 export default {
   name: 'VoiceRegForm',
   components: {
@@ -66,22 +68,18 @@ export default {
     async submitForm() {
         if(this.code.length == 0) {
             alert('기관 코드를 입력하세요');
-            this.$refs.code.focus();
             return;
         }
         if(this.name.length == 0) {
-                alert('이름을 입력하세요');
-                this.$refs.name.focus();
-                return;
+            alert('이름을 입력하세요');
+            return;
         }
         if(this.phone.length == 0) {
             alert('휴대 전화를 입력하세요');
-            this.$refs.phone.focus();
             return;
         }
         if(this.addr.length == 0) {
             alert('주소를 입력하세요');
-            this.$refs.addr.focus();
             return;
         }
 
@@ -90,9 +88,16 @@ export default {
         this.$store.commit("setAddr", this.addr);
         this.$store.commit("setCode", this.code);
 
-        http.post('/아직안정해짐')
+        const info = {
+            name : this.$store.state.name,
+            addr : this.$store.state.addr,
+            phone : this.$store.state.phone,
+            code : this.$store.state.code,
+          }
+
+        axios.post("http://localhost:8081/api/form", info)
             .then((res) => {
-                    if(res.data.state){ // 등록이 되면
+                    if(res.data){ // 등록이 되면
                         this.$router.push({name: 'RegRecord',});
                         console.log('success')
                     } else {
@@ -101,7 +106,6 @@ export default {
                 } 
             )
             .catch((err) => {
-                this.$router.push({name: 'RegRecord',});
                 alert('Error ', err)
                 });
     },
