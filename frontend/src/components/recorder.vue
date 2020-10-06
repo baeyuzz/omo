@@ -206,11 +206,11 @@
           @click.native="stopRecorder"/>
       </div>
 
-      <div class="ar-recorder__records-limit" v-if="attempts">Attempts: {{attemptsLeft}}/{{attempts}}</div>
+      <!-- <div class="ar-recorder__records-limit" v-if="attempts">Attempts: {{attemptsLeft}}/{{attempts}}</div> -->
       <div class="ar-recorder__duration">{{recordedTime}}</div>
-      <div class="ar-recorder__time-limit" v-if="time">Record duration is limited: {{time}}m</div>
+      <div class="ar-recorder__time-limit" v-if="time">Record duration is limited: {{time*60}} seconds</div>
 
-      <div class="ar-records">
+      <!-- <div class="ar-records">
         <div
           class="ar-records__record"
           :class="{'ar-records__record--selected': record.id === selected.id}"
@@ -238,19 +238,19 @@
               :headers="headers"
               :upload-url="uploadUrl"/>
         </div>
-      </div>
+      </div> -->
 
-      <audio-player :record="selected"/>
+      <!-- <audio-player :record="selected"/> -->
     </div>
   </div>
 </template>
 
 <script>
-  import AudioPlayer from './player'
-  import Downloader  from './downloader'
+  // import AudioPlayer from './player'
+  // import Downloader  from './downloader'
   import IconButton  from './icon-button'
   import Recorder    from '@/lib/recorder'
-  import Uploader    from './uploader'
+  // import Uploader    from './uploader'
   import UploaderPropsMixin from '@/mixins/uploader-props'
   import { convertTimeMMSS }  from '@/lib/utils'
 
@@ -287,10 +287,10 @@
       }
     },
     components: {
-      AudioPlayer,
-      Downloader,
+      // AudioPlayer,
+      // Downloader,
+      // Uploader,
       IconButton,
-      Uploader
     },
     mounted () {
       this.$eventBus.$on('start-upload', () => {

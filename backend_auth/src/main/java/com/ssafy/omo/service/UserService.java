@@ -19,11 +19,10 @@ public interface UserService {
 	User updateUser(User newUser, String username, UserPrincipal currentUser);
 
 	ApiResponse deleteUser(String username, UserPrincipal currentUser);
-
-	ApiResponse giveAdmin(String username);
-
-	ApiResponse removeAdmin(String username);
+//
+//	ApiResponse giveAdmin(String username);
+//
+//	ApiResponse removeAdmin(String username);
 
 	UserProfile setOrUpdateInfo(UserPrincipal currentUser, InfoRequest infoRequest);
-
 }

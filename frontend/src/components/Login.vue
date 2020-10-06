@@ -1,30 +1,28 @@
 <template>
   <div class="login">
-    <transition name="slide-fade" mode="out-in">
-      <div id="loginForm" v-if="!isShow">
+    <!-- <transition name="slide-fade" mode="out-in"> -->
+      <div id="loginForm">
         <input class="loginInput" placeholder="email" v-model="email" />
         <br />
         <input class="loginInput" type="password" placeholder="password" v-model="password" />
         <br />
         <button class="loginBtn" @click="signIn">Login</button>
 
-        <h5>아직 회원이 아니세요?</h5>
-        <button @click="openSignUp">회원가입</button>
+        
       </div>
-      <SignUp v-else v-on:reTurn="openSignUp" />
-    </transition>
+    <!-- </transition> -->
   </div>
 </template>
 
 <script>
-import SignUp from "@/components/SignUp.vue";
+// import SignUp from "@/components/SignUp.vue";
 // import constants from "@/lib/constants.js";
 import { loginUser } from "@/lib/userApi.js";
 
 export default {
-  name: "Login.vue",
+  name: "Login",
   components: {
-    SignUp,
+    // SignUp,
   },
   methods: {
     openSignUp() {
@@ -62,7 +60,7 @@ export default {
   position: absolute;
   width: 90%;
   margin: 0% 5%;
-  bottom: 5%;
+  top: 65%;
   text-align: center;
 }
 .loginInput {
@@ -104,19 +102,4 @@ button:hover {
   color: #ffffffbb;
 }
 
-.slide-fade-enter-active {
-  transition: all 0.3s;
-}
-.slide-fade-leave-active {
-  transition: all 0.3s;
-}
-.slide-fade-enter
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
-.slide-fade-leave-to {
-  transform: translateX(-10px);
-  opacity: 0;
-}
 </style>

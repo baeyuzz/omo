@@ -3,7 +3,7 @@
     <Nav />
 
     <div class="menu">
-      <div>
+      <div style="padding-right : 2%;">
         <router-link to="/chat/123" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/frame.png" width="170px" height="170px;" />
@@ -11,8 +11,7 @@
           <p>명부 작성</p>
         </router-link>
       </div>
-       -->
-      <div>
+      <div style="padding-left : 2%;">
         <router-link to="/account" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/key.png" width="170px" height="170px;"/>
@@ -66,7 +65,7 @@ export default {
     top : 40%;
     width: 30%;
     text-align: center;
-    padding: 0 35% 0 35%;
+    padding: 0 33% 0 33%;
     display: flex;
     z-index: 2;
     justify-items: center;
