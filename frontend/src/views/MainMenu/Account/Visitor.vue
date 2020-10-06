@@ -23,46 +23,10 @@
                         </thead>
                         <tbody>
                             <tr v-for="log in visitorlogs" :key="log">
-                                <td>log.visitTime</td>
-                                <td>log.name</td>
-                                <td>log.phone</td>
-                                <td>log.address</td>
-                            </tr>
-                            <tr>
-                                <td>2020/10/05 14:46:35</td>
-                                <td>배재원</td>
-                                <td>010-1234-5678</td>
-                                <td>경기 성남</td>
-                            </tr>
-                            <tr>
-                                <td>2020/09/25 20:35:13</td>
-                                <td>김강현</td>
-                                <td>010-6564-5678</td>
-                                <td>서울 관악</td>
-                            </tr>
-                            <tr>
-                                <td>2020/09/25 16:38:24</td>
-                                <td>김강현</td>
-                                <td>010-6564-5678</td>
-                                <td>서울 관악</td>
-                            </tr>
-                            <tr>
-                                <td>2020/09/25 15:10:51</td>
-                                <td>최문경</td>
-                                <td>010-6547-3215</td>
-                                <td>서울 송파</td>
-                            </tr>
-                            <tr>
-                                <td>2020/09/24 19:30:23</td>
-                                <td>배유진</td>
-                                <td>010-3030-4565</td>
-                                <td>경기 하남</td>
-                            </tr>
-                            <tr>
-                                <td>2020/09/24 11:43:20</td>
-                                <td>정용우</td>
-                                <td>010-6547-3214</td>
-                                <td>서울 관악</td>
+                                <td>{{log.visitTime}}</td>
+                                <td>{{log.name}}</td>
+                                <td>{{log.phone}}</td>
+                                <td>{{log.address}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -93,8 +57,7 @@ export default {
   created () {
       http.get("api/visitors/"+ this.$store.state.code)
       .then(res =>{
-          this.visitorlogs = res;
-          console.log(res);
+          this.visitorlogs = res.data;
       })
       .catch( err =>{
           console.log(err)
