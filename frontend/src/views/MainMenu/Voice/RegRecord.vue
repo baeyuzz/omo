@@ -56,11 +56,11 @@ export default {
 <style scoped>
 
 #recordernscript {
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center;
   justify-items: center;
   margin: auto;
-  margin-top : 40px;
+  margin-top : 40px; */
 }
 #notice {
   /* width: 50%; */
@@ -75,8 +75,10 @@ export default {
   border-radius: 15px;
   padding : 30px;
   height: 325px;
-  width: 370px;
-  
+  width: 360px;
+  margin : auto;
+  padding: auto;
+  margin-top : 10px;
 }
 
 #notice::-webkit-scrollbar {

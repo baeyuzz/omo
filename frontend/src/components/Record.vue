@@ -1,7 +1,9 @@
 <template>
   <div class="record">
-
-    <div class="recorder">
+    <div v-if="!isLoading">
+      <Loading/>
+    </div>
+    <div v-else class="recorder">
       <audio-recorder
           :attempts=attempts
           :time=time
@@ -22,19 +24,23 @@
 <script>
 import Vue from 'vue'
 import AudioRecorder from '@/index.js'
+import Loading from "@/components/loading.vue";
 
 // import http from '@/http-common.js'
 import axios from "axios";
-
 
 Vue.use(AudioRecorder)
 
 export default {
     name: 'Record',
-        data() {
-            return {
-            }
-        },
+     components: {
+       Loading
+    },
+    data() {
+      return {
+        isLoading: true,
+        }
+    },
     props: {
       time :{
         type: Number,
@@ -60,6 +66,8 @@ export default {
         console.debug(data)
       },
       upload(data){
+        console.log(this.$store.state.code)
+        this.isLoading = false;
         // console.log(data.blob)
 
         // this.$store.state.code = "team9"
@@ -79,30 +87,36 @@ export default {
 
         if(!this.uploadBtn){ // 업로드 버튼이 false면 자동 업로드 -> 명부 작성 시 사용
           
+
           const info = {
             code : this.$store.state.code,
           }
           axios.post("http://localhost:8081/api/ai/uploadAudio4list", audio, {headers : info})
           .then(resp => {
             console.log(resp.data)
-     
-          var confirm_test = confirm(resp.data + "님이 맞으신가요?");
-          
-          if ( confirm_test == true ) {
-            let today = new Date();
-            alert(resp.data+"님 " + today + "방문" )
-            this.$router.push({
-              name: "Main",
-              });
+            var confirm_test = confirm(resp.data + "님이 맞으신가요?");
+            
+            if ( confirm_test == true ) {
+              let today = new Date();
+              alert(resp.data+"님 " + today + "방문" )
+              this.$router.push({name: "Main"});
           } else if ( confirm_test == false ) {
             alert("다시 녹음해 주세요")
+            this.isLoading = true;
           }
           })
           .catch(error => {
-            console.log(error)
+            // console.log(error)
+            alert(error)
+            this.isLoading = true;
+
           })
+          
+
         }
         else {
+          console.log(this.$store.state.code)
+          this.isLoading = false;
           const info = {
             name : this.$store.state.name,
             addr : this.$store.state.addr,
@@ -120,14 +134,13 @@ export default {
               this.$store.commit("setAddr", '');
               
               alert ('등록 되었습니다')
-              this.$router.push({
-                name: "Main",
-                });
+              this.$router.push({ name: "Main" });
               }
           })
           .catch(error => {
-            console.log(audio)
-            console.log(error)
+            alert(error)
+            this.isLoading = true;
+
           })
         }
       },
