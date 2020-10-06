@@ -54,7 +54,17 @@ body {
   #yep {display: inherit;}
 }
 
-@media screen and (max-width: 800px) { 
+@media screen and (max-width: 800px){ 
+  #nope { display:inherit } 
+  #app { 
+    height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    }
+  #yep {display: none;}
+}
+@media screen and  (max-height : 750px) { 
   #nope { display:inherit } 
   #app { 
     height: 100vh;

@@ -17,11 +17,28 @@
         </div>
       </div>
     </div>
-    <Login/>
+    <div class="loginORjoin">
+      <a class="toggle" @click="openLogin">
+        <span v-if="!isShow" style="color : rgb(209, 209, 209);"> 로그인 </span>
+        <span v-else> 로그인 </span>
+      </a>
+      
+      <a class="toggle" @click="openSignUp">
+        <span v-if="isShow" style="color : rgb(209, 209, 209);"> 회원가입 </span>
+        <span v-else> 회원가입 </span>
+
+      </a>
+    </div>
+    <transition name="slide-fade" mode="out-in">
+      <Login v-if="!isShow" />
+      <SignUp v-else />
+    </transition>
+ 
   </div>
 </template>
 
 <script>
+import SignUp from '@/components/SignUp.vue'
 import Login from '@/components/Login.vue'
 import Nav from '@/components/Nav.vue'
 
@@ -29,7 +46,24 @@ export default {
   name: 'Home',
   components: {
     Login,
-    Nav
+    Nav,
+    SignUp
+  },
+  data() {
+    return {
+      isShow: false,
+    };
+  },
+
+  methods: {
+    openLogin() {
+     
+      this.isShow = false;
+    },
+    openSignUp() {
+      
+      this.isShow = true;
+    },
   }
 }
 </script>
@@ -38,7 +72,7 @@ export default {
   padding-left : 7%;
 }
 .ment {
-  margin  : 5% 0 10% 0;
+  margin  : 5% 0 5% 0;
 
 }
 h2 {
@@ -52,5 +86,36 @@ h1 {
 .desc {
   font-size: 24px;
 }
+
+.slide-fade-enter-active {
+  transition: all 0.3s;
+}
+.slide-fade-leave-active {
+  transition: all 0.3s;
+}
+.slide-fade-enter
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.slide-fade-leave-to {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+.loginORjoin {
+  position: absolute;
+  width: 90%;
+  margin: 0% 5%;
+  top: 60%;
+  text-align: center;
+}
+a {
+  padding : 15px;
+  background: none;
+  outline: none;
+  border: none;
+  color: white;
+}
+
 
 </style>
