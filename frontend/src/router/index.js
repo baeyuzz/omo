@@ -10,7 +10,8 @@ Vue.use(VueRouter)
 const routes = [{
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    beforeEnter: requireLogout,
   },
   {
     path: '/main',
@@ -111,6 +112,10 @@ const router = new VueRouter({
 
 function requireLogin(to, from, next) {
   cookies.get('token') != null ?next() : next('/'); // 지금은 임시로 == 해놓음 ~
+}
+
+function requireLogout(to, from, next) {
+  cookies.get('token') == null ? next() : next('/main');
 }
 
 export default router
