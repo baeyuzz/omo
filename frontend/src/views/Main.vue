@@ -4,20 +4,11 @@
 
     <div class="menu">
       <div>
-        <router-link to="/createList" style="text-decoration:none">
-          <div class="icons">
-            <img src="@/assets/frame.png" width="170px" height="170px;" />
-          </div>
-          <p>명부 작성</p>
-        </router-link>
-      </div>
-
-      <div>
         <router-link to="/chat/123" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/frame.png" width="170px" height="170px;" />
           </div>
-          <p>명부 작성 -yw</p>
+          <p>명부 작성</p>
         </router-link>
       </div>
       

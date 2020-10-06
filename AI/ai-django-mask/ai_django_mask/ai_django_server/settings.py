@@ -25,7 +25,11 @@ SECRET_KEY = 'ek8ai=2qv$mrk*q9h(r%q029le$j-m=*=8ontq-#ewl6a4&f$a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+  '*'
+  # 'localhost',
+  # aws주소 넣어줘야함
+]
 
 
 # Application definition

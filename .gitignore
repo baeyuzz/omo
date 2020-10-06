@@ -12,3 +12,5 @@ frontend/package-lock.json
 
 # Ignore Gradle build output directory
 build
+
+.pyc

@@ -24,13 +24,17 @@ from .models import Capture, Chat
 
 
 def index(request):
-    print(request)
-    return render(request, 'chat/index.html', {})
+  print(request)
+  return render(request, 'chat/index.html', {})
+
+def stop(request):
+  vs = VideoStream(src=0).stop()
+  return 
 
 def room(request, room_name):
   # do a bit of cleanup
   cv2.destroyAllWindows()
-  vs = VideoStream(src=0)
+  vs = VideoStream(src=0).stop()
   def detect_and_predict_mask(frame, faceNet, maskNet):
     # grab the dimensions of the frame and then construct a blob
     # from it
@@ -70,7 +74,8 @@ def room(request, room_name):
         # extract the face ROI, convert it from BGR to RGB channel
         # ordering, resize it to 224x224, and preprocess it
         face = frame[startY:endY, startX:endX]
-        face = cv2.cvtColor(face, cv2.COLOR_BGR2RGB)
+        
+        # face = cv2.cvtColor(face, cv2.COLOR_BGR2RGB)
         face = cv2.resize(face, (224, 224))
         face = img_to_array(face)
         face = preprocess_input(face)
@@ -102,7 +107,7 @@ def room(request, room_name):
 
   # load the face mask detector model from disk
   print("[INFO] loading face mask detector model...")
-  maskNet = load_model("mask_detector_all.model")
+  maskNet = load_model("mask_detector.model")
 
   # initialize the video stream and allow the camera sensor to warm up
   print("[INFO] starting video stream...")
@@ -114,8 +119,8 @@ def room(request, room_name):
   value = [False] * LENGTH
   i = 0
   frame = None
-  result = {'result': 'a'}
-  while True:
+  isOver = False
+  while not isOver:
     # grab the frame from the threaded video stream and resize it
     # to have a maximum width of 400 pixels
     
@@ -165,10 +170,12 @@ def room(request, room_name):
       with open(filename, "rb") as capture:
         encoded_string = base64.b64encode(capture.read()).decode('utf-8')
       capture.close()
-      if value.count(True) == LENGTH - ALLOW: 
+      if value.count(True) >= LENGTH - ALLOW: 
         ins.check = True 
         print('CHECKED@@@@@@@@@@@@@@@@@2')
+        isOver = True
         value = [False] * LENGTH
+        
       else: ins.check = False
       # capture = np.fromstring(frame.getvalue(), dtype='uint8')
       # encoded_string = cv2.imdecode(capture, cv2.IMREAD_COLOR)
@@ -192,4 +199,4 @@ def room(request, room_name):
   # do a bit of cleanup
   cv2.destroyAllWindows()
   vs.stop()
-  return JsonResponse(result)
+  return JsonResponse({'result': 'success'})

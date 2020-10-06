@@ -5,11 +5,11 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from channels.layers import get_channel_layer
 from .models import Chat
+from imutils.video import VideoStream
 
 @receiver(post_save, sender=Chat)
 def announce_chats(sender, instance, created, **kwargs):
     if created:
-        print(instance.check)
         channel_layer=get_channel_layer()
         async_to_sync(channel_layer.group_send)(
             "chat_123", {
@@ -38,6 +38,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             self.room_group_name,
             self.channel_name
         )
+        vs = VideoStream(src=0).stop()
 
     # Receive message from WebSocket
     async def receive(self, text_data):
