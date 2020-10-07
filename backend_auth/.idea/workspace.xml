@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -32,81 +35,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be227e13-619a-489d-8166-3b9497ebcabf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/BlogApiApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/AuditingConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/AuditingConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/CORSFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/CORSFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/SecutiryConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/SecutiryConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/AccessDeniedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/AccessDeniedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/AppException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/AppException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/BadRequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/BadRequestException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/BlogapiException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/BlogapiException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/ResponseEntityErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/ResponseEntityErrorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/RestControllerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/RestControllerExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/UnauthorizedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/exception/UnauthorizedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/audit/DateAudit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/audit/DateAudit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/audit/UserDateAudit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/audit/UserDateAudit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/role/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/role/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/role/RoleName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/role/RoleName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/ApiResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/DateAuditPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/DateAuditPayload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/EmployeeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/EmployeeRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/EmployeeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/EmployeeResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/ExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/ExceptionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/InfoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/InfoRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/JwtAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/JwtAuthenticationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/SignUpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/UserDateAuditPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/UserDateAuditPayload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/UserIdentityAvailability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/UserIdentityAvailability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/UserProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/UserSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/payload/UserSummary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/repository/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/repository/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/security/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/security/CurrentUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/security/JwtAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/security/JwtAuthenticationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/security/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/security/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/security/UserPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/impl/CustomUserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/impl/CustomUserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/utils/AppConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/utils/AppConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/account-activity-change.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/account-activity-change.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/circle-invite.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/circle-invite.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/email-verification.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/email-verification.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reset-link.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reset-link.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ssafy/AuthApp/cache/LoggedOutJwtTokenCacheTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ssafy/AuthApp/cache/LoggedOutJwtTokenCacheTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ssafy/AuthApp/security/JwtTokenProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ssafy/AuthApp/security/JwtTokenProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ssafy/AuthApp/security/JwtTokenValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ssafy/AuthApp/security/JwtTokenValidatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../새 폴더 (2)/s03p23a509" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../진짜/s03p23a509" beforeDir="false" afterPath="$PROJECT_DIR$/../../../진짜/s03p23a509" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,12 +90,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.23" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="ReactorSettings">
@@ -233,34 +162,8 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AuthAppApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="chat_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.accolite.pru.health.AuthApp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.accolite.pru.health.AuthApp.AuthAppApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="chat.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.accolite.pru.health.AuthApp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.accolite.pru.health.AuthApp.AuthAppApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BlogApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="chat_main" />
+      <module name="chat.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.ssafy.omo.*" />
@@ -275,21 +178,17 @@
     <list>
       <item itemvalue="Gradle.JwtTokenProviderTest.testGetUserIdFromJWT" />
       <item itemvalue="Gradle.JwtTokenProviderTest.validateToken" />
-      <item itemvalue="Spring Boot.AuthAppApplication" />
-      <item itemvalue="Spring Boot.AuthAppApplication (1)" />
       <item itemvalue="Spring Boot.BlogApiApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.BlogApiApplication" />
-        <item itemvalue="Spring Boot.AuthAppApplication (1)" />
-        <item itemvalue="Spring Boot.AuthAppApplication" />
-        <item itemvalue="Gradle.JwtTokenProviderTest.testGetUserIdFromJWT" />
         <item itemvalue="Gradle.JwtTokenProviderTest.validateToken" />
+        <item itemvalue="Gradle.JwtTokenProviderTest.testGetUserIdFromJWT" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -315,11 +214,12 @@
       <workItem from="1601881911613" duration="7000" />
       <workItem from="1601997571174" duration="3724000" />
       <workItem from="1602001345269" duration="17000" />
+      <workItem from="1602003084425" duration="574000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -333,6 +233,12 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$USER_HOME$" />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
     <state x="415" y="6" key="#AuthAppApplication" timestamp="1597564961311">
       <screen x="0" y="0" width="1536" height="824" />
@@ -342,10 +248,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="415" y="6" key="#AuthAppApplication_(1)/0.0.1536.824@0.0.1536.824" timestamp="1597539505237" />
-    <state x="304" y="187" width="1213" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597737605669">
+    <state x="304" y="187" width="1213" height="772" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602003491599">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="304" y="187" width="1213" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1597737605669" />
+    <state x="304" y="187" width="1213" height="772" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1602003491599" />
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1597377724440">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -430,10 +336,10 @@
     </state>
     <state width="1493" height="129" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1597730968964" />
     <state width="1126" height="455" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368360" />
-    <state x="328" y="106" key="SettingsEditor" timestamp="1597737657896">
+    <state x="628" y="97" key="SettingsEditor" timestamp="1602029840463">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1597737657896" />
+    <state x="628" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1602029840463" />
     <state x="475" y="97" width="585" height="630" key="find.popup" timestamp="1597541847628">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
