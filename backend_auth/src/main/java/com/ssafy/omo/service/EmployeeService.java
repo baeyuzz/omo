@@ -22,4 +22,6 @@ public interface EmployeeService {
 
 	Employee getEmployee(Long id);
 
+	Employee getEmployeeByPhoneAndName(String name,String phone);
+
 }
