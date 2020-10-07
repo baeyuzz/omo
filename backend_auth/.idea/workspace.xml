@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -32,6 +35,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be227e13-619a-489d-8166-3b9497ebcabf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/controller/VoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/controller/VoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberSignUpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberSignUpResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/VisitorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/VisitorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/service/ApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/service/ApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/config/WebMvcConfig.java" afterDir="false" />
     </list>
@@ -86,6 +102,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -121,7 +138,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BlogApiApplication (1)">
+  <component name="RunManager" selected="Spring Boot.BlogApiApplication">
     <configuration name="JwtTokenProviderTest.testGetUserIdFromJWT" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -160,19 +177,6 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BlogApiApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="chat_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ssafy.omo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ssafy.omo.BlogApiApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BlogApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="chat.main" />
       <extension name="coverage">
@@ -190,18 +194,16 @@
       <item itemvalue="Gradle.JwtTokenProviderTest.testGetUserIdFromJWT" />
       <item itemvalue="Gradle.JwtTokenProviderTest.validateToken" />
       <item itemvalue="Spring Boot.BlogApiApplication" />
-      <item itemvalue="Spring Boot.BlogApiApplication (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.BlogApiApplication (1)" />
         <item itemvalue="Spring Boot.BlogApiApplication" />
         <item itemvalue="Gradle.JwtTokenProviderTest.validateToken" />
         <item itemvalue="Gradle.JwtTokenProviderTest.testGetUserIdFromJWT" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -233,7 +235,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -266,10 +268,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="415" y="6" key="#BlogApiApplication/0.0.1536.824@0.0.1536.824" timestamp="1602031444812" />
-    <state x="304" y="187" width="1213" height="772" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602003491599">
+    <state x="304" y="187" width="1213" height="796" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602044602088">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="304" y="187" width="1213" height="772" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1602003491599" />
+    <state x="304" y="187" width="1213" height="796" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1602044602088" />
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1602034004627">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -338,22 +340,22 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="129" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597730968964" />
-    <state width="1126" height="455" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368361" />
-    <state width="1126" height="455" key="GridCell.Tab.2.center" timestamp="1597739368359">
+    <state width="1269" height="341" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1602061107214" />
+    <state width="1269" height="341" key="GridCell.Tab.2.center" timestamp="1602061107212">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="129" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1597730968964" />
-    <state width="1126" height="455" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368359" />
-    <state width="1126" height="455" key="GridCell.Tab.2.left" timestamp="1597739368358">
+    <state width="1269" height="341" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1602061107212" />
+    <state width="1269" height="341" key="GridCell.Tab.2.left" timestamp="1602061107211">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="129" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1597730968964" />
-    <state width="1126" height="455" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368358" />
-    <state width="1126" height="455" key="GridCell.Tab.2.right" timestamp="1597739368360">
+    <state width="1269" height="341" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1602061107211" />
+    <state width="1269" height="341" key="GridCell.Tab.2.right" timestamp="1602061107213">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="129" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1597730968964" />
-    <state width="1126" height="455" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368360" />
+    <state width="1269" height="341" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1602061107213" />
     <state x="628" y="97" key="SettingsEditor" timestamp="1602029840463">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -362,6 +364,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="475" y="97" width="585" height="630" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1597541847628" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/impl/EmployeeServiceImpl.java</url>
+          <line>106</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/chat$AuthAppApplication__1_.ic" NAME="AuthAppApplication (1) Coverage Results" MODIFIED="1597711601567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

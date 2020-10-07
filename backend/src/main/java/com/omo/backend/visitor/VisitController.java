@@ -23,18 +23,24 @@ public class VisitController {
     @PostMapping("/visitors")
     @ResponseBody
     @ApiOperation(value = "방문자 명부 작성")
-    public ResponseEntity<VisitLog> visit(@RequestBody VisitorRequest request) {
+    public VisitorResponse visit(@RequestBody VisitorRequest request) {
         Optional<VisitLog> visitLog = visitService.writeGuestBook(request);
         if(!visitLog.isPresent())
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new VisitorResponse().builder()
+                    .success(false)
+                    .message("Fail writing visitor log")
+                    .build();
         else
-            return new ResponseEntity<>(visitLog.get(), HttpStatus.OK);
+            return new VisitorResponse().builder()
+                    .success(true)
+                    .message("Success writing visitor log")
+                    .build();
     }
 
     @GetMapping("/visitors/{groupCode}")
     @ResponseBody
     @ApiOperation(value = "방문자 명부 조회")
-    public ResponseEntity getVisitorList(@PathVariable String groupCode) {
+    public ResponseEntity<List<VisitLog>> getVisitorList(@PathVariable String groupCode) {
         Optional<List<VisitLog>> visitLogs = visitService.getVisitorList(groupCode);
         if(!visitLogs.isPresent())
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

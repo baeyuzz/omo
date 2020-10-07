@@ -12,6 +12,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MemberRequest implements Serializable {
-    private String name;
+    private String userName;
     private String phone;
 }
