@@ -180,7 +180,7 @@ public class VoiceController {
     }
 
     @GetMapping("/train")
-    public ResponseEntity train (@RequestParam(value = "code") final String code) throws Exception {
+    public ResponseEntity train (@RequestParam(value = "code") String code) throws Exception {
 
         Decoder decoder = Base64.getDecoder();
         
