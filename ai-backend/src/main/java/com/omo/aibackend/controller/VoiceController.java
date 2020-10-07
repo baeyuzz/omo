@@ -30,6 +30,7 @@ public class VoiceController {
     @PostMapping("/uploadAudio4list") // 음성 인식 페이지
     public ResponseEntity upload (@RequestHeader final Map<String, Object> info, @RequestParam (value = "audio") final MultipartFile file) throws Exception {
         String code = (String) info.get("code");
+        String token = (String) info.get("token");
 
         Decoder decoder = Base64.getDecoder();
         
@@ -66,7 +67,7 @@ public class VoiceController {
         if(res != null) {   // 1. 방문자 인식 성공
 
             // 2. 인식한 방문자의 정보 요청
-            ResponseEntity memberResponse = clientService.callGetAuthExternalServer(
+            ResponseEntity<MemberResponse> memberResponse = clientService.callGetAuthExternalServer(token,
                     new MemberRequest().builder()
                             .name(name)
                             .phone(phone)
@@ -107,6 +108,7 @@ public class VoiceController {
         String name = (String) info.get("name");
         String phone = (String) info.get("phone");
         String address = (String) info.get("addr");
+        String token = (String) info.get("token");
 
         Decoder decoder = Base64.getDecoder();
         
@@ -127,16 +129,15 @@ public class VoiceController {
         System.out.println(phone);
         System.out.println(name);
 
-        ResponseEntity response = clientService.callPostAuthExternalServer(
+        ResponseEntity<MemberSignUpResponse> response = clientService.callPostAuthExternalServer(token,
                 new MemberSignUpRequest().builder()
-                        .code(code)
                         .name(name)
                         .phone(phone)
                         .address(address)
                         .build()
         );
 
-        if(response.getStatusCode() != HttpStatus.OK) return new ResponseEntity<>(false, HttpStatus.OK);
+        if(!response.getBody().isSuccess()) return new ResponseEntity<>(false, HttpStatus.OK);
 
         String nplusp = name + "_" + phone;
 
