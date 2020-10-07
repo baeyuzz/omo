@@ -10,6 +10,16 @@
           <p>명부 작성</p>
       </div>
       <div style="padding-left : 2%;">
+        <div @click="goMask" style="padding-right : 2%; cursor:pointer;">
+          <div class="icons">
+            <img src="@/assets/facemask.png" width="170px" height="170px;"/>
+          </div>
+          <p>
+          마스크 인식
+          </p>
+        </div>
+      </div>
+      <div style="padding-left : 2%;">
         <router-link to="/account" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/key.png" width="170px" height="170px;"/>
@@ -19,17 +29,6 @@
           </p>
         </router-link>
       </div>
-      <div style="padding-left : 2%;">
-        <router-link to="/video/mask" style="text-decoration:none">
-          <div class="icons">
-            <img src="@/assets/key.png" width="170px" height="170px;"/>
-          </div>
-          <p>
-          마스크 인식
-          </p>
-        </router-link>
-      </div>
-
     </div>
   </div>
 </template>
@@ -69,6 +68,9 @@ export default {
     },
     goVideo() {
       this.$router.push('/video/' + this.$cookies.get('code'))
+    },
+    goMask() {
+      this.$router.push('/video/mask/' + this.$cookies.get('code'))
     }
   }          
 }

@@ -7,7 +7,9 @@
       </div>
     </transition>
 
-
+    <div class="count">
+      <p>현재 방문자 수: {{ count }} 명</p>
+    </div>
     <div id="box">
         <div id="load" v-if="isLoading">
           <socket></socket><br>
@@ -17,8 +19,10 @@
         
         <img id="stream" height="480" alt="stream" v-if="!isLoading"/>
         <div>
-          <p v-if="!isLoading & !success" class="caution"><strong>마스크를 벗지말고</strong> 얼굴을 찍어주세요!</p>
+          <p class="caution"><strong>마스크를 벗지말고</strong> 얼굴을 찍어주세요!</p>
+          <p class="caution">openCV 프로그램에서 'q' 를 누르면, 비디오 스트림이 종료됩니다</p>
         </div>
+
     </div>
   </div>
 </template>
@@ -36,6 +40,7 @@ export default {
       chatSocket: null,
       success: false,
       isLoading: true, 
+      count: 0,
     };
   },
   components: {
@@ -54,9 +59,15 @@ export default {
     this.chatSocket.onmessage = function (e) {
       var data = JSON.parse(e.data);
       var message = data["message"];
-      // console.log(data["check"])
       if (data["check"]) {
-        this.goVoice();
+        this.count += 1;
+        this.success = true;
+        var el = document.getElementById('stream');
+        el.style.borderColor = '#00FF00';
+        setTimeout(function() {
+          this.success = false;
+          el.style.borderColor = '#FF0000';
+        }.bind(this), 1500)
       }
       if (this.isLoading) this.isLoading=false;
       document.querySelector("#stream").src = 'data:image/png;base64,' + message
@@ -66,13 +77,11 @@ export default {
     this.chatSocket.onclose = function (e) {
       console.error("Chat socket closed unexpectedly" + e);
     };
+    console.log("http://127.0.0.1:8082/chat/mask/"+this.roomName+'/')
     axios
       .get("http://127.0.0.1:8082/chat/mask/"+this.roomName+'/')
       .then((res) => {
         console.log("전송성공" + res.data);
-        this.success = true;
-        var el = document.getElementById('stream');
-        el.style.borderColor = '#00FF00';
       })
       .catch((err) => {
         // alert('서버 연결에 실패했습니다..')
@@ -133,6 +142,9 @@ export default {
         background: none;
         border: none;
         margin-right: 100px;
+    }
+    .count {
+      padding-left: 500px;
     }
     .success {
       display: inline-block;

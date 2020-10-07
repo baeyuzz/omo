@@ -132,12 +132,12 @@ def mask(request, room_name):
   cv2.destroyAllWindows()
 
   # initialize the video stream and allow the camera sensor to warm up
-  print("[INFO] starting video stream...")
+  print("[INFO] starting video stream... :mask")
   # vs = WebcamVideoStream(src=0).start()
   vs = cv2.VideoCapture(0)
   time.sleep(1.0)
   # loop over the frames from the video stream
-  LENGTH = 20
+  LENGTH = 15
   ALLOW = 2
   value = [False] * LENGTH
   i = 0
@@ -197,7 +197,6 @@ def mask(request, room_name):
         ins.check = True 
         print('CHECKED@@@@@@@@@@@@@@@@@2')
         value = [False] * LENGTH
-        time.sleep(2.0)
         count += 1
       else: ins.check = False
       ins.room = mark_safe(json.dumps('mask_'+room_name))
