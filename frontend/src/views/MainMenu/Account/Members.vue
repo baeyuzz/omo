@@ -96,7 +96,7 @@ export default {
 
   },
   created () {
-
+      this.$store.state.code = this.$cookies.get("code")
       let code = this.$store.state.code
 
       axios.get(`http://localhost:8080/api/members?code=${code}`)

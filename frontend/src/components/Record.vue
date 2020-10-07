@@ -156,7 +156,10 @@ export default {
         link.click()
       }
     },
-   
+    created () {
+      this.$store.state.code = this.$cookies.get("code")
+      this.code = this.$store.state.code
+    }
 }
 </script>
 <style scoped>
