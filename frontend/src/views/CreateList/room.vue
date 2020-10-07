@@ -20,7 +20,7 @@
           <p v-if="!isLoading & !success" class="caution"><strong>마스크를 벗지말고</strong> 얼굴을 찍어주세요!</p>
         </div>
         <div class="success" v-if="success">
-          <p>3초 후에 화자 인식 페이지로 넘어갑니다!</p>
+          <p>잠시 후에 화자 인식 페이지로 넘어갑니다!</p>
         </div>
     </div>
   </div>
@@ -117,7 +117,7 @@ export default {
         color: #dddddd;
         width: 640px;
         margin: auto;
-        background-color: rgba(0,0,0,0.3);
+        background-color: rgba(0,0,0,0.2);
     }
     #covering{
         height: auto;
@@ -148,7 +148,7 @@ export default {
       padding: 10px 16px 0px 16px;
       text-align: center;
       border-radius: 5px;
-      background-color: rgba(255,255,255,0.4);
+      background-color: rgba(255,255,255,0.2);
     }
     .caution {
       color: #dddddd;

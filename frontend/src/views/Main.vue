@@ -3,13 +3,11 @@
     <Nav />
 
     <div class="menu">
-      <div style="padding-right : 2%;">
-        <router-link to="/chat/123" style="text-decoration:none">
+      <div @click="goVideo" style="padding-right : 2%; cursor:pointer;">
           <div class="icons">
             <img src="@/assets/frame.png" width="170px" height="170px;" />
           </div>
           <p>명부 작성</p>
-        </router-link>
       </div>
       <div style="padding-left : 2%;">
         <router-link to="/account" style="text-decoration:none">
@@ -37,7 +35,11 @@ export default {
   data(){
     return {
       'imageBytes': null,
+      'videoUrl': null,
     }
+  },
+  mounted() {
+    this.videoUrl = "/video/" + this.$cookies.get('code')
   },
   methods: {
     test() {
@@ -55,6 +57,9 @@ export default {
           console.log('사진 업로드 실패', err)
         })
     },
+    goVideo() {
+      this.$router.push('/video/' + this.$cookies.get('code'))
+    }
   }          
 }
 </script>
