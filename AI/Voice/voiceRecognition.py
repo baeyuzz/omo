@@ -32,7 +32,12 @@ def main(argv):
 
     for folder in folders:
         if not os.path.isdir(DATA_PATH): continue
-        files = os.listdir(DATA_PATH + "/" + folder)
+        
+        if os.path.exists(os.path.join(DATA_PATH,'record.wav')):
+            os.remove(os.path.join(DATA_PATH,'record.wav'))
+
+
+        files = os.listdir(DATA_PATH + "\\" + folder)
 
         for f in files:
             if f.endswith('.npy'):
