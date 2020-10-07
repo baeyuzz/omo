@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface EmployeeService {
 
-	List<Employee> getAllEmployees();
+	List<Employee> getAllEmployees(UserPrincipal currentUser);
 
 	List<Employee> getEmployeesByCreatedBy(String username);
 
