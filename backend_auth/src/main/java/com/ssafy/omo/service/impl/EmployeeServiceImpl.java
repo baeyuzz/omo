@@ -68,10 +68,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		if (employee.getUser().getId().equals(currentUser.getId())
 				|| currentUser.getAuthorities().contains(new SimpleGrantedAuthority(RoleName.ROLE_ADMIN.toString()))) {
 			employeeRepository.deleteById(id);
-			return new ApiResponse(Boolean.TRUE, "You successfully deleted post");
+			return new ApiResponse(Boolean.TRUE, "You successfully deleted employee");
 		}
 
-		ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "You don't have permission to delete this post");
+		ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "You don't have permission to delete this employee");
 
 		throw new UnauthorizedException(apiResponse);
 	}

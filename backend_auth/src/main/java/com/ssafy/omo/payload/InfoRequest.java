@@ -10,14 +10,11 @@ public class InfoRequest {
 
 	@NotBlank
 	@Size(min = 10)
-	private String name;
+	private String password;
 
 	@NotBlank
-	@Size(min = 50)
-	private String phone;
+	@Size(min = 10)
+	private String newPassword;
 
-	@NotBlank
-	@Size(min = 50)
-	private String address;
 
 }

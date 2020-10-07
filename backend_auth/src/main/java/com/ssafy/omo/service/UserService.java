@@ -18,7 +18,7 @@ public interface UserService {
 
 	User updateUser(User newUser, String username, UserPrincipal currentUser);
 
-	ApiResponse deleteUser(String username, UserPrincipal currentUser);
+	ApiResponse deleteUser(UserPrincipal currentUser);
 
 	ApiResponse giveAdmin(String username);
 
