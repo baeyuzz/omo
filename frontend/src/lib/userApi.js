@@ -24,10 +24,22 @@ function deleteUser() {
 function emailCheck(data) {
     return instance.post('auth/emailCheck', data);
 }
+function getEmp() {
+    return instance.get('employee', {
+        headers: { 'Authorization' : 'Bearer ' + cookies.get("token") },
+    });
+}
+function deleteEmp(id) {
+    return instance.delete(`employee/${id}`, {
+        headers: { 'Authorization' : 'Bearer ' + cookies.get("token") },
+    });
+}
 
 export {
   loginUser,
   createUser,
   deleteUser,
-  emailCheck
+  emailCheck,
+  getEmp,
+  deleteEmp
 }

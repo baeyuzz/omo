@@ -38,11 +38,13 @@
         <table class="logtable">
           <tbody>
             <tr v-for="(member, idx) in memberList" :key="member.id">
-              <td>{{ idx+1 }}</td>
+              <td>{{ idx + 1 }}</td>
               <td>{{ member.name }}</td>
               <td>{{ member.phone }}</td>
               <td>{{ member.address }}</td>
-              <td class="remove" @click="remove(member.id)"><i class="far fa-trash-alt"></i></td> 
+              <td class="remove" @click="remove(member.id)">
+                <i class="far fa-trash-alt"></i>
+              </td>
 
               <!-- <td>{{log.address}}</td> -->
             </tr>
@@ -59,6 +61,7 @@
 import Nav from "@/components/Nav.vue";
 // import http from '@/http-common.js'
 import axios from "axios";
+import { getEmp, deleteEmp } from "@/lib/userApi.js";
 
 export default {
   name: "Members",
@@ -86,12 +89,18 @@ export default {
         });
     },
     remove(id) {
-      axios
-        .delete(`http://localhost:9004/api/employee?id=${id}`, null, {
-          headers: "Bearer" + this.$cookies.get("token"),
-        })
-        .then((res) => {
-          console.log(res);
+      deleteEmp(id)
+        .then(() => {
+          alert("삭제되었습니다");
+
+          getEmp()
+            .then((res2) => {
+              console.log(res2);
+              this.memberList = res2.data;
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         })
         .catch((err) => {
           console.log(err);
@@ -99,13 +108,12 @@ export default {
     },
   },
   created() {
-    axios
-      .get(`http://localhost:9004/api/employee`, null, {
-        headers: "Bearer" + this.$cookies.get("token"),
-      })
+    // const auth = "Bearer " + this.$cookies.get("token");
+    // console.log(auth)
+    getEmp()
       .then((res) => {
         console.log(res);
-        this.memberList = res.data
+        this.memberList = res.data;
       })
       .catch((err) => {
         console.log(err);
@@ -132,7 +140,7 @@ export default {
 .logtable {
   margin: auto;
   text-align: center;
-  width : 100%;
+  width: 100%;
 }
 .visitor {
   text-align: center;
@@ -171,7 +179,7 @@ th {
 }
 .list::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.300);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .list::-webkit-scrollbar-button {
   width: 0;
