@@ -40,7 +40,7 @@ public class EmployeeController {
             return new ResponseEntity<EmployeeResponse>(employeeResponse, HttpStatus.CREATED);
         }
 
-        @GetMapping("/{phone}")
+        @GetMapping("/{userName}/{phone}")
         public ResponseEntity<Employee> getEmployee(@PathVariable(name = "userName") String userName,@PathVariable(name = "phone") String phone) {
             Employee employee = employeeService.getEmployeeByPhoneAndName(userName,phone);
 
