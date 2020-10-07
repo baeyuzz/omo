@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 	List<Employee> findByCreatedBy(Long userId);
 	Long countByCreatedBy(Long userId);
-	Optional<Employee> findByPhoneAndName(String name, String phone);
+	Optional<Employee> findByNameAndPhone(String name, String phone);
 }

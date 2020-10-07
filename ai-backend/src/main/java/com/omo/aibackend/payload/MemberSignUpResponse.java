@@ -12,6 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MemberSignUpResponse implements Serializable {
-    private boolean success;
-    private String message;
+    private String name;
+    private String phone;
+    private String address;
 }

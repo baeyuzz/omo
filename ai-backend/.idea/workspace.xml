@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a0d4a7-55ca-47e2-aeef-f89666d514b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend_auth/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberSignUpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberSignUpResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/VisitorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/VisitorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/ApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/ApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend_auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_auth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_auth/src/main/java/com/ssafy/omo/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_auth/src/main/java/com/ssafy/omo/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_auth/src/main/java/com/ssafy/omo/payload/EmployeeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_auth/src/main/java/com/ssafy/omo/payload/EmployeeResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_auth/src/main/java/com/ssafy/omo/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_auth/src/main/java/com/ssafy/omo/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_auth/src/main/java/com/ssafy/omo/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_auth/src/main/java/com/ssafy/omo/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_auth/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_auth/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +67,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.omo.aibackend.config" />
       <recent name="com.omo.aibackend.payload" />
+      <recent name="com.omo.aibackend.config" />
       <recent name="com.omo.aibackend.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -63,6 +80,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AiBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ai-backend.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.omo.aibackend.AiBackendApplication" />
@@ -87,6 +115,12 @@
       <workItem from="1601969171156" duration="853000" />
       <workItem from="1602029923656" duration="55000" />
       <workItem from="1602029986640" duration="38000" />
+      <workItem from="1602045510992" duration="3317000" />
+      <workItem from="1602049068709" duration="483000" />
+      <workItem from="1602049573691" duration="287000" />
+      <workItem from="1602049931552" duration="2109000" />
+      <workItem from="1602054682753" duration="616000" />
+      <workItem from="1602055316125" duration="5867000" />
     </task>
     <servers />
   </component>
@@ -94,54 +128,87 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1634" height="372" key="GridCell.Tab.0.bottom" timestamp="1602030023969">
-      <screen x="0" y="23" width="1680" height="970" />
-    </state>
-    <state width="1638" height="194" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156173" />
-    <state width="1634" height="372" key="GridCell.Tab.0.bottom/0.23.1680.970@0.23.1680.970" timestamp="1602030023969" />
-    <state width="1634" height="372" key="GridCell.Tab.0.center" timestamp="1602030023969">
-      <screen x="0" y="23" width="1680" height="970" />
-    </state>
-    <state width="1638" height="194" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156172" />
-    <state width="1634" height="372" key="GridCell.Tab.0.center/0.23.1680.970@0.23.1680.970" timestamp="1602030023969" />
-    <state width="1634" height="372" key="GridCell.Tab.0.left" timestamp="1602030023968">
-      <screen x="0" y="23" width="1680" height="970" />
-    </state>
-    <state width="1638" height="194" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156171" />
-    <state width="1634" height="372" key="GridCell.Tab.0.left/0.23.1680.970@0.23.1680.970" timestamp="1602030023968" />
-    <state width="1634" height="372" key="GridCell.Tab.0.right" timestamp="1602030023969">
-      <screen x="0" y="23" width="1680" height="970" />
-    </state>
-    <state width="1638" height="194" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156172" />
-    <state width="1634" height="372" key="GridCell.Tab.0.right/0.23.1680.970@0.23.1680.970" timestamp="1602030023969" />
-    <state width="1634" height="372" key="GridCell.Tab.1.bottom" timestamp="1602030023971">
-      <screen x="0" y="23" width="1680" height="970" />
-    </state>
-    <state width="1638" height="194" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156176" />
-    <state width="1634" height="372" key="GridCell.Tab.1.bottom/0.23.1680.970@0.23.1680.970" timestamp="1602030023971" />
-    <state width="1634" height="372" key="GridCell.Tab.1.center" timestamp="1602030023970">
-      <screen x="0" y="23" width="1680" height="970" />
-    </state>
-    <state width="1638" height="194" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156175" />
-    <state width="1634" height="372" key="GridCell.Tab.1.center/0.23.1680.970@0.23.1680.970" timestamp="1602030023970" />
-    <state width="1634" height="372" key="GridCell.Tab.1.left" timestamp="1602030023970">
-      <screen x="0" y="23" width="1680" height="970" />
-    </state>
-    <state width="1638" height="194" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156174" />
-    <state width="1634" height="372" key="GridCell.Tab.1.left/0.23.1680.970@0.23.1680.970" timestamp="1602030023970" />
-    <state width="1634" height="372" key="GridCell.Tab.1.right" timestamp="1602030023970">
-      <screen x="0" y="23" width="1680" height="970" />
-    </state>
-    <state width="1638" height="194" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1601969156175" />
-    <state width="1634" height="372" key="GridCell.Tab.1.right/0.23.1680.970@0.23.1680.970" timestamp="1602030023970" />
-    <state x="341" y="147" key="SettingsEditor" timestamp="1602029969337">
-      <screen x="0" y="23" width="1680" height="970" />
-    </state>
-    <state x="341" y="147" key="SettingsEditor/0.23.1680.970@0.23.1680.970" timestamp="1602029969337" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1601967145124">
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602056807459">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1601967145124" />
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1602056807459" />
+    <state width="1638" height="371" key="GridCell.Tab.0.bottom" timestamp="1602061484327">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1602061484327" />
+    <state width="1638" height="371" key="GridCell.Tab.0.bottom/0.23.1680.970@0.23.1680.970" timestamp="1602061469617" />
+    <state width="1638" height="371" key="GridCell.Tab.0.center" timestamp="1602061484325">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1602061484325" />
+    <state width="1638" height="371" key="GridCell.Tab.0.center/0.23.1680.970@0.23.1680.970" timestamp="1602061469614" />
+    <state width="1638" height="371" key="GridCell.Tab.0.left" timestamp="1602061484324">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1602061484324" />
+    <state width="1638" height="371" key="GridCell.Tab.0.left/0.23.1680.970@0.23.1680.970" timestamp="1602061469607" />
+    <state width="1638" height="371" key="GridCell.Tab.0.right" timestamp="1602061484326">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1602061484326" />
+    <state width="1638" height="371" key="GridCell.Tab.0.right/0.23.1680.970@0.23.1680.970" timestamp="1602061469616" />
+    <state width="1638" height="371" key="GridCell.Tab.1.bottom" timestamp="1602061480383">
+      <screen x="0" y="23" width="1680" height="970" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1602059814774" />
+    <state width="1638" height="371" key="GridCell.Tab.1.bottom/0.23.1680.970@0.23.1680.970" timestamp="1602061480383" />
+    <state width="1638" height="371" key="GridCell.Tab.1.center" timestamp="1602061480380">
+      <screen x="0" y="23" width="1680" height="970" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1602059814772" />
+    <state width="1638" height="371" key="GridCell.Tab.1.center/0.23.1680.970@0.23.1680.970" timestamp="1602061480380" />
+    <state width="1638" height="371" key="GridCell.Tab.1.left" timestamp="1602061480374">
+      <screen x="0" y="23" width="1680" height="970" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1602059814771" />
+    <state width="1638" height="371" key="GridCell.Tab.1.left/0.23.1680.970@0.23.1680.970" timestamp="1602061480374" />
+    <state width="1638" height="371" key="GridCell.Tab.1.right" timestamp="1602061480382">
+      <screen x="0" y="23" width="1680" height="970" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1602059814773" />
+    <state width="1638" height="371" key="GridCell.Tab.1.right/0.23.1680.970@0.23.1680.970" timestamp="1602061480382" />
+    <state width="1638" height="371" key="GridCell.Tab.2.bottom" timestamp="1602061469200">
+      <screen x="0" y="23" width="1680" height="970" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1602059814778" />
+    <state width="1638" height="371" key="GridCell.Tab.2.bottom/0.23.1680.970@0.23.1680.970" timestamp="1602061469200" />
+    <state width="1638" height="371" key="GridCell.Tab.2.center" timestamp="1602061469199">
+      <screen x="0" y="23" width="1680" height="970" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1602059814776" />
+    <state width="1638" height="371" key="GridCell.Tab.2.center/0.23.1680.970@0.23.1680.970" timestamp="1602061469199" />
+    <state width="1638" height="371" key="GridCell.Tab.2.left" timestamp="1602061469198">
+      <screen x="0" y="23" width="1680" height="970" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1602059814775" />
+    <state width="1638" height="371" key="GridCell.Tab.2.left/0.23.1680.970@0.23.1680.970" timestamp="1602061469198" />
+    <state width="1638" height="371" key="GridCell.Tab.2.right" timestamp="1602061469199">
+      <screen x="0" y="23" width="1680" height="970" />
+    </state>
+    <state width="1638" height="371" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1602059814777" />
+    <state width="1638" height="371" key="GridCell.Tab.2.right/0.23.1680.970@0.23.1680.970" timestamp="1602061469199" />
+    <state x="378" y="187" key="Maven.ArtifactSearchDialog" timestamp="1602049423650">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="378" y="187" key="Maven.ArtifactSearchDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1602049423650" />
+    <state x="341" y="134" key="SettingsEditor" timestamp="1602055339790">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="341" y="134" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1602055339790" />
+    <state x="341" y="147" key="SettingsEditor/0.23.1680.970@0.23.1680.970" timestamp="1602029969337" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1602048064090">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1602048064090" />
+    <state x="437" y="142" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602047963891">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="437" y="142" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1602047963890" />
     <state x="208" y="188" key="new project wizard" timestamp="1601883429038">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -152,20 +219,43 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java</url>
-          <line>205</line>
+          <line>238</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java</url>
-          <line>214</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/ClientService.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/ClientService.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java</url>
-          <line>217</line>
-          <option name="timeStamp" value="3" />
+          <line>253</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java</url>
+          <line>261</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java</url>
+          <line>252</line>
+          <properties class="com.omo.aibackend.controller.VoiceController" method="postEmployeeExternalServerRequestTest">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.springframework.http.converter.StringHttpMessageConverter" memberName="supportedMediaTypes" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
