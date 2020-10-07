@@ -115,7 +115,96 @@ def room(request, room_name):
       ins.delete()
 
     
-    # cv2.imshow("Frame", frame)
+    cv2.imshow("Frame", frame)
+    key = cv2.waitKey(1) & 0xFF
+
+    # if the `q` key was pressed, break from the loop
+    if key == ord("q"):
+      break
+
+  # do a bit of cleanup
+  vs.release()
+  cv2.destroyAllWindows()
+  return JsonResponse({'result': 'success'})
+
+def mask(request, room_name):
+  # do a bit of cleanup
+  cv2.destroyAllWindows()
+
+  # initialize the video stream and allow the camera sensor to warm up
+  print("[INFO] starting video stream... :mask")
+  # vs = WebcamVideoStream(src=0).start()
+  vs = cv2.VideoCapture(0)
+  time.sleep(1.0)
+  # loop over the frames from the video stream
+  LENGTH = 15
+  ALLOW = 2
+  value = [False] * LENGTH
+  i = 0
+  frame = None
+  count = 0
+  while True:
+    # grab the frame from the threaded video stream and resize it
+    # to have a maximum width of 400 pixels
+    
+    let, frame = vs.read()
+    if let == True:
+      frame = imutils.resize(frame, width=400)
+      i += 1
+      if i >= LENGTH:
+        i = 0
+
+      # detect faces in the frame and determine if they are wearing a
+      # face mask or not
+      (locs, preds) = detect_and_predict_mask(frame, faceNet, maskNet)
+
+      # loop over the detected face locations and their corresponding
+      # locations
+      for (box, pred) in zip(locs, preds):
+        # unpack the bounding box and predictions
+        (startX, startY, endX, endY) = box
+        (mask, withoutMask) = pred
+
+        # determine the class label and color we'll use to draw
+        # the bounding box and text
+        label = "Mask" if mask > withoutMask else "No Mask"
+        if label == "Mask" :
+          color = (0, 255, 0)
+          value[i] = True
+        else:
+          color = (0, 0, 255)
+          value[i] = False
+
+        # include the probability in the label
+        label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
+
+        # display the label and bounding box rectangle on the output
+        # frame
+        cv2.putText(frame, label, (startX, startY - 10),
+          cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
+        cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
+      
+      # show the output frame 
+      print(count, value.count(True))
+      ins = Chat()
+      capture = frame
+      filename = 'uploads/mask'+room_name+'.png'
+      cv2.imwrite(filename, capture)
+      with open(filename, "rb") as capture:
+        encoded_string = base64.b64encode(capture.read()).decode('utf-8')
+      capture.close()
+      if value.count(True) >= LENGTH - ALLOW: 
+        ins.check = True 
+        print('CHECKED@@@@@@@@@@@@@@@@@2')
+        value = [False] * LENGTH
+        count += 1
+      else: ins.check = False
+      ins.room = mark_safe(json.dumps('mask_'+room_name))
+      ins.message = encoded_string
+      ins.save()
+      ins.delete()
+  
+    cv2.imshow("Frame", frame)
     key = cv2.waitKey(1) & 0xFF
 
     # if the `q` key was pressed, break from the loop
@@ -153,7 +242,7 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
 
       # filter out weak detections by ensuring the confidence is
       # greater than the minimum confidence
-      if confidence > 0.8:
+      if confidence > 0.7:
         # compute the (x, y)-coordinates of the bounding box for
         # the object
         box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])

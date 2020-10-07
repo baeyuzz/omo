@@ -9,14 +9,24 @@
           </div>
           <p>명부 작성</p>
       </div>
-      <div style="padding-left: 2%">
-        <router-link to="/account" style="text-decoration: none">
+      <div style="padding-left : 7%; padding-right: 7%">
+        <div @click="goMask" style="padding-right : 2%; cursor:pointer;">
+          <div class="icons">
+            <img src="@/assets/facemask.png" width="170px" height="170px;"/>
+          </div>
+          <p>
+          마스크 인식
+          </p>
+        </div>
+      </div>
+      <div style="padding-left : 2%;">
+        <router-link to="/account" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/key.png" width="170px" height="170px;" />
           </div>
           <p>계정 관리</p>
         </router-link>
-      </div>  
+      </div>
     </div>
   </div>
 </template>
@@ -56,6 +66,9 @@ export default {
     },
     goVideo() {
       this.$router.push('/video/' + this.$cookies.get('code'))
+    },
+    goMask() {
+      this.$router.push('/video/mask/' + this.$cookies.get('code'))
     }
   }          
 }
@@ -63,28 +76,28 @@ export default {
 
 <style scoped>
 .menu {
-  position: fixed;
-  top: 40%;
+  position : fixed;
+  top : 40%;
   width: 30%;
   text-align: center;
   padding: 0 33% 0 33%;
   display: flex;
   z-index: 2;
   justify-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .icons {
-  height: 180px;
+  height : 180px;
 }
 img {
   transform: scale(1);
-  -webkit-transform: scale(1);
+  -webkit-transform:scale(1);
 }
 img:hover {
   transform: scale(1.2);
-  -webkit-transform: scale(1.2);
+  -webkit-transform:scale(1.2);
 }
 p {
-  color: white;
+  color : white;
 }
 </style>

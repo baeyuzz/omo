@@ -24,7 +24,7 @@
       </a>
       
       <a class="toggle" @click="openSignUp">
-        <span v-if="isShow" style="color : white;"> 회원가입 </span>
+        <span v-if="isShow" style="color : white; cursor:pointer;"> 회원가입 </span>
         <span v-else> 회원가입 </span>
 
       </a>
@@ -116,6 +116,8 @@ a {
   border: none;
   color : rgb(209, 209, 209);
 }
-
+.toggle {
+  cursor: pointer;
+}
 
 </style>
