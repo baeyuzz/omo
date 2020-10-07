@@ -33,7 +33,7 @@ public class ClientService {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", "Bearer " + token);
         headers.setContentType(MediaType.APPLICATION_JSON);
-        return clientApiService.get("https://j3a509.p.ssafy.io:9004/api/employee/" + request.getPhone(), headers).getBody();
+        return clientApiService.get("https://j3a509.p.ssafy.io:9004/api/employee/" + request.getName() + "/" + request.getPhone(), headers).getBody();
     }
 
     /**
