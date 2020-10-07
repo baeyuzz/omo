@@ -146,7 +146,6 @@ public class UserServiceImpl implements UserService {
 				|| currentUser.getAuthorities().contains(new SimpleGrantedAuthority(RoleName.ROLE_ADMIN.toString()))) {
 
 			User updatedUser = userRepository.save(user);
-			User updatedUser = userRepository.save(user);
 
 			Long postCount = employeeRepository.countByCreatedBy(updatedUser.getId());
 
