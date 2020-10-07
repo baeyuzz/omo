@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a0d4a7-55ca-47e2-aeef-f89666d514b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/config/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberSignUpRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberSignUpResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/VisitorRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/VisitorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/controller/VoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/SignUpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/payload/MemberResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omo/aibackend/service/UserClientService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitorRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitorRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_auth/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_auth/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_auth/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_auth/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_auth/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
