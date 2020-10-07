@@ -32,13 +32,12 @@
                   </div>
                   <div slot="collapse-body">
                     {{ article. contents }}
-
                   </div>
                 </collapse>
 
 							</div>
 							<div class="cell" data-title="Job Title">
-								{{ article.createdAt.replace('T',' ') }}
+								{{ article.createdAt.substring(0,article.createdAt.indexOf('T')) }}
 							</div>
 						</div>
 					</div>
@@ -97,14 +96,14 @@ export default {
 </script>
 <style scoped>
 .intro {
-  padding-left : 7%;
+  margin : auto;
+  text-align: center;
 }
 
 .content-box { 
-  /* width: 100%; */
+  width: 60%;
   height: 80%;
-  margin-left : 7%;
-  margin-right : 6.5%;
+  margin : auto;
   background: white;
   border-radius: 12px;
   color: black;
@@ -193,7 +192,9 @@ a:hover { color: black; text-decoration: underline;}
 }
 
 .row .cell:nth-child(2) {
-  width: 200px;;
+  width: 160px;
+  padding-right: 40px;
+
 }
 
 /* .row .cell:nth-child(3) {
