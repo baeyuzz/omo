@@ -92,9 +92,9 @@ public class UserController {
 	@ApiOperation(value = "삭제")
 	@DeleteMapping("/{username}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-	public ResponseEntity<ApiResponse> deleteUser(@PathVariable(value = "username") String username,
+	public ResponseEntity<ApiResponse> deleteUser(
 			@CurrentUser UserPrincipal currentUser) {
-		ApiResponse apiResponse = userService.deleteUser(username, currentUser);
+		ApiResponse apiResponse = userService.deleteUser(currentUser);
 
 		return new ResponseEntity< >(apiResponse, HttpStatus.OK);
 	}
