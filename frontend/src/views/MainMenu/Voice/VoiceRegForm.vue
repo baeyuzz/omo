@@ -3,7 +3,7 @@
         <Nav/>
         
         <div style="text-align : center; color : black;" class="regForm" >
-            <div style="margin-top : 4%; background-color : white; width : 480px; border-radius : 15px">
+            <div style="margin-top : 3%; background-color : white; width : 480px; border-radius : 15px">
             <div class="regForm" style="padding-top : 4%;">
                 <h1>
                     음성등록

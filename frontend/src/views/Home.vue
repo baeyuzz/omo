@@ -19,12 +19,12 @@
     </div>
     <div class="loginORjoin">
       <a class="toggle" @click="openLogin">
-        <span v-if="!isShow" style="color : rgb(209, 209, 209);"> 로그인 </span>
+        <span v-if="!isShow" style="color : white;"> 로그인 </span>
         <span v-else> 로그인 </span>
       </a>
       
       <a class="toggle" @click="openSignUp">
-        <span v-if="isShow" style="color : rgb(209, 209, 209);"> 회원가입 </span>
+        <span v-if="isShow" style="color : white;"> 회원가입 </span>
         <span v-else> 회원가입 </span>
 
       </a>
@@ -106,7 +106,7 @@ h1 {
   position: absolute;
   width: 90%;
   margin: 0% 5%;
-  top: 60%;
+  top: 55%;
   text-align: center;
 }
 a {
@@ -114,7 +114,7 @@ a {
   background: none;
   outline: none;
   border: none;
-  color: white;
+  color : rgb(209, 209, 209);
 }
 
 
