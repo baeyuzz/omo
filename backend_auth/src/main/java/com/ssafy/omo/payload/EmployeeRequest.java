@@ -9,15 +9,15 @@ import javax.validation.constraints.Size;
 public class EmployeeRequest {
 
 	@NotBlank
-	@Size(min = 10)
+//	@Size(min = 10)
 	private String name;
 
 	@NotBlank
-	@Size(min = 50)
+//	@Size(min = 50)
 	private String phone;
 
 	@NotBlank
-	@Size(min = 50)
+//	@Size(min = 50)
 	private String address;
 
 }

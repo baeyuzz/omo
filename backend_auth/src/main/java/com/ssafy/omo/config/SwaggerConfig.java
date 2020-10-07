@@ -33,65 +33,65 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//@EnableSwagger2
-//@Configuration
-//public class SwaggerConfig extends WebMvcConfigurerAdapter{
-//
-//    @Bean
-//    public Docket productApi() {
-//        ParameterBuilder aParameterBuilder = new ParameterBuilder();
-//        aParameterBuilder.name("Authorization") //헤더 이름
-//                .description("Access Tocken") //설명
-//                .modelRef(new ModelRef("string"))
-//                .parameterType("header")
-//                .required(false)
-//                .build();
-//
-//        List<Parameter> aParameters = new ArrayList<>();
-//        aParameters.add(aParameterBuilder.build());
-//
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                .globalOperationParameters(aParameters)
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.ssafy.omo"))
-//                .paths(PathSelectors.regex("/api.*"))
-//                .build()
-////                .apiInfo(metaInfo())
-//                .securitySchemes(Arrays.asList(apiKey()));
-//    }
-//
-//
-//    private ApiInfo metaInfo() {
-//        return new ApiInfoBuilder()
-//                .description("Backend API For the Auth/User Service")
-//                .title("Auth/User API")
-//                .version("Unreleased [WIP]")
-//                .build();
-//    }
-//
-//    private ApiKey apiKey() {
-//        return new ApiKey("Bearer +accessToken", "Authorization", "header");
-//    }
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("swagger-ui.html")
-//                .addResourceLocations("classpath:/META-INF/resources/");
-//
-//        registry.addResourceHandler("/webjars/**")
-//                .addResourceLocations("classpath:/META-INF/resources/webjars/");
-//    }
-//
-//}
-@Configuration
 @EnableSwagger2
-public class SwaggerConfig {
+@Configuration
+public class SwaggerConfig extends WebMvcConfigurerAdapter{
 
     @Bean
-    public Docket api() {
+    public Docket productApi() {
+        ParameterBuilder aParameterBuilder = new ParameterBuilder();
+        aParameterBuilder.name("Authorization") //헤더 이름
+                .description("Access Tocken") //설명
+                .modelRef(new ModelRef("string"))
+                .parameterType("header")
+                .required(false)
+                .build();
+
+        List<Parameter> aParameters = new ArrayList<>();
+        aParameters.add(aParameterBuilder.build());
+
         return new Docket(DocumentationType.SWAGGER_2)
+                .globalOperationParameters(aParameters)
                 .select()
-                .apis(RequestHandlerSelectors.any()) // 현재 RequestMapping으로 할당된 모든 URL 리스트를 추출
-                .paths(PathSelectors.ant("/api/**")) // 그중 /api/** 인 URL들만 필터링
+                .apis(RequestHandlerSelectors.basePackage("com.ssafy.omo"))
+                .paths(PathSelectors.regex("/api.*"))
+                .build()
+//                .apiInfo(metaInfo())
+                .securitySchemes(Arrays.asList(apiKey()));
+    }
+
+
+    private ApiInfo metaInfo() {
+        return new ApiInfoBuilder()
+                .description("Backend API For the Auth/User Service")
+                .title("Auth/User API")
+                .version("Unreleased [WIP]")
                 .build();
     }
+
+    private ApiKey apiKey() {
+        return new ApiKey("Bearer +accessToken", "Authorization", "header");
+    }
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+    }
+
 }
+//@Configuration
+//@EnableSwagger2
+//public class SwaggerConfig {
+//
+//    @Bean
+//    public Docket api() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .select()
+//                .apis(RequestHandlerSelectors.any()) // 현재 RequestMapping으로 할당된 모든 URL 리스트를 추출
+//                .paths(PathSelectors.ant("/api/**")) // 그중 /api/** 인 URL들만 필터링
+//                .build();
+//    }
+//}
