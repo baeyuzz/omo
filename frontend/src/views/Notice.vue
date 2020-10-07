@@ -98,17 +98,33 @@ export default {
 .intro {
   margin : auto;
   text-align: center;
+  padding-bottom: 2%;
 }
 
 .content-box { 
   width: 60%;
-  height: 80%;
+  /* height: 80%; */
   margin : auto;
   background: white;
   border-radius: 12px;
   color: black;
+  overflow: auto;
+  /* height : 500px; */
 }
-
+.content-box::-webkit-scrollbar {
+  width: 3px;
+}
+.content-box::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.content-box::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: rgba(136, 187, 255, 0.692);
+}
+.content-box::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
 a:link { color: #666666; text-decoration: none;}
 a:visited { color: #666666; text-decoration: none;}
 a:hover { color: black; text-decoration: underline;}
@@ -138,7 +154,7 @@ a:hover { color: black; text-decoration: underline;}
 .wrap-table100 {
   width: 100%;
   border-radius: 10px;
-  overflow: hidden;
+  
 }
 
 .table {
