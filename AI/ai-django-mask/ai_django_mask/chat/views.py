@@ -115,7 +115,7 @@ def room(request, room_name):
       ins.delete()
 
     
-    # cv2.imshow("Frame", frame)
+    cv2.imshow("Frame", frame)
     key = cv2.waitKey(1) & 0xFF
 
     # if the `q` key was pressed, break from the loop
@@ -242,7 +242,7 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
 
       # filter out weak detections by ensuring the confidence is
       # greater than the minimum confidence
-      if confidence > 0.8:
+      if confidence > 0.7:
         # compute the (x, y)-coordinates of the bounding box for
         # the object
         box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])

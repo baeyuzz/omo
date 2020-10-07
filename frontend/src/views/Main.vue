@@ -9,7 +9,7 @@
           </div>
           <p>명부 작성</p>
       </div>
-      <div style="padding-left : 2%;">
+      <div style="padding-left : 7%; padding-right: 7%">
         <div @click="goMask" style="padding-right : 2%; cursor:pointer;">
           <div class="icons">
             <img src="@/assets/facemask.png" width="170px" height="170px;"/>
@@ -86,7 +86,7 @@ export default {
     display: flex;
     z-index: 2;
     justify-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .icons {
     height : 180px;
