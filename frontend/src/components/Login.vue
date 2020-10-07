@@ -35,8 +35,11 @@ export default {
       };
       loginUser(data)
       .then((res)=>{
-        this.$store.commit('setToken', res.data.jwt);
-        this.$store.commit('setCode', res.data.code);
+        console.log(res)
+        this.$store.commit('setToken', res.data.accessToken);
+        this.$store.commit('setCode', res.data.companyName);
+        this.$store.commit('setEmail', this.email);
+        this.$router.push({ name: "Main" });
       })
       .catch((err)=>{
         alert(err)

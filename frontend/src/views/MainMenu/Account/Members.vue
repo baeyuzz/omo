@@ -97,9 +97,7 @@ export default {
   },
   created () {
 
-    //   let code = 'ssafy';
       let code = this.$store.state.code
-      console.log(code)
 
       axios.get(`http://localhost:8080/api/members?code=${code}`)
       .then((res) => {

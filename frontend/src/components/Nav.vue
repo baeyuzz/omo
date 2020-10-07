@@ -25,7 +25,7 @@ export default {
       try {
         this.$router.push("Main");
       } catch (error) {
-        console.log("route same path!");
+        // console.log("route same path!");
       }
     },
   },

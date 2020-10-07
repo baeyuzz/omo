@@ -83,22 +83,22 @@ export default {
             this.$refs.addr.focus();
             return;
         }
-        const params = {
-            phone: this.phone,
-            name: this.name,
-            code: this.code,
-            addr: this.addr,
-        };
-        http.post('/아직안정해짐',params)
-            .then((res) => {
-                    if(res.data.state){ // 등록이 되면
-                        console.log('success')
-                    } else {
-                        console.log('fail')
-                    }
-                } 
-            )
-            .catch((err) => alert('Error ', err));
+        // const params = {
+        //     phone: this.phone,
+        //     name: this.name,
+        //     code: this.code,
+        //     addr: this.addr,
+        // };
+        // http.post('/아직안정해짐',params)
+        //     .then((res) => {
+        //             if(res.data.state){ // 등록이 되면
+        //                 console.log('success')
+        //             } else {
+        //                 console.log('fail')
+        //             }
+        //         } 
+        //     )
+        //     .catch((err) => alert('Error ', err));
     },
   },
 

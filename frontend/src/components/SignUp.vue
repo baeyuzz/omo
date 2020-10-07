@@ -49,7 +49,7 @@ export default {
       }
       createUser(data)
         .then(() => {
-          console.log("Success");
+          // console.log("Success");
           this.$store.commit("setCode", this.name);
           alert("회원가입 성공 ! 로그인 해주세요")
           this.name = '';
@@ -59,8 +59,8 @@ export default {
           this.passwordConfirm = '';
 
         })
-        .catch((err) => {
-          console.log(err);
+        .catch(() => {
+          // console.log(err);
           alert("회원가입 실패")
         });
     },
