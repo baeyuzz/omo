@@ -26,10 +26,10 @@ public class EmployeeController {
         private EmployeeService employeeService;
 
         @GetMapping
-        public ResponseEntity<List<Employee>> getAllEmployees() {
-            List<Employee> response = employeeService.getAllEmployees();
+        public ResponseEntity<List<Employee>> getAllEmployees( @CurrentUser UserPrincipal currentUser) {
+            List<Employee> response = employeeService.getAllEmployees(currentUser);
 
-            return new ResponseEntity<>(response, HttpStatus.OK);
+            return new ResponseEntity<  >(response, HttpStatus.OK);
         }
 
         @PostMapping
