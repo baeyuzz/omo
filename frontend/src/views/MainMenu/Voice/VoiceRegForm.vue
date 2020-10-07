@@ -3,7 +3,7 @@
         <Nav/>
         
         <div style="text-align : center; color : black;" class="regForm" >
-            <div style="margin-top : 11%; background-color : white; width : 480px; border-radius : 15px">
+            <div style="margin-top : 4%; background-color : white; width : 480px; border-radius : 15px">
             <div class="regForm" style="padding-top : 4%;">
                 <h1>
                     음성등록
@@ -66,10 +66,10 @@ export default {
   },
   methods: {
     async submitForm() {
-        if(this.code.length == 0) {
-            alert('기관명을 입력하세요');
-            return;
-        }
+        // if(this.code.length == 0) {
+        //     alert('기관명을 입력하세요');
+        //     return;
+        // }
         if(this.name.length == 0) {
             alert('이름을 입력하세요');
             return;
@@ -86,7 +86,7 @@ export default {
         this.$store.commit("setPhone", this.phone);
         this.$store.commit("setName", this.name);
         this.$store.commit("setAddr", this.addr);
-        this.$store.commit("setCode", this.code);
+        // this.$store.commit("setCode", this.code);
         
 
         this.$router.push({name: 'RegRecord',});
