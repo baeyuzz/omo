@@ -6,7 +6,7 @@
       <router-link to="/main" style="text-decoration:none; color : white;">
         <h1>◀</h1>
       </router-link>
-      <h1>계정 설정</h1>
+      <h1>{{code}} 계정 설정</h1>
       <h2 />
     </div>
     <!-- 
@@ -75,7 +75,9 @@ export default {
     ChangePwd,
   },
   data() {
-    return {};
+    return {
+      code : this.$store.state.code
+    };
   },
   methods: {
     attachModal() {
@@ -110,6 +112,10 @@ export default {
       return;
     }
   },
+  created() {
+    this.$store.state.code = this.$cookies.get("code")
+    this.code = this.$store.state.code
+  }
 };
 </script>
 <style scoped>

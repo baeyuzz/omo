@@ -13,7 +13,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td><label>모임 코드</label></td>
+                                <td><label>기관명</label></td>
                                 <td> <input class="regInput" placeholder="ex. A123" v-model="code"/></td>
                             </tr>
                             <tr>
@@ -22,7 +22,7 @@
                             </tr>
                             <tr>
                                 <td><label>휴대 전화</label></td>
-                                <td><input class="regInput" type="tel" placeholder="ex. 010-1234-1234" v-model="phone"/></td>
+                                <td><input class="regInput" type="tel" placeholder="ex. 01012345678" v-model="phone"/></td>
                             </tr>
                             <tr>
                                 <td><label>주소</label></td>
