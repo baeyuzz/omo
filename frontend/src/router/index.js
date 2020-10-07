@@ -50,9 +50,10 @@ const routes = [{
     beforeEnter: requireLogin,
   },
   {
-    path: '/video',
-    name: 'Video',
-    component: () => import('../views/CreateList/chat.vue'),
+    path: '/video/mask/:roomName',
+    name: 'OnlyMask',
+    component: () => import('../views/CreateList/onlyMask.vue'),
+    props: route => ({roomName: String(route.params.roomName)})
   },
   {
     path: '/video/:roomName',

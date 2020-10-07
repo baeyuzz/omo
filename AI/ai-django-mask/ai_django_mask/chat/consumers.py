@@ -13,6 +13,7 @@ def announce_chats(sender, instance, created, **kwargs):
         channel_layer=get_channel_layer()
         group_name = 'chat_{}'.format(instance.room)
         group_name = group_name[0:5] + group_name[6:-1]
+        print(group_name)
         async_to_sync(channel_layer.group_send)(
             group_name, {
                 "type": "chat_message",
@@ -40,7 +41,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
             self.room_group_name,
             self.channel_name
         )
-        vs = VideoStream(src=0).stop()
 
     # Receive message from WebSocket
     async def receive(self, text_data):
