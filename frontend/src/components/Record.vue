@@ -79,8 +79,8 @@ export default {
 
         // console.log(audio.getAll('audio'))
           
-        const headers = {}
-        headers['Content-Type'] = `multipart/form-data;`
+        // const headers = {}
+        // headers['Content-Type'] = `multipart/form-data;`
 
         // console.log(headers)
         // console.log(audio)
@@ -88,11 +88,17 @@ export default {
         if(!this.uploadBtn){ // 업로드 버튼이 false면 자동 업로드 -> 명부 작성 시 사용
           
 
-          const info = {
-            code : this.$store.state.code,
-            token : this.$cookies.get('token')
-          }
-          axios.post("http://localhost:8081/api/ai/uploadAudio4list", audio, {headers : info})
+          // const info = {
+          //   code : this.$store.state.code,
+          //   token : this.$cookies.get('token')
+            
+          // }
+          axios.post("http://localhost:8081/api/ai/uploadAudio4list", audio,{
+            headers : {
+              'code' : btoa(unescape(encodeURIComponent(this.$store.state.code))),
+              'token' : this.$cookies.get('token'), 
+              // 'Content-Type': 'application/json;charset=UTF-8',
+              }})
           .then(resp => {
             console.log(resp.data)
             var confirm_test = confirm(resp.data + "님이 맞으신가요?");
@@ -118,15 +124,19 @@ export default {
         else {
           // console.log(this.$store.state.code)
           this.isLoading = false;
-          const info = {
-            name : this.$store.state.name,
-            addr : this.$store.state.addr,
-            phone : this.$store.state.phone,
-            code : this.$store.state.code,
-            token : this.$cookies.get('token')
-          }
+          // const info = {
+            
+          // }
 
-          axios.post("http://localhost:8081/api/ai/uploadAudio4member", audio, {headers : info})
+          axios.post("http://localhost:8081/api/ai/uploadAudio4member", audio,
+          {headers : {
+            'name' : btoa(unescape(encodeURIComponent(this.$store.state.name))),
+            'addr' : btoa(unescape(encodeURIComponent(this.$store.state.addr))),
+            'phone' : btoa(unescape(encodeURIComponent(this.$store.state.phone))),
+            'code' : btoa(unescape(encodeURIComponent(this.$store.state.code))),
+            'token' : this.$cookies.get('token'), 
+            // 'Content-Type': 'application/json;charset=UTF-8',
+            }})
           .then(resp => {
 
             // console.log(resp.data)

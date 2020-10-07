@@ -16,6 +16,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
+import java.util.Base64;
+import java.util.Base64.Decoder;
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api/ai")
@@ -28,6 +31,13 @@ public class VoiceController {
     public ResponseEntity upload (@RequestHeader final Map<String, Object> info, @RequestParam (value = "audio") final MultipartFile file) throws Exception {
         String code = (String) info.get("code");
         String token = (String) info.get("token");
+
+        Decoder decoder = Base64.getDecoder();
+        
+        byte[] decodedBytes = decoder.decode(code);
+        
+        code = new String(decodedBytes, "UTF-8");
+        System.out.println(code);
 
         String fileName= file.getOriginalFilename();
         File f= new File("C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\" + code + "\\" + fileName);
@@ -100,6 +110,25 @@ public class VoiceController {
         String address = (String) info.get("addr");
         String token = (String) info.get("token");
 
+        Decoder decoder = Base64.getDecoder();
+        
+        byte[] decodedBytes = decoder.decode(code);
+        code = new String(decodedBytes, "UTF-8");
+
+        decodedBytes = decoder.decode(name);
+        name = new String(decodedBytes, "UTF-8");
+        
+        decodedBytes = decoder.decode(phone);
+        phone = new String(decodedBytes, "UTF-8");
+        
+        decodedBytes = decoder.decode(address);
+        address = new String(decodedBytes, "UTF-8");
+
+        System.out.println(code);
+        System.out.println(address);
+        System.out.println(phone);
+        System.out.println(name);
+
         ResponseEntity<MemberSignUpResponse> response = clientService.callPostAuthExternalServer(token,
                 new MemberSignUpRequest().builder()
                         .name(name)
@@ -152,6 +181,12 @@ public class VoiceController {
 
     @GetMapping("/train")
     public ResponseEntity train (@RequestParam(value = "code") final String code) throws Exception {
+
+        Decoder decoder = Base64.getDecoder();
+        
+        byte[] decodedBytes = decoder.decode(code);
+        
+        code = new String(decodedBytes, "UTF-8");
 
         // 여기는 training 하는 코드
 

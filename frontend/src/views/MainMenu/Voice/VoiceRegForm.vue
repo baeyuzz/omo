@@ -3,7 +3,7 @@
         <Nav/>
         
         <div style="text-align : center; color : black;" class="regForm" >
-            <div style="margin-top : 2%; background-color : white; width : 480px; border-radius : 15px">
+            <div style="margin-top : 11%; background-color : white; width : 480px; border-radius : 15px">
             <div class="regForm" style="padding-top : 4%;">
                 <h1>
                     음성등록
@@ -13,17 +13,17 @@
                 <div class="regForm">
                     <table>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
                                 <td><label>기관명</label></td>
                                 <td> <input class="regInput" placeholder="ex. A123" v-model="code"/></td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <td><label>이름</label></td>
                                 <td> <input class="regInput" placeholder="ex. 홍길동" v-model="name"/></td>
                             </tr>
                             <tr>
                                 <td><label>휴대 전화</label></td>
-                                <td><input class="regInput" type="tel" placeholder="ex. 010-1234-1234" v-model="phone"/></td>
+                                <td><input class="regInput" type="tel" placeholder="ex. 01012345678" v-model="phone"/></td>
                             </tr>
                             <tr>
                                 <td><label>주소</label></td>
