@@ -25,14 +25,6 @@
         </router-link>
       </div>
       <div style="padding-right : 2%;">
-        <router-link to="/voiceReg" style="text-decoration:none">
-          <div class="icons">
-            <img src="@/assets/mic.png" width="130px" height="130px;" />
-          </div>
-          <p>음성 등록</p>
-        </router-link>
-      </div>
-      <div style="padding-right : 2%;">
         <router-link to="/visitor" style="text-decoration:none">
           <div class="icons">
             <img src="@/assets/paper.png" width="110px" height="120px;" />
@@ -40,13 +32,21 @@
           <p>명부 관리</p>
         </router-link>
       </div>
+      <div style="padding-right : 2%;">
+        <router-link to="/voiceReg" style="text-decoration:none">
+          <div class="icons">
+            <img src="@/assets/mic.png" width="130px" height="130px;" />
+          </div>
+          <p>음성 등록</p>
+        </router-link>
+      </div>
 
-      <div class="pwd-modal" data-toggle="modal" style="padding-right : 2%;">
+      <!-- <div class="pwd-modal" data-toggle="modal" style="padding-right : 2%;">
         <div class="icons">
           <img src="@/assets/pwd.png" style="width : 130px; height : 120px;" />
         </div>
           <p>비밀번호 변경</p>
-      </div>
+      </div> -->
       <div>
         <div class="icons" @click="logout" style="padding-right : 2%;">
           <img src="@/assets/unlock.png" style="width : 120px; height : 120px;" />
@@ -122,7 +122,7 @@ export default {
 .menu {
   margin-top: 8%;
   text-align: center;
-  padding: 0 15% 0 15%;
+  padding: 0 20% 0 20%;
   display: flex;
   z-index: 5;
   justify-items: center;
