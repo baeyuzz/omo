@@ -12,7 +12,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MemberSignUpRequest implements Serializable {
-    private String code;
     private String name;
     private String phone;
     private String address;
