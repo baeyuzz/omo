@@ -26,7 +26,7 @@
 								{{ article.id }}
 							</div> -->
 							<div class="cell" data-title="Age">
-                <collapse>
+                <collapse :selected="false  ">
                   <div slot="collapse-header">
                     {{ article. title }}
                   </div>
@@ -89,7 +89,7 @@ export default {
    created(){
        http.get('/api/notice').then(res => {
        this.article_list= (res.data);
-       console.log(this.article_list)
+      //  console.log(this.article_list)
      })
    }
 }

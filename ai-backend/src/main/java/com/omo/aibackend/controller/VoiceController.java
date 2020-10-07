@@ -59,9 +59,12 @@ public class VoiceController {
             res = execPython(command,1);
         }
         System.out.println("res : " + res);
-        String name = res.split("_")[0];
-        String phone = res.split("_")[1];
+        
+        if(res.equals("false"))
+            return new ResponseEntity<>(false, HttpStatus.OK);
 
+        String name = res.split("_")[0].trim();
+        String phone = res.split("_")[1].trim();
         // 1. 방문자 인식이 되었다면
         // 2. backend_auth 서버로 방문자 정보 요청
         // 3. 방문자 관리 서버에 명부 작성 요청
@@ -229,6 +232,10 @@ public class VoiceController {
         
         if(idx2 == -1)
             return "success";
+
+        if(output.lastIndexOf("uncertain result : ") != -1){
+            return "false";
+        }
 
         return res;
 

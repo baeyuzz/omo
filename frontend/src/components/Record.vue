@@ -101,6 +101,11 @@ export default {
               }})
           .then(resp => {
             console.log(resp.data)
+            if(!resp.data){
+              alert('인식 불가! 다시 시도해주세요')
+              this.isLoading = true;
+              return;
+            }
             var confirm_test = confirm(resp.data + "님이 맞으신가요?");
             
             if ( confirm_test == true ) {

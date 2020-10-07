@@ -68,9 +68,11 @@ export default {
 
       if (confirm_test == true) {
         // axios.~~.then~~.catch~~ 하기
-        deleteUser(this.$cookies.get('token'))
-        .then(()=>
-            this.$router.push({ name: "Main" })
+        deleteUser()
+        .then(()=>{
+          alert('탈퇴 되었습니다')
+          this.$router.push({ name: "Main" })
+          }
         )
         .catch((err)=>alert(err))
       }
