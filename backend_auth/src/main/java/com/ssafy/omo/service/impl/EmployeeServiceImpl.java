@@ -102,4 +102,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(AppConstants.EMPLOYEE, AppConstants.ID, id));
 	}
 
+	@Override
+	public Employee getEmployeeByPhoneAndName(String name, String phone) {
+		return employeeRepository.findByPhoneAndName(name,phone).orElseThrow(() -> new ResourceNotFoundException(AppConstants.EMPLOYEE, AppConstants.ID, name));
+	}
+
 }
