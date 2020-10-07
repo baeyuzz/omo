@@ -55,6 +55,8 @@ export default {
 
   },
   created () {
+      this.$store.state.code = this.$cookies.get("code")
+
       http.get("api/visitors/"+ this.$store.state.code)
       .then(res =>{
           this.visitorlogs = res.data;

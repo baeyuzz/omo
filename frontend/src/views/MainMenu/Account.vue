@@ -19,7 +19,7 @@
       <div style="padding-right : 2%;">
         <router-link to="/members" style="text-decoration:none">
         <div class="icons">
-          <img src="@/assets/frame.png" style="width : 120px; height : 120px;" />
+          <img src="@/assets/members.png" style="width : 120px; height : 130px;" />
         </div>
         <p>등록 회원 관리</p>
         </router-link>

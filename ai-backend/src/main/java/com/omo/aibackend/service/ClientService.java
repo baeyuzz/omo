@@ -23,7 +23,8 @@ public class ClientService {
         headers.add("Authorization", "Bearer " + token);
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        return clientApiService.post("https://j3a509.p.ssafy.io:9004/api/employee", headers, request).getBody();
+        // return clientApiService.post("https://j3a509.p.ssafy.io:9004/api/employee", headers, request).getBody();
+        return clientApiService.post("http://localhost:9004/api/employee", headers, request).getBody();
     }
 
     /**
@@ -33,14 +34,14 @@ public class ClientService {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", "Bearer " + token);
         headers.setContentType(MediaType.APPLICATION_JSON);
-        return clientApiService.get("https://j3a509.p.ssafy.io:9004/api/employee/" + request.getName() + "/" + request.getPhone(), headers).getBody();
+        return clientApiService.get("http://localhost:9004/api/employee/" + request.getPhone(), headers).getBody();
     }
 
     /**
      * 방문자 관리 서버로 방문자 정보 POST 통신
      * */
     public ResponseEntity callPostVisitorExternalServer(VisitorRequest request) {
-        return clientApiService.post("https://j3a509.p.ssafy.io:8080/api/visitors", HttpHeaders.EMPTY, request).getBody();
+        return clientApiService.post("http://localhost:8080/api/visitors", HttpHeaders.EMPTY, request).getBody();
     }
 
     /**

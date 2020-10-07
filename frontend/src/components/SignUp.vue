@@ -81,7 +81,7 @@ export default {
   position: absolute;
   width: 90%;
   margin: 0% 5%;
-  top: 65%;
+  top: 58%;
   text-align: center;
 
 }

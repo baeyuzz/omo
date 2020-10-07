@@ -7,16 +7,20 @@
       </head>
     <router-view />
     </div>
-    
+    <div class="footer">
+    <Footer/>
+    </div>
   </div>
 </template>
 
 <script>
 import sizeWarning from '@/components/size-warning.vue';
+import Footer from '@/components/footer.vue';
 
 export default {
   components: {
-    "size-warning" : sizeWarning
+    "size-warning" : sizeWarning,
+    Footer
   },
 }
 </script>
@@ -46,6 +50,13 @@ html {
 
 body {
   margin: 0;
+}
+
+.footer {
+   position : fixed;
+   bottom : 10px;
+   text-align: center;
+   width: 100%;
 }
 
 
