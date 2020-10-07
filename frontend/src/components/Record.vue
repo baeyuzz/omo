@@ -90,6 +90,7 @@ export default {
 
           const info = {
             code : this.$store.state.code,
+            token : this.$cookies.get('token')
           }
           axios.post("http://localhost:8081/api/ai/uploadAudio4list", audio, {headers : info})
           .then(resp => {
@@ -122,6 +123,7 @@ export default {
             addr : this.$store.state.addr,
             phone : this.$store.state.phone,
             code : this.$store.state.code,
+            token : this.$cookies.get('token')
           }
 
           axios.post("http://localhost:8081/api/ai/uploadAudio4member", audio, {headers : info})
