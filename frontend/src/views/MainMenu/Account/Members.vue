@@ -75,7 +75,6 @@ export default {
   },
   methods: {
     train() {
-      //   let code = 'ssafy';
       let code = this.$store.state.code;
 
       alert("음성데이터를 훈련 시킵니다 !");
@@ -94,16 +93,16 @@ export default {
           alert("삭제되었습니다");
 
           getEmp()
-            .then((res2) => {
-              console.log(res2);
-              this.memberList = res2.data;
+            .then((res) => {
+              // console.log(res);
+              this.memberList = res.data;
             })
-            .catch((err) => {
-              console.log(err);
+            .catch(() => {
+              // console.log(err);
             });
         })
-        .catch((err) => {
-          console.log(err);
+        .catch(() => {
+          // console.log(err);
         });
     },
   },
@@ -112,11 +111,11 @@ export default {
     // console.log(auth)
     getEmp()
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         this.memberList = res.data;
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        // console.log(err);
       });
   },
 };

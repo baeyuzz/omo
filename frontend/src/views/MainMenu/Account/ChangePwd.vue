@@ -60,21 +60,24 @@ export default {
   },
   methods: {
     deleteAcc() {
-    //   if (this.prePwd.length == 0) {
-    //     alert("기존 비밀번호를 입력하세요");
-    //     return;
-    //   }
+      //   if (this.prePwd.length == 0) {
+      //     alert("기존 비밀번호를 입력하세요");
+      //     return;
+      //   }
       var confirm_test = confirm("탈퇴하시겠습니까?");
 
       if (confirm_test == true) {
         // axios.~~.then~~.catch~~ 하기
         deleteUser()
-        .then(()=>{
-          alert('탈퇴 되었습니다')
-          this.$router.push({ name: "Main" })
-          }
-        )
-        .catch((err)=>alert(err))
+          .then(() => {
+            alert("탈퇴 되었습니다");
+            this.$store.commit("clearMember");
+            this.$store.commit("logout");
+            this.$cookies.remove("token");
+            this.$cookies.remove("code");
+            this.$router.push("/");
+          })
+          .catch((err) => alert(err));
       }
     },
     async submitForm() {
