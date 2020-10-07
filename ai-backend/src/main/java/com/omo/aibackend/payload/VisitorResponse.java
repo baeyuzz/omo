@@ -12,6 +12,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VisitorResponse implements Serializable {
-    private String message;
     private boolean success;
+    private String message;
 }

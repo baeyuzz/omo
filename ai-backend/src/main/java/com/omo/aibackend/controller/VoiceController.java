@@ -25,6 +25,7 @@ public class VoiceController {
     private final ClientService clientService;
 
     @PostMapping("/uploadAudio4list") // 음성 인식 페이지
+    @ResponseBody
     public ResponseEntity upload (@RequestHeader final Map<String, Object> info, @RequestParam (value = "audio") final MultipartFile file) throws Exception {
         String code = (String) info.get("code");
         String token = (String) info.get("token");
@@ -57,20 +58,20 @@ public class VoiceController {
         if(res != null) {   // 1. 방문자 인식 성공
 
             // 2. 인식한 방문자의 정보 요청
-            ResponseEntity<MemberResponse> memberResponse = clientService.callGetAuthExternalServer(token,
+            MemberResponse memberResponse = clientService.callGetAuthExternalServer(token,
                     new MemberRequest().builder()
-                            .name(name)
+                            .userName(name)
                             .phone(phone)
                             .build());
 
-            if(memberResponse.getStatusCode() != HttpStatus.OK) {
-
-            } else {
-
-            }
+//            if(memberResponse.getStatusCode() != HttpStatus.OK) {
+//
+//            } else {
+//
+//            }
 
             // 3. 받아온 정보로 방문자 관리 서버에 전송
-            ResponseEntity visitorResponse = clientService.callPostVisitorExternalServer(
+            VisitorResponse visitorResponse = clientService.callPostVisitorExternalServer(
                     new VisitorRequest().builder()
                             .groupCode(code)
                             .name(name)
@@ -78,13 +79,13 @@ public class VoiceController {
                             //.address(address)
                             .build());
 
-            if(visitorResponse.getStatusCode() != HttpStatus.OK) {
-                System.out.println("방문자 서버 에러");
-                return new ResponseEntity<>(false, HttpStatus.OK);
-            } else {
-                System.out.println(visitorResponse.getBody());
-//                return new ResponseEntity(response.getBody(), HttpStatus.OK);
-            }
+//            if(visitorResponse.getStatusCode() != HttpStatus.OK) {
+//                System.out.println("방문자 서버 에러");
+//                return new ResponseEntity<>(false, HttpStatus.OK);
+//            } else {
+//                System.out.println(visitorResponse.getBody());
+////                return new ResponseEntity(response.getBody(), HttpStatus.OK);
+//            }
 
             return new ResponseEntity<>(res, HttpStatus.OK);
         } else
@@ -92,6 +93,7 @@ public class VoiceController {
     }
 
     @PostMapping("/uploadAudio4member") // 음성 등록 페이지
+    @ResponseBody
     public ResponseEntity regMember (@RequestHeader final Map<String, Object> info, @RequestParam (value = "audio") final MultipartFile file) throws Exception {
 
         String code = (String) info.get("code");
@@ -100,7 +102,26 @@ public class VoiceController {
         String address = (String) info.get("addr");
         String token = (String) info.get("token");
 
-        ResponseEntity<MemberSignUpResponse> response = clientService.callPostAuthExternalServer(token,
+        Decoder decoder = Base64.getDecoder();
+        
+        byte[] decodedBytes = decoder.decode(code);
+        code = new String(decodedBytes, "UTF-8");
+
+        decodedBytes = decoder.decode(name);
+        name = new String(decodedBytes, "UTF-8");
+        
+        decodedBytes = decoder.decode(phone);
+        phone = new String(decodedBytes, "UTF-8");
+        
+        decodedBytes = decoder.decode(address);
+        address = new String(decodedBytes, "UTF-8");
+
+        System.out.println(code);
+        System.out.println(address);
+        System.out.println(phone);
+        System.out.println(name);
+
+        MemberSignUpResponse response = clientService.callPostAuthExternalServer(token,
                 new MemberSignUpRequest().builder()
                         .name(name)
                         .phone(phone)
@@ -108,7 +129,7 @@ public class VoiceController {
                         .build()
         );
 
-        if(!response.getBody().isSuccess()) return new ResponseEntity<>(false, HttpStatus.OK);
+        //if(response.getStatusCode() != HttpStatus.CREATED) return new ResponseEntity<>(false, HttpStatus.OK);
 
         String nplusp = name + "_" + phone;
 
@@ -151,6 +172,7 @@ public class VoiceController {
     }
 
     @GetMapping("/train")
+    @ResponseBody
     public ResponseEntity train (@RequestParam(value = "code") final String code) throws Exception {
 
         // 여기는 training 하는 코드
@@ -202,9 +224,10 @@ public class VoiceController {
 
     }
 
-    @PostMapping("/test")
-    public ResponseEntity VisitLogExternalServerRequestTest() {
-        ResponseEntity response = clientService.callPostVisitorTestExternalServer(
+    @PostMapping("/test1")
+    @ResponseBody
+    public void visitLogExternalServerRequestTest() {
+        VisitorResponse response = clientService.callPostVisitorTestExternalServer(
                 new VisitorRequest().builder()
                         .groupCode("ssafy")
                         .name("최문경")
@@ -212,13 +235,34 @@ public class VoiceController {
                         .address("서울 송파구")
                         .build());
 
-        if(response.getStatusCode() != HttpStatus.OK) {
-            System.out.println("방문자 서버 에러");
-            return new ResponseEntity<>(false, HttpStatus.OK);
-        } else {
-            System.out.println(response.getBody());
-            return new ResponseEntity<>(true, HttpStatus.OK);
-        }
+        System.out.println(response.getMessage());
+    }
+
+    @PostMapping("/test2")
+    @ResponseBody
+    public void postEmployeeExternalServerRequestTest() {
+        MemberSignUpResponse response = clientService.callPostAuthTestExternalServer(
+                new MemberSignUpRequest().builder()
+                        .name("최문경8")
+                        .phone("010-0015-0000")
+                        .address("서울 강남구")
+                        .build()
+        );
+
+        System.out.println(response.getName());
+    }
+
+    @GetMapping("/test3")
+    @ResponseBody
+    public void getEmployeeExternalServerRequestTest() {
+        MemberResponse response = clientService.callGetAuthTestExternalServer(
+                new MemberRequest().builder()
+                        .userName("김강현")
+                        .phone("010-0000-0000")
+                        .build()
+        );
+
+        System.out.println(response.getAddress());
     }
 
 }

@@ -1,4 +1,4 @@
-package com.omo.aibackend.payload;
+package com.omo.backend.visitor;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,8 +11,7 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MemberResponse implements Serializable {
-    private String name;
-    private String phone;
-    private String address;
+public class VisitorResponse implements Serializable {
+    private boolean success;
+    private String message;
 }
