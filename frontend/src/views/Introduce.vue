@@ -15,7 +15,6 @@
     <div style="width : 50%; margin : auto">
         <carousel  
         :per-page="1" 
-        :navigate-to="someLocalProperty" 
         :loop="true" 
         :navigation-enabled="true"
         :paginationPadding='5'

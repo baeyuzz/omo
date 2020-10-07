@@ -77,7 +77,7 @@ export default {
             .then(()=>{
                 alert("음성데이터 훈련이 끝났습니다")
             })
-            .cath((err)=>{
+            .catch((err)=>{
                 alert("음성데이터 훈련 실패 ", err)
             })
       },
