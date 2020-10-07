@@ -4,12 +4,14 @@
 
     <div class="menu">
       <div>
-        <router-link to="/chat/123" style="text-decoration:none">
+        <!-- <router-link :to="videoUrl" style="text-decoration:none"> -->
+        <div @click="goVideo">
           <div class="icons">
             <img src="@/assets/frame.png" width="170px" height="170px;" />
           </div>
           <p>명부 작성</p>
-        </router-link>
+        </div>
+        <!-- </router-link> -->
       </div>
       
       <div>
@@ -38,7 +40,11 @@ export default {
   data(){
     return {
       'imageBytes': null,
+      'videoUrl': null,
     }
+  },
+  mounted() {
+    this.videoUrl = "/video/" + this.$cookies.get('code')
   },
   methods: {
     test() {
@@ -56,6 +62,9 @@ export default {
           console.log('사진 업로드 실패', err)
         })
     },
+    goVideo() {
+      this.$router.push('/video/' + this.$cookies.get('code'))
+    }
   }          
 }
 </script>

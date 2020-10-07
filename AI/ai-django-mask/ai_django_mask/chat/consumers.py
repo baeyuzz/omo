@@ -11,8 +11,10 @@ from imutils.video import VideoStream
 def announce_chats(sender, instance, created, **kwargs):
     if created:
         channel_layer=get_channel_layer()
+        group_name = 'chat_{}'.format(instance.room)
+        group_name = group_name[0:5] + group_name[6:-1]
         async_to_sync(channel_layer.group_send)(
-            "chat_123", {
+            group_name, {
                 "type": "chat_message",
                 "message": instance.message,
                 "check": instance.check,
