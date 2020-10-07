@@ -98,7 +98,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public ApiResponse deleteUser(String username, UserPrincipal currentUser) {
+	public ApiResponse deleteUser(UserPrincipal currentUser) {
+		String username = currentUser.getUsername();
 		User user = userRepository.findByUsername(username)
 				.orElseThrow(() -> new ResourceNotFoundException("User", "id", username));
 		if (!user.getId().equals(currentUser.getId()) || !currentUser.getAuthorities()
@@ -144,6 +145,7 @@ public class UserServiceImpl implements UserService {
 		if (user.getId().equals(currentUser.getId())
 				|| currentUser.getAuthorities().contains(new SimpleGrantedAuthority(RoleName.ROLE_ADMIN.toString()))) {
 
+			User updatedUser = userRepository.save(user);
 			User updatedUser = userRepository.save(user);
 
 			Long postCount = employeeRepository.countByCreatedBy(updatedUser.getId());
