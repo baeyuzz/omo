@@ -138,3 +138,11 @@ Flow 2 ) 마스크인식 + 마스크 벗고 얼굴인식
 - **형상관리**
   - Jira
   - GitLab
+  - 
+  
+
+## :calendar: 프로젝트 진행 일정
+
+<img src="https://user-images.githubusercontent.com/32058420/95409680-227a9700-095d-11eb-8da0-9eb7eb19345d.png">
+
+
