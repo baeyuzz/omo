@@ -4,7 +4,7 @@
     <br />
     <input type="text" placeholder="Email" v-model="email" />
     <br />
-    <input type="password" placeholder="Password (6자~20자)" v-model="password" />
+    <input type="password" placeholder="Password (10자~20자)" v-model="password" />
     <br />
     <input type="password" placeholder="Password Confirm" v-model="passwordConfirm" />
     <br />
@@ -37,8 +37,8 @@ export default {
         alert("유효하지 않은 이메일 입니다.");
         return;
       }      
-      if (this.password.length<6) {
-        alert("패스워드는 6자 이상으로 해주세요.");
+      if (this.password.length<10) {
+        alert("패스워드는 10자 이상으로 해주세요.");
         return;
       }
       

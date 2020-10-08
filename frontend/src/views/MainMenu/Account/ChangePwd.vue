@@ -43,8 +43,8 @@
 
 <script>
 // import Nav from '@/components/Nav.vue'
-import http from "@/http-common.js";
-import { deleteUser } from "@/lib/userApi.js";
+// import http from "@/http-common.js";
+import { deleteUser, changePwd } from "@/lib/userApi.js";
 
 export default {
   name: "ChangPwd",
@@ -101,31 +101,18 @@ export default {
         this.$refs.newPwd2.focus();
         return;
       }
-      const params = {
+      const data = {
         newPwd: this.newPwd,
-        newPwd2: this.newPwd2,
-        prePwd: this.prePwd,
+        pwd: this.prePwd,
       };
-      http
-        .post("/아직안정해짐", params)
-        .then((res) => {
-          if (res.data.state) {
-            // 등록이 되면
-            console.log("success");
-            this.$router.push({
-              name: "Main",
-            });
-          } else {
-            this.$router.push({
-              name: "Main",
-            });
-            console.log("fail");
-          }
-        })
-        .catch((err) => {
+      changePwd(data)
+        .then(() => {
+          alert("변경되었습니다");
           this.$router.push({
             name: "Main",
           });
+        })
+        .catch((err) => {
           alert("Error ", err);
         });
     },

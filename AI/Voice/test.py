@@ -29,7 +29,7 @@ for folder in folders:
         break;
     else:
         order += 1
-if np.max(res) > 50:
+if np.max(res) > 40:
     print("result : ", result)
 else:
     print("uncertain result :", result)

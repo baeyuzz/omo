@@ -41,13 +41,13 @@ public class VoiceController {
         System.out.println(code);
 
         String fileName= file.getOriginalFilename();
-        File f= new File("C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\" + code + "\\" + fileName);
+        File f= new File("/home/ubuntu/testServer/v0.8/s03p23a509/AI/Voice/" + code + "/" + fileName);
         file.transferTo(f);
 
         System.out.println("Python Call");
         String[] command = new String[3];
         command[0] = "python";
-        command[1] = "C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\test.py";
+        command[1] = "/home/ubuntu/testServer/v0.8/s03p23a509/AI/Voice/test.py";
         command[2] = code;
 
         String res;
@@ -146,7 +146,7 @@ public class VoiceController {
 
         String nplusp = name + "_" + phone;
 
-        String path = "C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\" + code + "\\data\\" + nplusp;
+        String path = "/home/ubuntu/testServer/v0.8/s03p23a509/AI/Voice/" + code + "/data/" + nplusp;
 
         File newfile = new File(path);
 
@@ -162,7 +162,7 @@ public class VoiceController {
         System.out.println("Python Call");
         String[] command = new String[4];
         command[0] = "python";
-        command[1] = "C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\mfcctonpy.py";
+        command[1] = "/home/ubuntu/testServer/v0.8/s03p23a509/AI/Voice/mfcctonpy.py";
         command[2] = code;
         command[3] = nplusp;
 
@@ -193,7 +193,7 @@ public class VoiceController {
         System.out.println("Python Call");
         String[] command = new String[3];
         command[0] = "python";
-        command[1] = "C:\\ssafy\\project2\\pjt3\\s03p23a509\\AI\\Voice\\voiceRecognition.py";
+        command[1] = "/home/ubuntu/testServer/v0.8/s03p23a509/AI/Voice/voiceRecognition.py";
         command[2] = code;
 
         try {

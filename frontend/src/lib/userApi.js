@@ -3,7 +3,7 @@ import cookies from 'vue-cookies';
 
 const instance = axios.create({
     baseURL: 'http://localhost:9004/api/'
-  });
+});
 
 
 function loginUser(data) {
@@ -14,7 +14,7 @@ function createUser(data) {
 }
 function deleteUser() {
     return instance.delete(`users/${cookies.get('code')}`, {
-        headers: { 'Authorization' : 'Bearer ' + cookies.get("token") },
+        headers: { 'Authorization': 'Bearer ' + cookies.get("token") },
     });
 }
 function emailCheck(data) {
@@ -22,20 +22,30 @@ function emailCheck(data) {
 }
 function getEmp() {
     return instance.get('employee', {
-        headers: { 'Authorization' : 'Bearer ' + cookies.get("token") },
+        headers: { 'Authorization': 'Bearer ' + cookies.get("token") },
     });
 }
 function deleteEmp(id) {
     return instance.delete(`employee/${id}`, {
-        headers: { 'Authorization' : 'Bearer ' + cookies.get("token") },
+        headers: { 'Authorization': 'Bearer ' + cookies.get("token") },
+    });
+}
+function changePwd(data) {
+    const infoRequest = {
+        "newPassword": data.newPwd,
+        "password": data.pwd
+    }
+    return instance.put(`users/setOrUpdateInfo`, infoRequest, {
+        headers: { 'Authorization': 'Bearer ' + cookies.get("token") },
     });
 }
 
 export {
-  loginUser,
-  createUser,
-  deleteUser,
-  emailCheck,
-  getEmp,
-  deleteEmp
+    loginUser,
+    createUser,
+    deleteUser,
+    emailCheck,
+    getEmp,
+    deleteEmp,
+    changePwd
 }
