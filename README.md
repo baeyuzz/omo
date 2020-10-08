@@ -18,25 +18,13 @@
 
 ![image](https://user-images.githubusercontent.com/23401317/93544693-a9110980-f999-11ea-9fe2-64d0122e70a3.png)
 
-# 서비스 구체화 회의
-
-주제 : 방문자 명단 자동 작성을 위한 서비스
-
-[서비스 진행상황]
-
-→ 마스크 디텍션까지는 모델 리소스 확보
-
-[문제점]
-
-→ 마스크를 낀 상태로 개인 식별을 어떻게 할 것인가?
-
-[서비스 전제 사항]
-
-특정기관 혹은 단체에서 사용할 것
-
-특정 인물에 대한 개인정보동의가 이루어진 상황에서 얼굴에 대한 학습이 완료된 상태라고 가정
+<br>
+<br>
+<br>
 
 # 서비스 설계
+
+<br>
 
 ## 와이어프레임 
 [구경하러가기](https://www.figma.com/file/Ke6MIc0wdEYPm34qRRzKtI/%ED%8A%B9%ED%99%94-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-5%EB%B0%98-9%EC%A1%B0-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84?node-id=0%3A1)
@@ -51,7 +39,7 @@ Flow 2 ) 마스크인식 + 마스크 벗고 얼굴인식
 
 : 캠에 인식 → `마스크디텍션` → 마스크 벗고 인식 요청 → `얼굴인식` → 결과값
 
-Flow 3 ) 마스크인식 + 음성인식으로 사람 식별
+:thumbsup: <strong> Flow 3 ) 마스크인식 + 음성인식으로 사람 식별 </strong>
 
 : 캠에 인식 → `1. 마스크 디텍션` → 음성인식 요청 → `2. 음성인식` → 결과값
 
@@ -64,27 +52,56 @@ Flow 3 ) 마스크인식 + 음성인식으로 사람 식별
 
 음성인식 5초
 
-# 서버 API
+<br>
+<br>
+<br>
+#
 
-## POST /api/visitation : 방문처리
+# 메인 화면
 
-- 방문자 식별정보(이름/ 고유값..?)
-- 방문 시간은 서버에서 생성할것
+![main](https://user-images.githubusercontent.com/32058420/95405993-44bbe700-0954-11eb-8d27-fce5b01a793a.png)
 
-NoSQL 사용해서 방문기록 파일형태로 생성
+<br>
+<br>
+<br>
 
-### Request
+# 마스크 - 음성 인식 과정
 
-```json
-{
-	
-}
-```
+![마스크-음성](https://user-images.githubusercontent.com/32058420/95406067-79c83980-0954-11eb-8bee-094a3e14b6b6.png)
 
-### Response
+마스크가 인식이 되면 음성을 통해 방문자가 눈군지 판별합니다
 
-```json
-{
-	
-}
-```
+<br>
+<br>
+<br>
+
+# 계정 관리
+![image](https://user-images.githubusercontent.com/32058420/95406763-2c4ccc00-0956-11eb-99b0-4e60979d41e5.png)
+
+<br>
+<br>
+
+
+- 등록 회원 관리 및 음성 훈련
+ 
+<img src = 'https://user-images.githubusercontent.com/32058420/95406840-628a4b80-0956-11eb-822c-1e60b43b78c8.png' alt="회원관리" width=800px>
+
+해당 기관에 등록 되어있는 회원들을 관리하고, 음성을 훈련 시킬 수 있습니다
+
+<br>
+<br>
+
+- 방문자 명부
+
+<img src = 'https://user-images.githubusercontent.com/32058420/95406924-982f3480-0956-11eb-985c-8911b61be13d.png' alt="방문자명부" width=800px>
+
+해당 기관에 방문한 사람들의 목록을 보여줍니다
+
+<br>
+<br>
+
+- 음성 등록
+
+<img src = 'https://user-images.githubusercontent.com/32058420/95406963-b8f78a00-0956-11eb-80c0-f0fd23ca2f83.png' alt="음성등록" width=450px>
+
+기관에 새로 추가된 사람의 음성을 등록 할 수 있습니다
