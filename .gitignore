@@ -6,3 +6,12 @@
 .idea/workspace.xml
 AI/Voice/_config.yml
 frontend/package-lock.json
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+*.pyc
+.pyc

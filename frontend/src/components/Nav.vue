@@ -1,14 +1,16 @@
 <template>
   <div class="nav">
-    <!-- <h1 class="logo" @click="goMain()">
-            ㅇㅁㅇ
-    </h1>-->
+    <head>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    </head>
     <router-link to="/main">
       <img class="logo" @click="goMain()" src="@/assets/icon.png" width="100px" />
     </router-link>
 
     <div class="menu">
-      <button>서비스 소개</button>
+      <button>
+        <router-link to="/service">서비스 소개</router-link>
+      </button>
       <button>
         <router-link to="/notice">공지사항</router-link>
       </button>
@@ -23,7 +25,7 @@ export default {
       try {
         this.$router.push("Main");
       } catch (error) {
-        console.log("route same path!");
+        // console.log("route same path!");
       }
     },
   },
@@ -35,6 +37,7 @@ export default {
   display: flex;
   justify-content: space-between;
   justify-items: center;
+  margin-bottom : 4%;
 }
 a:link {
   color: white;
@@ -57,8 +60,6 @@ img:hover {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
 }
-.logo {
-}
 .logo:hover,
 button:hover {
   color: #ffffffbb;
@@ -74,5 +75,9 @@ button {
   border: none;
   color: white;
   font-size: 15px;
+}
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+
 }
 </style>

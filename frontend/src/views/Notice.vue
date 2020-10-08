@@ -6,16 +6,13 @@
       <h2>OMO 서비스 공지사항 </h2>
     </div> 
 
-    <!-- <div class="content-box">
-      
-    </div> -->
   <div class="content-box">
 			<div class="wrap-table100">
 					<div class="table">
 						<div class="row header">
-							<div class="cell">
+							<!-- <div class="cell">
 								#
-							</div>
+							</div> -->
 							<div class="cell">
 								제목
 							</div>
@@ -24,15 +21,23 @@
 							</div>
 						</div>
 
-						<div class="row"  v-for="(article, idx) in article_list" :key="idx" >
-							<div class="cell" data-title="Full Name">
-								{{ idx }}
-							</div>
+						<div class="row"  v-for="article in article_list" :key="article.id" >
+							<!-- <div class="cell" data-title="Full Name">
+								{{ article.id }}
+							</div> -->
 							<div class="cell" data-title="Age">
-								<router-link to="/notice">{{ article }}</router-link>
+                <collapse :selected="false  ">
+                  <div slot="collapse-header">
+                    {{ article. title }}
+                  </div>
+                  <div slot="collapse-body">
+                    {{ article. contents }}
+                  </div>
+                </collapse>
+
 							</div>
 							<div class="cell" data-title="Job Title">
-								2020-09-16
+								{{ article.createdAt.substring(0,article.createdAt.indexOf('T')) }}
 							</div>
 						</div>
 					</div>
@@ -44,39 +49,82 @@
 
 <script>
 import Nav from '@/components/Nav.vue'
+import http from '@/http-common.js'
+import Collapse from 'vue-collapse'
 
 export default {
   name: 'Notice',
   components: {
-    Nav
+    Nav,
+    Collapse
   },
   data() {
     return {
-      article_list: [
-        '개인정보 처리방침 개정안내',
-        'OMO 운영정책 변경 안내'
-      ]
+      article_list: []
     }
   },
    methods: {
+    //  attachCollapse(){
+    //     var coll = document.getElementsByClassName("collapsible");
+    //     console.log(coll)
+
+    //     for (var i = 0; i < coll.length; i++) {
+    //       console.log('before')
+    //       coll[i].addEventListener("click", function() {
+    //                   console.log('before')
+
+    //         this.classList.toggle("active");
+    //         var content = this.nextElementSibling;
+    //         if (content.style.display === "block") {
+    //           content.style.display = "none";
+    //         } else {
+    //           content.style.display = "block";
+    //         }
+    //       });
+    //     }
+    //  }
+   },
+   mounted() {
+   },
+   created(){
+       http.get('/api/notice').then(res => {
+       this.article_list= (res.data);
+      //  console.log(this.article_list)
+     })
    }
 }
 </script>
 <style scoped>
 .intro {
-  padding-left : 7%;
+  margin : auto;
+  text-align: center;
+  padding-bottom: 2%;
 }
 
 .content-box { 
-  /* width: 100%; */
-  height: 80%;
-  margin-left : 7%;
-  margin-right : 6.5%;
+  width: 60%;
+  /* height: 80%; */
+  margin : auto;
   background: white;
   border-radius: 12px;
   color: black;
+  overflow: auto;
+  /* height : 500px; */
 }
-
+.content-box::-webkit-scrollbar {
+  width: 3px;
+}
+.content-box::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.content-box::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: rgba(136, 187, 255, 0.692);
+}
+.content-box::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
 a:link { color: #666666; text-decoration: none;}
 a:visited { color: #666666; text-decoration: none;}
 a:hover { color: black; text-decoration: underline;}
@@ -106,18 +154,19 @@ a:hover { color: black; text-decoration: underline;}
 .wrap-table100 {
   width: 100%;
   border-radius: 10px;
-  overflow: hidden;
+  
 }
 
 .table {
   width: 100%;
   display: table;
   margin: 0;
+
 }
 
 .row {
   display: table-row;
-  background: #fff;
+  background: #f7f7f7;
 }
 
 .row.header {
@@ -154,25 +203,48 @@ a:hover { color: black; text-decoration: underline;}
 }
 
 .row .cell:nth-child(1) {
-  width: 100px;
+  width: 470px;
   padding-left: 40px;
 }
 
 .row .cell:nth-child(2) {
-  width: 470px;
+  width: 160px;
+  padding-right: 40px;
+
 }
 
-.row .cell:nth-child(3) {
+/* .row .cell:nth-child(3) {
   width: 200px;
 }
 
 .row .cell:nth-child(4) {
   width: 190px;
-}
+} */
 
 
 .table, .row {
   width: 100% !important;
 }
 
+.collapsible {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  color: rgb(180, 180, 180);
+}
+
+.content {
+  text-align: left;
+  padding: 30px;
+  display: none;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
 </style>

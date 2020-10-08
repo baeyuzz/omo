@@ -3,10 +3,10 @@
     <Nav />
 
     <div class="intro">
-      <router-link to="/main" style="text-decoration:none; color : white;">
+      <router-link to="/main" style="text-decoration: none; color: white">
         <h1>◀</h1>
       </router-link>
-      <h2>계정 설정</h2>
+      <h1>{{ code }} 계정 관리</h1>
       <h2 />
     </div>
     <!-- 
@@ -16,38 +16,43 @@
     -->
 
     <div class="menu">
-      <div>
-        <div class="icons" onclick="alert(`준비중입니다.`)">
-          <img src="@/assets/frame.png" style="width : 120px; height : 120px;" />
-        </div>
-        <p>등록 회원 관리</p>
-      </div>
-      <div>
-        <router-link to="/voiceReg" style="text-decoration:none">
+      <div style="padding-right: 2%">
+        <router-link to="/members" style="text-decoration: none">
           <div class="icons">
-            <img src="@/assets/mic.png" width="90px" height="120px;" />
+            <img
+              src="@/assets/members.png"
+              style="width: 120px; height: 130px"
+            />
           </div>
-          <p>음성 등록</p>
+          <p>등록 회원 관리</p>
         </router-link>
       </div>
-      <div>
-        <router-link to="/manageList" style="text-decoration:none">
+      <div style="padding-right: 2%">
+        <router-link to="/visitor" style="text-decoration: none">
           <div class="icons">
             <img src="@/assets/paper.png" width="110px" height="120px;" />
           </div>
           <p>명부 관리</p>
         </router-link>
       </div>
+      <div style="padding-right: 2%">
+        <router-link to="/voiceReg" style="text-decoration: none">
+          <div class="icons">
+            <img src="@/assets/mic.png" width="130px" height="130px;" />
+          </div>
+          <p>음성 등록</p>
+        </router-link>
+      </div>
 
-      <div class="pwd-modal" data-toggle="modal">
+      <div class="pwd-modal" data-toggle="modal" style="padding-right: 2%">
         <div class="icons">
-          <img src="@/assets/pwd.png" style="width : 130px; height : 120px;" />
+          <img src="@/assets/pwd.png" style="width: 130px; height: 120px" />
         </div>
-          <p>비밀번호 변경</p>
+        <p>계정 설정</p>
       </div>
       <div>
-        <div class="icons" @click="logout">
-          <img src="@/assets/unlock.png" style="width : 120px; height : 120px;" />
+        <div class="icons" @click="logout" style="padding-right: 2%">
+          <img src="@/assets/unlock.png" style="width: 120px; height: 120px" />
         </div>
         <p>로그아웃</p>
       </div>
@@ -55,7 +60,12 @@
 
     <div id="changPwdModal" class="modal">
       <div class="modal-content">
-        <div class="close" style="text-align : right; cursor : pointer color : black">X</div>
+        <div
+          class="close"
+          style="text-align : right; cursor : pointer color : black"
+        >
+          X
+        </div>
         <ChangePwd />
       </div>
     </div>
@@ -73,7 +83,9 @@ export default {
     ChangePwd,
   },
   data() {
-    return {};
+    return {
+      code: this.$store.state.code,
+    };
   },
   methods: {
     attachModal() {
@@ -94,9 +106,11 @@ export default {
       };
     },
     logout() {
-      this.$router.push({
-        name: "Home",
-      });
+      this.$store.commit("clearMember");
+      this.$store.commit("logout");
+      this.$cookies.remove("token");
+      this.$cookies.remove("code");
+      this.$router.push("/");
     },
   },
   mounted() {
@@ -106,20 +120,24 @@ export default {
       return;
     }
   },
+  created() {
+    this.$store.state.code = this.$cookies.get("code");
+    this.code = this.$store.state.code;
+  },
 };
 </script>
 <style scoped>
 .menu {
   margin-top: 8%;
   text-align: center;
-  padding: 0 15% 0 15%;
+  padding: 0 20% 0 20%;
   display: flex;
   z-index: 5;
   justify-items: center;
   justify-content: space-between;
 }
 .intro {
-  padding-top: 3%;
+  /* padding-top: 3%; */
   margin-left: 7%;
   margin-right: 7%;
   display: flex;

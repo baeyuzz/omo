@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:bugfix" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="be227e13-619a-489d-8166-3b9497ebcabf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/controller/VoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/controller/VoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberSignUpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/MemberSignUpResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/VisitorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/payload/VisitorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/service/ApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/service/ApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-backend/src/main/java/com/omo/aibackend/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/omo/backend/visitor/VisitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1fwr64OcC8cOavFWCNU6L0PEdFr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.23" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ssafy.omo.config" />
+      <recent name="com.accolite.pru.health.AuthApp.config" />
+      <recent name="com.accolite.pru.health.AuthApp.service" />
+      <recent name="com.accolite.pru.health.AuthApp.event" />
+      <recent name="com.accolite.pru.health.AuthApp.event.listener" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\multicampus\Desktop\leg\s03p13a510\backend_auth\src\main\java" />
+      <recent name="C:\Users\multicampus\Desktop\dd\s03p13a510\backend_auth\src\main\java\com\accolite\pru\health\AuthApp\event" />
+      <recent name="C:\Users\multicampus\Desktop\dd\s03p13a510\backend_auth\src\main\resources\templates" />
+      <recent name="C:\Users\multicampus\Desktop\dd\s03p13a510\backend_auth\src\main\java\com\accolite\pru\health\AuthApp\model" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BlogApiApplication">
+    <configuration name="JwtTokenProviderTest.testGetUserIdFromJWT" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.accolite.pru.health.AuthApp.security.JwtTokenProviderTest.testGetUserIdFromJWT&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="JwtTokenProviderTest.validateToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.accolite.pru.health.AuthApp.security.JwtTokenProviderTest.validateToken&quot; --stacktrace" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="BlogApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="chat.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ssafy.omo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ssafy.omo.BlogApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.JwtTokenProviderTest.testGetUserIdFromJWT" />
+      <item itemvalue="Gradle.JwtTokenProviderTest.validateToken" />
+      <item itemvalue="Spring Boot.BlogApiApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BlogApiApplication" />
+        <item itemvalue="Gradle.JwtTokenProviderTest.validateToken" />
+        <item itemvalue="Gradle.JwtTokenProviderTest.testGetUserIdFromJWT" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="be227e13-619a-489d-8166-3b9497ebcabf" name="Default Changelist" comment="" />
+      <created>1597139818122</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597139818122</updated>
+      <workItem from="1597139819260" duration="3084000" />
+      <workItem from="1597337601615" duration="2766000" />
+      <workItem from="1597340477113" duration="5574000" />
+      <workItem from="1597365920215" duration="10878000" />
+      <workItem from="1597379606330" duration="3881000" />
+      <workItem from="1597487611635" duration="282000" />
+      <workItem from="1597539352481" duration="7228000" />
+      <workItem from="1597547877792" duration="30824000" />
+      <workItem from="1597734527085" duration="17000" />
+      <workItem from="1597737268983" duration="2273000" />
+      <workItem from="1601859192873" duration="1335000" />
+      <workItem from="1601866100188" duration="7055000" />
+      <workItem from="1601881911613" duration="7000" />
+      <workItem from="1601997571174" duration="3724000" />
+      <workItem from="1602001345269" duration="17000" />
+      <workItem from="1602003084425" duration="574000" />
+      <workItem from="1602031402217" duration="6950000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$USER_HOME$" />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="415" y="6" key="#AuthAppApplication" timestamp="1597564961311">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="415" y="6" key="#AuthAppApplication/0.0.1536.824@0.0.1536.824" timestamp="1597564961311" />
+    <state x="415" y="6" key="#AuthAppApplication_(1)" timestamp="1597539505237">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="415" y="6" key="#AuthAppApplication_(1)/0.0.1536.824@0.0.1536.824" timestamp="1597539505237" />
+    <state x="415" y="6" key="#BlogApiApplication" timestamp="1602031444812">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="415" y="6" key="#BlogApiApplication/0.0.1536.824@0.0.1536.824" timestamp="1602031444812" />
+    <state x="304" y="187" width="1213" height="796" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602044602088">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="187" width="1213" height="796" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1602044602088" />
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1602034004627">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1602034004627" />
+    <state x="234" y="335" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1601859462848">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="234" y="335" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1601859462848" />
+    <state x="497" y="279" width="541" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1597379658030">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="497" y="279" width="541" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1597379658030" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602000163743">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1602000163743" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601999025904">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601999025904" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1597543068907">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597543068907" />
+    <state width="1156" height="109" key="GridCell.Tab.0.bottom" timestamp="1602079156403">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1156" height="109" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602079156403" />
+    <state width="1126" height="455" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368353" />
+    <state width="1156" height="109" key="GridCell.Tab.0.center" timestamp="1602079156403">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1156" height="109" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602079156403" />
+    <state width="1126" height="455" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368346" />
+    <state width="1156" height="109" key="GridCell.Tab.0.left" timestamp="1602079156403">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1156" height="109" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602079156403" />
+    <state width="1126" height="455" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368342" />
+    <state width="1156" height="109" key="GridCell.Tab.0.right" timestamp="1602079156403">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1156" height="109" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602079156403" />
+    <state width="1126" height="455" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368351" />
+    <state width="1156" height="109" key="GridCell.Tab.1.bottom" timestamp="1602079156404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1156" height="109" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602079156404" />
+    <state width="1126" height="455" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368356" />
+    <state width="1156" height="109" key="GridCell.Tab.1.center" timestamp="1602079156404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1156" height="109" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602079156404" />
+    <state width="1126" height="455" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368355" />
+    <state width="1156" height="109" key="GridCell.Tab.1.left" timestamp="1602079156403">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1156" height="109" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602079156403" />
+    <state width="1126" height="455" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368354" />
+    <state width="1156" height="109" key="GridCell.Tab.1.right" timestamp="1602079156404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1156" height="109" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602079156404" />
+    <state width="1126" height="455" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597739368355" />
+    <state width="1126" height="455" key="GridCell.Tab.2.bottom" timestamp="1597739368361">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1493" height="129" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597730968964" />
+    <state width="1269" height="341" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1602061107214" />
+    <state width="1269" height="341" key="GridCell.Tab.2.center" timestamp="1602061107212">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1493" height="129" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1597730968964" />
+    <state width="1269" height="341" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1602061107212" />
+    <state width="1269" height="341" key="GridCell.Tab.2.left" timestamp="1602061107211">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1493" height="129" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1597730968964" />
+    <state width="1269" height="341" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1602061107211" />
+    <state width="1269" height="341" key="GridCell.Tab.2.right" timestamp="1602061107213">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1493" height="129" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1597730968964" />
+    <state width="1269" height="341" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1602061107213" />
+    <state x="628" y="97" key="SettingsEditor" timestamp="1602029840463">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="628" y="97" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1602029840463" />
+    <state x="475" y="97" width="585" height="630" key="find.popup" timestamp="1597541847628">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="475" y="97" width="585" height="630" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1597541847628" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ssafy/omo/service/impl/EmployeeServiceImpl.java</url>
+          <line>106</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/chat$AuthAppApplication__1_.ic" NAME="AuthAppApplication (1) Coverage Results" MODIFIED="1597711601567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.accolite.pru.health.AuthApp.*</FILTER>
+    </SUITE>
+  </component>
+</project>

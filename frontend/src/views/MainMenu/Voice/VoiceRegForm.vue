@@ -2,8 +2,8 @@
     <div>
         <Nav/>
         
-        <div style="text-align : center; color : black; margin-top : 4%" class="regForm" >
-            <div style="margin-top : 2%; background-color : white; width : 480px; border-radius : 15px">
+        <div style="text-align : center; color : black;" class="regForm" >
+            <div style="margin-top : 3%; background-color : white; width : 480px; border-radius : 15px">
             <div class="regForm" style="padding-top : 4%;">
                 <h1>
                     음성등록
@@ -13,17 +13,17 @@
                 <div class="regForm">
                     <table>
                         <tbody>
-                            <tr>
-                                <td><label>기관 코드</label></td>
+                            <!-- <tr>
+                                <td><label>기관명</label></td>
                                 <td> <input class="regInput" placeholder="ex. A123" v-model="code"/></td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <td><label>이름</label></td>
                                 <td> <input class="regInput" placeholder="ex. 홍길동" v-model="name"/></td>
                             </tr>
                             <tr>
                                 <td><label>휴대 전화</label></td>
-                                <td><input class="regInput" type="tel" placeholder="ex. 010-1234-1234" v-model="phone"/></td>
+                                <td><input class="regInput" type="tel" placeholder="ex. 01012345678" v-model="phone"/></td>
                             </tr>
                             <tr>
                                 <td><label>주소</label></td>
@@ -48,7 +48,9 @@
 <script>
 
 import Nav from '@/components/Nav.vue'
-import http from '@/http-common.js'
+// import http from '@/http-common.js'
+// import axios from "axios";
+
 export default {
   name: 'VoiceRegForm',
   components: {
@@ -59,58 +61,62 @@ export default {
       name: '',
       phone: '',
       addr: '',
-      code: '',
+      code: this.$store.state.code,
     };
   },
   methods: {
     async submitForm() {
-        if(this.code.length == 0) {
-            alert('기관 코드를 입력하세요');
-            this.$refs.code.focus();
-            return;
-        }
+        // if(this.code.length == 0) {
+        //     alert('기관명을 입력하세요');
+        //     return;
+        // }
         if(this.name.length == 0) {
-                alert('이름을 입력하세요');
-                this.$refs.name.focus();
-                return;
+            alert('이름을 입력하세요');
+            return;
         }
         if(this.phone.length == 0) {
             alert('휴대 전화를 입력하세요');
-            this.$refs.phone.focus();
             return;
         }
         if(this.addr.length == 0) {
             alert('주소를 입력하세요');
-            this.$refs.addr.focus();
             return;
         }
-        const params = {
-            phone: this.phone,
-            name: this.name,
-            code: this.code,
-            addr: this.addr,
-        };
-        http.post('/아직안정해짐',params)
-            .then((res) => {
-                    if(res.data.state){ // 등록이 되면
-                        this.$router.push({
-                            name: "RegRecord",
-                        });
-                        console.log('success')
-                    } else {
-                        console.log('fail')
-                    }
-                } 
-            )
-            .catch((err) => {
-                this.$router.push({
-                    name: "RegRecord",
-                    });
-                alert('Error ', err)
-                });
+
+        this.$store.commit("setPhone", this.phone);
+        this.$store.commit("setName", this.name);
+        this.$store.commit("setAddr", this.addr);
+        // this.$store.commit("setCode", this.code);
+        
+
+        this.$router.push({name: 'RegRecord',});
+
+        // const info = {
+        //     name : this.$store.state.name,
+        //     addr : this.$store.state.addr,
+        //     phone : this.$store.state.phone,
+        //     code : this.$store.state.code,
+        //   }
+
+        // axios.post("http://localhost:8081/api/ai/form", info)
+        //     .then((res) => {
+        //             if(res.data){ // 등록이 되면
+        //                 this.$router.push({name: 'RegRecord',});
+        //                 console.log('success')
+        //             } else {
+        //                 console.log('fail')
+        //             }
+        //         } 
+        //     )
+        //     .catch((err) => {
+        //         alert('Error ', err)
+        //         });
     },
   },
-
+  created () {
+      this.$store.state.code = this.$cookies.get("code")
+      this.code = this.$store.state.code
+  }
 }
 </script>
 <style scoped>
