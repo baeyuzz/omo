@@ -60,6 +60,8 @@ Flow 2 ) 마스크인식 + 마스크 벗고 얼굴인식
 
 마스크가 인식이 되면 화자의 목소리를 통해 방문자가 눈군지 판별합니다
 
+(음성 녹음 사용 컴포넌트 ```https://www.npmjs.com/package/vue-audio-recorder```)
+
 <br>
 <br>
 <br>
@@ -144,5 +146,3 @@ Flow 2 ) 마스크인식 + 마스크 벗고 얼굴인식
 ## :calendar: 프로젝트 진행 일정
 
 <img src="https://user-images.githubusercontent.com/32058420/95409680-227a9700-095d-11eb-8da0-9eb7eb19345d.png">
-
-
